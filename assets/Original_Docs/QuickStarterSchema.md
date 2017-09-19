@@ -1,3 +1,4 @@
+# Database Schema
 
 ## projects
 | **column name**  	| **data type** 	| **details**                    	|
@@ -13,8 +14,9 @@
 | description      	| text          	| not null                       	|
 | title_image      	| string        	| not null                       	|
 | category         	| string        	|                                	|
-| created_at        | datetime        | not null                        |
-| updated_at        | datetime        | not null                        |
+| created_at            | datetime              | not null                              |
+| updated_at            | datetime              | not null                              |
+* author_id references users
 
 ## users
 | **column name** | **data type** | **details**               |
@@ -38,18 +40,21 @@
 | gift_description | string        |                                |
 | created_at       | datetime      | not null                       |
 | updated_at       | datetime      | not null                       |
+* project_id references projects
 
+## projectSupporters
+| **column name** 	| **data type** 	| **details**           	|
+|-----------------	|---------------	|-----------------------	|
+| id              	| integer       	| not null, primary key 	|
+| backer_id       	| integer       	| not null, foreign key 	|
+| project_id      	| integer       	| not null, foreign key 	|
+| backed_amount   	| integer       	| not null              	|
+* joins table to link users(backer_id) and the projects(project_id) they support
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  -->
+## userRewards
+| **column name** 	| **data type** 	| **details**           	|
+|-----------------	|---------------	|-----------------------	|
+| id              	| integer       	| not null, primary key 	|
+| backer_id       	| integer       	| not null, foreign key 	|
+| reward_id       	| integer       	| not null, foreign key 	|
+* joins table to link users(backer_id) and the rewards(reward_id) they've paid for
