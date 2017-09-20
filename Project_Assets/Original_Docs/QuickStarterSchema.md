@@ -12,7 +12,8 @@
 | total_funded     	| integer       	|                                	|
 | blurb            	| string        	|                                	|
 | description      	| text          	| not null                       	|
-| title_image      	| string        	| not null                       	|
+| title_image      	| string        	|                                	|
+| extra_image      	| string        	|                                      	|
 | category         	| string        	|                                	|
 | created_at            | datetime              | not null                              |
 | updated_at            | datetime              | not null                              |
@@ -42,7 +43,7 @@
 | updated_at       | datetime      | not null                       |
 * project_id references projects
 
-## projectSupporters
+## Supporters
 | **column name** 	| **data type** 	| **details**           	|
 |-----------------	|---------------	|-----------------------	|
 | id              	| integer       	| not null, primary key 	|
@@ -51,7 +52,7 @@
 | backed_amount   	| integer       	| not null              	|
 * joins table to link users(backer_id) and the projects(project_id) they support
 
-## userRewards
+## UserRewards
 | **column name** 	| **data type** 	| **details**           	|
 |-----------------	|---------------	|-----------------------	|
 | id              	| integer       	| not null, primary key 	|

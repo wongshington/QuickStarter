@@ -1,5 +1,5 @@
 {
-  "name": "--skip-test-unit",
+  "name": "QuickStarter",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
