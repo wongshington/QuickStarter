@@ -10,55 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170919231810) do
+ActiveRecord::Schema.define(version: 20170920171014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "projects", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "author_id", null: false
-    t.integer "backer_count"
-    t.datetime "funding_deadline", null: false
-    t.integer "funding_goal", null: false
-    t.integer "total_funded"
-    t.string "blurb"
-    t.text "description", null: false
-    t.string "title_image"
-    t.string "extra_image"
-    t.string "category", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_projects_on_author_id"
-    t.index ["category"], name: "index_projects_on_category"
-  end
-
-  create_table "rewards", force: :cascade do |t|
-    t.integer "project_id", null: false
-    t.integer "pledge_amount", null: false
-    t.string "gift", null: false
-    t.string "gift_description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_rewards_on_project_id"
-  end
-
-  create_table "supporters", force: :cascade do |t|
-    t.integer "backer_id"
-    t.integer "project_id"
-    t.integer "backed_amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["backer_id"], name: "index_supporters_on_backer_id"
-    t.index ["project_id"], name: "index_supporters_on_project_id"
-  end
-
-  create_table "user_rewards", force: :cascade do |t|
-    t.integer "backer_id", null: false
-    t.integer "reward_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
