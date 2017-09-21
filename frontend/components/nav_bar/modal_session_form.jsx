@@ -41,7 +41,8 @@ class ModalSessionForm extends React.Component {
       password: "",
       email: "",
       modalState: false,
-      formType: null
+      formType: null,
+      errors: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,10 +52,10 @@ class ModalSessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push("/");
-    }
+
+      this.setState({errors: [nextProps.errors] });
   }
+
 
   update(field) {
     return e =>
@@ -77,7 +78,8 @@ class ModalSessionForm extends React.Component {
         email: "",
         password: "",
         modalState: false,
-        formType: "none"
+        formType: "none",
+        errors: []
       })
     );
   }
@@ -96,7 +98,7 @@ class ModalSessionForm extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {this.props.errors.map((error, i) => (
+        {this.state.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
@@ -104,7 +106,6 @@ class ModalSessionForm extends React.Component {
   }
 
   logDemo(e) {
-    console.log("sup");
     e.preventDefault();
     this.props.login(demo);
   }
@@ -113,7 +114,7 @@ class ModalSessionForm extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="right-nav">
-          <button onClick={this.handleClick} className="button">
+          <button onClick={this.handleSubmit(this.props.logout)} className="nav-bar-session-buttons">
             Sign Out
           </button>
         </div>
@@ -133,7 +134,7 @@ class ModalSessionForm extends React.Component {
       </div>
     );
 
-    if (this.state.formType === "login") {
+    if (this.state.formType === "LogIn") {
       userText = "Welcome Back";
       sessionAction = this.props.login;
       userNameBox = "";
@@ -158,9 +159,7 @@ class ModalSessionForm extends React.Component {
         <br />
         <br />
         <ReactModal
-          handleSubmit={this.handleSubmit}
-          toggleModalState={this.toggleModalState}
-          handleClick={this.handleClick}
+
           isOpen={this.state.modalState}
           contentLabel="Modal"
           style={style}
@@ -168,6 +167,7 @@ class ModalSessionForm extends React.Component {
           <button onClick={() => this.toggleModalState(null)}>Close</button>
           <div className="modal-inputs">
             <form onSubmit={this.handleSubmit(sessionAction)}>
+              {userText}
               {this.renderErrors()}
               {userNameBox}
               <input
