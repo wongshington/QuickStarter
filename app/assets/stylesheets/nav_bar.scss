@@ -1,0 +1,47 @@
+.flex-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px #e0e1e2;
+  box-shadow: 0px 0px 5px grey;
+}
+
+.nav-bar-session-buttons {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  padding-right: 2%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar-session-buttons > button {
+  border: 10px;
+  background: #e0e1e2;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding: 2%;
+  margin: auto;
+  border-radius: 10%;
+  box-shadow: 0px 0px 5px grey;
+}
+
+.modal-inputs input[type="text"], .modal-inputs input[type="password"] {
+  background: #f7fbff;
+  border: 1px solid #dad7d4;
+  border-radius: 3%;
+  width: 80%;
+  margin-bottom: 20px;
+
+}
+
+.modal-inputs {
+  text-align:center;
+  display: block;
+  margin-bottom: 20px;
+}
+.modal-inputs input[type="submit"] {
+  background: #05AF3C;
+  width: 80%;
+  border-radius: 3%;
+}

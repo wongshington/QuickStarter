@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 
-import SessionButtons from './session_buttons';
+import ModalSessionForm from './modal_session_form';
 
-const mapStateToProps = ({ sessionReducer }) => ({
-  currentUser: sessionReducer.currentUser
+const mapStateToProps = ({ errorsReducer, sessionReducer }) => ({
+  currentUser: sessionReducer.currentUser,
+  loggedIn: Boolean(sessionReducer.currentUser),
+  errors: errorsReducer.sessionErrReducer,
+  modalState: false,
+  formType: null
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -13,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionButtons);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalSessionForm);

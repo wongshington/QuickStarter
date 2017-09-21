@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Modal from 'react-modal';
 
 
 
@@ -66,6 +67,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
+
       <div >
         <form onSubmit={this.handleSubmit} >
           {this.renderErrors()}
@@ -88,6 +90,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
       </div>
+    </Modal>
     );
   }
 }
