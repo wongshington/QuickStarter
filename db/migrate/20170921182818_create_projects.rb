@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :title, null: false
       t.integer :author_id, null: false
       t.integer :backer_count
-      t.datetime :funding_deadline, null: false
+      t.date :funding_deadline, null: false
       t.integer :funding_goal, null: false
       t.integer :total_funded
       t.string :blurb
@@ -17,5 +17,6 @@ class CreateProjects < ActiveRecord::Migration[5.1]
     end
     add_index :projects, :author_id
     add_index :projects, :category
+
   end
 end

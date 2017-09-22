@@ -14,6 +14,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 const App = () =>(
   <div>
       <NavBarContainer />
+      
 
   </div>
 );

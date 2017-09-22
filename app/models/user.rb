@@ -28,7 +28,10 @@ class User < ApplicationRecord
 
 
 # associations
-
+has_many :projects,
+primary_key: :id,
+foreign_key: :author_id,
+class_name: 'Project'
 
 
 # associations
@@ -38,7 +41,7 @@ class User < ApplicationRecord
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
-  
+
     user && user.is_password?(password) ? user : nil
   end
 

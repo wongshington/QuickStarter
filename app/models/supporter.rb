@@ -19,5 +19,5 @@ class Supporter < ApplicationRecord
 
   belongs_to :user,
   primary_key: :id,
-  foreign_key: :backer_id,
+  foreign_key: :backer_id
 end

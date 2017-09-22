@@ -1,33 +1,21 @@
-# == Schema Information
-#
-# Table name: projects
-#
-#  id               :integer          not null, primary key
-#  title            :string           not null
-#  author_id        :integer          not null
-#  backer_count     :integer
-#  funding_deadline :datetime         not null
-#  funding_goal     :integer          not null
-#  total_funded     :integer
-#  blurb            :string
-#  description      :text             not null
-#  title_image      :string
-#  extra_image      :string
-#  category         :string           not null
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#
-
 class Project < ApplicationRecord
+validates :title, :author_id, :funding_goal, :funding_deadline, :description, :category, presence: true
 
-  belongs_to :author,
-  primary_key: :id,
-  foreign_key: :author_id,
-  class_name: 'User'
+belongs_to :author,
+primary_key: :id,
+foreign_key: :author_id,
+class_name: 'User'
 
-  has_many :rewards,
-  primary_key: :id,
-  foreign_key: :project_id,
-  class_name: 'Reward'
+def self.searched?
+  self.where("category = ?")
+end
+
+def self.days_left(funding_deadline)
+
+end
+
+def self.funded_percentage(total_funded, funding_goal)
+end
+
 
 end
