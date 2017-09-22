@@ -8,7 +8,7 @@ const ProjectIndexItem = ({ project }) => (
     {project.backer_count}
     {project.description}
     {project.category}
-    <img src="https://unsplash.com/photos/uSFOwYo1qEw/download?force=true" />
+    <img src="http://res.cloudinary.com/quickstarter/image/upload/v1506100103/kalen-emsley-99659_higgtt.jpg" />
   </li>
 
 );
