@@ -6,6 +6,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-modal": "^2.3.2",
@@ -17,11 +18,10 @@
     "webpack": "^3.6.0"
   },
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "6.10.1",
+    "npm": "3.10.10"
   },
   "scripts": {
     "postinstall": "webpack"
   }
-
 }
