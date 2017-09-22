@@ -18,7 +18,8 @@ const style = {
   content: {
     position: "relative",
     margin: "15% auto",
-    width: "20%",
+    width: "30%",
+    height: "250px",
     border: "1px solid rgba(0, 0, 0, .2)",
     background: "#fefff2",
     overflow: "auto",
@@ -48,7 +49,7 @@ class ModalSessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleModalState = this.toggleModalState.bind(this);
-    this.handleCick = this.handleClick.bind(this);
+    this.logOut = this.logOut.bind(this);
     this.logDemo = this.logDemo.bind(this);
   }
 
@@ -69,26 +70,31 @@ class ModalSessionForm extends React.Component {
   handleSubmit(action) {
     return e => {
       e.preventDefault();
-      if(this.state.loggedIn) {
-    this.setState({loggedIn: false });
-  } else {
-    this.setState({loggedIn: true });
-  }
+  //     if(this.state.loggedIn) {
+  //   this.setState({loggedIn: false });
+  // } else {
+  //   this.setState({loggedIn: true });
+  // }
+      // this.setState({errors: [action.sessionReducer.errorsReducer]});
+
       return action(this.state);
+
     };
   }
 
 //this function isnt even being called ever
-  handleClick() {
-    this.props.logout().then(
-      this.setState({
+  logOut(e) {
+
+    this.props.logout();
+    this.setState({
         username: "",
         email: "",
         password: "",
         modalState: false,
         formType: "none",
-        errors: []
-      })
+        errors: [],
+        loggedIn: false
+  }
     );
   }
 
@@ -99,11 +105,13 @@ class ModalSessionForm extends React.Component {
       password: "",
       modalState: !this.state.modalState,
       formType,
-      errors: []
+      errors: [],
+      loggedin: false
     });
   }
 
   renderErrors() {
+    console.log(this.props);
     return (
       <ul>
         {this.state.errors.map((error, i) => (
@@ -123,21 +131,22 @@ class ModalSessionForm extends React.Component {
   rightButtons() {
     if (this.state.loggedIn) {
       return (
-        <div className="right-nav">
-          <button onClick={this.handleSubmit(this.props.logout)} className="nav-bar-session-buttons">
+        <div >
+          <button onClick={()=> this.logOut()} >
             Sign Out
           </button>
         </div>
       );
     } else {
       return (
-        <div className="nav-bar-session-buttons">
+
+        <div className="nav-button-section">
           <button onClick={() => this.toggleModalState("LogIn")}>LogIn</button>
           <button onClick={() => this.toggleModalState("Sign Up")}>
             Sign Up
           </button>
           <button onClick={this.logDemo}>Demo</button>
-        </div>
+        </div >
 
       );
     }
@@ -150,7 +159,7 @@ class ModalSessionForm extends React.Component {
     let userNameBox = (
       <div>
         <input
-          className="username"
+
           placeholder="Username"
           value={this.state.username}
           onChange={this.update("username")}
@@ -166,10 +175,9 @@ class ModalSessionForm extends React.Component {
     }
 
     return (
-      <div>
+      <div  className="modal-form-container">
         {this.rightButtons()}
-        <br />
-        <br />
+
         <ReactModal
 
           isOpen={this.state.modalState}
@@ -180,6 +188,7 @@ class ModalSessionForm extends React.Component {
           <div className="modal-inputs">
             <form onSubmit={this.handleSubmit(sessionAction)}>
               {userText}
+              <br></br>
               {this.renderErrors()}
               {userNameBox}
               <input
@@ -187,7 +196,7 @@ class ModalSessionForm extends React.Component {
                 value={this.state.email}
                 onChange={this.update("email")}
                 type="text"
-                className="email"
+
               />
 
               <input
@@ -195,7 +204,7 @@ class ModalSessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update("password")}
                 type="password"
-                className="password"
+
               />
               <input type="submit" value={this.state.formType} />
             </form>
