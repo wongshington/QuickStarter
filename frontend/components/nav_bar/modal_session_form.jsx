@@ -42,7 +42,8 @@ class ModalSessionForm extends React.Component {
       email: "",
       modalState: false,
       formType: null,
-      errors: []
+      errors: [],
+      loggedIn: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -64,13 +65,20 @@ class ModalSessionForm extends React.Component {
       });
   }
 
+
   handleSubmit(action) {
     return e => {
       e.preventDefault();
+      if(this.state.loggedIn) {
+    this.setState({loggedIn: false });
+  } else {
+    this.setState({loggedIn: true });
+  }
       return action(this.state);
     };
   }
 
+//this function isnt even being called ever
   handleClick() {
     this.props.logout().then(
       this.setState({
@@ -108,10 +116,13 @@ class ModalSessionForm extends React.Component {
   logDemo(e) {
     e.preventDefault();
     this.props.login(demo);
+    this.setState({loggedIn: true });
+    console.log(this.state);
+
   }
 
-  render() {
-    if (this.props.loggedIn) {
+  rightButtons() {
+    if (this.state.loggedIn) {
       return (
         <div className="right-nav">
           <button onClick={this.handleSubmit(this.props.logout)} className="nav-bar-session-buttons">
@@ -119,7 +130,22 @@ class ModalSessionForm extends React.Component {
           </button>
         </div>
       );
+    } else {
+      return (
+        <div className="nav-bar-session-buttons">
+          <button onClick={() => this.toggleModalState("LogIn")}>LogIn</button>
+          <button onClick={() => this.toggleModalState("Sign Up")}>
+            Sign Up
+          </button>
+          <button onClick={this.logDemo}>Demo</button>
+        </div>
+
+      );
     }
+  }
+
+  render() {
+
     let userText = "Come get your Quick Start today!";
     let sessionAction = this.props.signup;
     let userNameBox = (
@@ -142,20 +168,7 @@ class ModalSessionForm extends React.Component {
 
     return (
       <div>
-        <div className="flex-nav">
-          <div className="nav-bar-session-buttons" >
-          <button >Discover</button>
-          <button >Start a Project</button>
-          </div>
-          <h1>QuickStarter</h1>
-          <div className="nav-bar-session-buttons">
-          <button onClick={() => this.toggleModalState("LogIn")}>LogIn</button>
-          <button onClick={() => this.toggleModalState("Sign Up")}>
-            Sign Up
-          </button>
-          <button onClick={this.logDemo}>Demo</button>
-          </div>
-        </div>
+        {this.rightButtons()}
         <br />
         <br />
         <ReactModal
