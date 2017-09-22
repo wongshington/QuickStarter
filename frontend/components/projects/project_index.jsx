@@ -13,17 +13,22 @@ class ProjectIndex extends React.Component {
   }
 
 render() {
-  const projects = this.props.projects;
 
-  return (
-    projects.map(project => {
+  const projects = this.props.projects.map(project => {
+
       return (
-        <ProjectIndexItem className="project-item" project={project} />
-        );
-    })
-  );
-}
-
+        <ProjectIndexItem
+          key={project.id}
+          project={project}
+        />
+      );
+    });
+    return (
+      <ul>
+        {projects}
+      </ul>
+    );
+  }
 
 
 }
