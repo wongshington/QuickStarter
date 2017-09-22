@@ -117,7 +117,6 @@ class ModalSessionForm extends React.Component {
     e.preventDefault();
     this.props.login(demo);
     this.setState({loggedIn: true });
-    console.log(this.state);
 
   }
 
