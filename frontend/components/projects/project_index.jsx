@@ -24,9 +24,11 @@ render() {
       );
     });
     return (
-      <ul>
-        {projects}
-      </ul>
+      <div  >
+        <ul className="project-index">
+          {projects}
+        </ul>
+      </div>
     );
   }
 

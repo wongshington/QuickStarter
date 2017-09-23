@@ -1,3 +1,22 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.project-index {
+  display: flex;
+  width: 80%;
+  position: relative;
+  margin: 50px auto;
+  top: 30px;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+
+.project-item {
+  width: 30%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.project-item img {
+  width: 100%;
+  height: 40%;
+  margin: auto;
+}
