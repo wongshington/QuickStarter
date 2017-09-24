@@ -111,7 +111,6 @@ class ModalSessionForm extends React.Component {
   }
 
   renderErrors() {
-    console.log(this.props);
     return (
       <ul>
         {this.state.errors.map((error, i) => (
@@ -131,7 +130,7 @@ class ModalSessionForm extends React.Component {
   rightButtons() {
     if (this.state.loggedIn) {
       return (
-        <div >
+        <div className="nav-button-section-logout">
           <button onClick={()=> this.logOut()} >
             Sign Out
           </button>

@@ -7,7 +7,7 @@ import { getProject } from '../../actions/project_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
+
   return ({
   project: state.entitiesReducer.projects[ownProps.match.params.projectId]
 });

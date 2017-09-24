@@ -5,7 +5,6 @@ $green: #25CB68;
 position: fixed;
 top: 0;
 width: 94%;
-height: 35px;
 display: flex;
 background: white;
 padding: 0 3%;
@@ -19,20 +18,25 @@ z-index:9999;
 
 .nav-button-section {
   width: 300px;
-
   display: flex;
   padding-right: 1%;
   justify-content: space-between;
   align-items: center;
-
 }
 
+.nav-button-section-logout {
+  width: 300px;
+  padding-right: 1%;
+  text-align: right;
+}
 .nav-button-section button {
+  padding: 5px 0 3px 0;
   height: 100%;
+  border-bottom: 2px solid #fff;
 }
 
 .nav-button-section button:hover {
-  border-bottom: 5px solid $green;
+  border-bottom: 1.5px solid $green;
   height: 100%;
 }
 

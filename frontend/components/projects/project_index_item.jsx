@@ -9,7 +9,7 @@ const ProjectIndexItem = ({ project }) => (
       <img src={project.title_image} />
       </Link>
     <br></br>
-    <div className="project-info">
+    <div >
     <li>{project.title}</li>
     <li>{project.author}</li>
 
