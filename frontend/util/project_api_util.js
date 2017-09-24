@@ -13,3 +13,11 @@ export const getProject = id => (
     url: `api/projects/${id}`
   })
 );
+
+export const createProject = project => (
+  $.ajax({
+    method: "POST",
+    url: `api/projects`,
+    data: project
+  })
+);
