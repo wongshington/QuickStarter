@@ -19,9 +19,7 @@ render() {
       return (
         <ProjectIndexItem
           key={project.id}
-          project={project}
-        />
-      );
+          project={project} /> );
     });
     return (
       <div  >

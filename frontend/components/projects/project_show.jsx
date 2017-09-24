@@ -43,7 +43,7 @@ render() {
             <li>{project.title}</li>
             <li>{project.author}</li>
 
-            <li>{project.description}</li>
+            <li>Blurb</li>
             <li>{project.category}</li>
             <li>
               <Line percent="50"
@@ -59,6 +59,10 @@ render() {
             <li>{project.funding_deadline}</li>
           </div>
         </div>
+      </div>
+      <div className="project-lower-page">
+        <div className="project-description-column">project description{project.description}</div>
+        <div className="rewards-column">rewards will go here</div>
       </div>
     </div>
   );

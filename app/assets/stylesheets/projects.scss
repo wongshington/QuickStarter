@@ -8,8 +8,8 @@
 }
 
 .project-item {
-  width: 27%;
-  margin: 0 3% 50px;
+  width: 300px;
+  margin: 0 15px 50px;
   text-align: center;
   border: 1px solid black;
   float: left;
@@ -26,7 +26,7 @@
 
 }
 .project-show-details {
-  width: 80%;
+  width: 90%;
   height: 300px;
   border: 1px black;
   margin: auto;
@@ -35,16 +35,16 @@
 }
 
 .project-show-image {
-  width: 50%;
+  width: 55%;
   height: 100%;
   display: inline;
-  margin-right: 25px;
+  margin-right: 20px;
   border: 3px solid black;
   overflow-y: hidden;
 }
 
 .project-info{
-  width:30%;
+  width:28%;
   height:100%;
   list-style: none;
   background: #a8aaad;
@@ -57,4 +57,28 @@
   justify-content: center;
   display: flex;
   justify-content: space-evenly;
+}
+
+.project-lower-page {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.project-description-column {
+  width: 500px;
+  height: 800px;
+  margin-right: 10px;
+  border: 1px solid blue;
+  display: inline-block;
+}
+
+.rewards-column {
+  width: 200px;
+  height: 800px;
+  margin-left:10px;
+  background: #b5d1ff;
+  display: inline-block;
 }
