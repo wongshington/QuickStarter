@@ -13,7 +13,7 @@ class navBar extends React.Component {
             <button  >Discover</button>
             <button >Start a Project</button>
           </div>
-          <h1>QuickStarter</h1>
+          <Link to="/"><h1>QuickStarter</h1></Link>
 
           <ModalSessionForm
             login={this.props.login}

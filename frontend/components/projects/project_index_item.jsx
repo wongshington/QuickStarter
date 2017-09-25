@@ -6,14 +6,14 @@ import { Line } from 'rc-progress';
 const ProjectIndexItem = ({ project }) => (
   <li className="project-item" >
     <Link to={`/projects/${project.id}`}>
-      <img src={project.title_image} />
+      <img src={project.title_image} className="index-title-img"/>
       </Link>
     <br></br>
     <div >
     <li>{project.title}</li>
-    <li>{project.author}</li>
+    <li className="index-author-info"><img src={project.author_pic} />{project.author}</li>
 
-    <li>{project.description}</li>
+    <li>blurb{project.blurb}</li>
     <li>{project.category}</li>
     <li>
       <Line percent="50"
@@ -21,12 +21,12 @@ const ProjectIndexItem = ({ project }) => (
             strokeLinecap="round"
             trailWidth="1.5"
             strokeColor="#25CB68"
-            trailColor="#f4f7f9" />
+            trailColor="#f4f7f9"
+            width="260px"/>
 
       </li>
     <li>{project.backer_count}</li>
-    <li>{project.funding_deadline}</li>
-    <li>{project.funding_deadline}</li>
+    <li>{project.days_left} Days Left!</li>
     </div>
     <br></br>
 
