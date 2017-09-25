@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Project.destroy_all
+Reward.destroy_all
+
 user1 = User.create(username: "jesse_wong", email: "name@email.com", password:"123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308070/katrina_user_rmzxd2.jpg" )
 user2 = User.create(username: 'guest', email: "email@email.com", password: 'password', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
 user3 = User.create(username: 'Quick_Silver', email: "LookAround@email.com", password: 'secure', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
