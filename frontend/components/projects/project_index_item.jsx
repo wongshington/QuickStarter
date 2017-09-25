@@ -16,7 +16,7 @@ const ProjectIndexItem = ({ project }) => (
     <li>blurb{project.blurb}</li>
     <li>{project.category}</li>
     <li>
-      <Line percent="50"
+      <Line percent={project.funded_percentage}
             strokeWidth="1.5"
             strokeLinecap="round"
             trailWidth="1.5"

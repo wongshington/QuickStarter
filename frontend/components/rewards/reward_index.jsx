@@ -6,7 +6,7 @@ import RewardIndexItem from './reward_index_item';
 class RewardIndex extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = this.props.project;
   }
 
   componentDidMount() {
@@ -25,7 +25,7 @@ render() {
       return (
         <RewardIndexItem
           key={reward.id}
-          reward={reward} /> );
+          reward={reward} patchProject={this.props.patchProject}/> );
     });
     return (
       <div  >

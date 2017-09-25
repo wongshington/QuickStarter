@@ -8,15 +8,16 @@ constructor(props){
 }
 
   render() {
-debugger;
     const settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      autoplaySpeed: 5000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      pauseOnHover: true
+      pauseOnHover: true,
+      fade: true,
+      arrows: true
     };
 
     if (this.props.SplashItems[0] === undefined) {

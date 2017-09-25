@@ -20,8 +20,12 @@ def days_left
   (funding_deadline-Date.today).to_i
 end
 
-def funded_percentage(total_funded, funding_goal)
-  total_funded/(funding_goal * 1.0)
+def funded_percentage
+  return "0" if total_funded == 0
+
+  result = ((total_funded/(funding_goal * 1.0)) * 100)
+  return "100" if result > 100
+  return result.to_s
 end
 
 

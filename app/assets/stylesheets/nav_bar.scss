@@ -38,6 +38,7 @@ z-index:9999;
 .nav-button-section button:hover {
   border-bottom: 1.5px solid $green;
   height: 100%;
+  transition-delay: 0.1s;
 }
 
 .modal-inputs input[type="text"], .modal-inputs input[type="password"] {

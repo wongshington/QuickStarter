@@ -6,7 +6,6 @@ $green: #25CB68;
   position: relative;
   margin: 50px auto;
   top: 30px;
-  border: 1px solid black;
 }
 
 .project-item {
@@ -16,13 +15,12 @@ $green: #25CB68;
   text-align: left;
   border: 1px solid black;
   float: left;
+  border-radius: 5px;
 }
 
 .project-item li{
   margin-left: 5%;
 }
-
-
 
 
 .index-title-img {

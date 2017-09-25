@@ -4,8 +4,8 @@ root "root#root"
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :projects, only: [:create, :show, :new, :index] do
-      resources :rewards, only: [:index, :create]
+    resources :projects, only: [:create, :show, :new, :index, :update] do
+      resources :rewards, only: [:index, :create, :update]
     end
   end
 

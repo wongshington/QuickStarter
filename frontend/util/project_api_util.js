@@ -21,3 +21,11 @@ export const createProject = project => (
     data: project
   })
 );
+
+export const patchProject = project => (
+  $.ajax({
+    method: "PATCH",
+    url: `api/projects/${project.id}`,
+    data: {project}
+  })
+);
