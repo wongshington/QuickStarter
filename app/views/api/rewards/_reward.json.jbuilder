@@ -1,2 +1,2 @@
-json.extract! project, :id, :project_id, :gift, :pledege_amount,
+json.extract! reward, :id, :project_id, :gift, :pledge_amount,
                        :gift_description
