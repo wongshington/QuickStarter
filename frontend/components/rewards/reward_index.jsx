@@ -10,13 +10,19 @@ class RewardIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getRewards();
   }
+
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    this.props.getRewards(this.props.project.id);
+}
 
 
 render() {
-
-  const rewards = this.props.rewards.map(reward => {
+  if (this.props.project.rewards === undefined) {
+    return null;
+  }
+  const rewards = this.props.project.rewards.map(reward => {
       return (
         <RewardIndexItem
           key={reward.id}
@@ -25,6 +31,8 @@ render() {
     return (
       <div  >
         <ul className="reward-index">
+          <button className="reward-item">
+          </button>
           {rewards}
         </ul>
       </div>

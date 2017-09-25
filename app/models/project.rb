@@ -11,18 +11,16 @@ primary_key: :id,
 foreign_key: :project_id,
 class_name: 'Reward'
 
-
-
 def self.searched?
   self.where("category = ?")
 end
 
 
-def self.days_left(funding_deadline)
-
+def days_left
+  (funding_deadline-Date.today).to_i
 end
 
-def self.funded_percentage(total_funded, funding_goal)
+def funded_percentage(total_funded, funding_goal)
   total_funded/(funding_goal * 1.0)
 end
 

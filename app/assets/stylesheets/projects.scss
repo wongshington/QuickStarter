@@ -1,3 +1,4 @@
+$green: #25CB68;
 
 .project-index {
   width: 80%;
@@ -16,8 +17,8 @@
 }
 
 .project-item img {
-  width: 100%;
-  height: 40%;
+  width: 300px;
+  height: 200px;
   margin: auto;
 }
 
@@ -49,36 +50,85 @@
   list-style: none;
   background: #a8aaad;
   display: inline;
-  border: 1px solid black
+  border: 1px solid black;
+  text-align: center;
+}
+.project-info li {
+  text-align: left;
 }
 
-.project-title-info {
+.project-main-info {
   margin-top: 70px;
   justify-content: center;
   display: flex;
-  justify-content: space-evenly;
+}
+
+.project-author-info {
+  width: 100px;
+  margin-right: 20px;
+  text-align: center;
+}
+.project-author-info img {
+  border-radius: 100%;
+  margin-top: 5px;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+.project-title-info {
+  font-size: 40px;
+  font-weight: bold;
+}
+.project-title-info li {
+  font-size: 20px;
+  list-style: none;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.back-me-button {
+  background: $green;
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  margin: 5px auto;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
 .project-lower-page {
   text-align: center;
   display: flex;
   justify-content: center;
-  max-width: 900px;
+  max-width: 80%;
   margin: 50px auto;
 }
 
 .project-description-column {
-  width: 500px;
+  width: 60%;
   height: 800px;
   margin-right: 10px;
   border: 1px solid blue;
   display: inline-block;
+  text-align: left;
+  font-size: 30px;
 }
 
 .rewards-column {
-  width: 200px;
+  width: 250px;
   height: 800px;
   margin-left:10px;
   background: #b5d1ff;
   display: inline-block;
+}
+
+.reward-item {
+  border: 1px solid black;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+
 }

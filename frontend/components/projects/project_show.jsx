@@ -1,6 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { Line } from 'rc-progress';
+
+import RewardIndex from '../rewards/reward_index';
+import RewardIndexContainer from '../rewards/reward_index_container';
 // import Project
 
 class ProjectShow extends React.Component{
@@ -29,9 +32,16 @@ render() {
   let project = this.props.project;
   return (
     <div>
-      <div className="project-title-info">
-        <div>author info</div>
-        <div>and title info will go here eventually, but for now enjoy this text</div>
+      <div className="project-main-info">
+        <div className="project-author-info">
+          By {project.author}
+          <img src={project.author_pic} />
+        </div>
+          <div className="project-title-info">
+            {project.title}
+            <br></br>
+            <li>and blurb info will go here eventually, but for now enjoy this text</li>
+          </div>
       </div>
       <br></br>
       <div className="main-project-details">
@@ -40,29 +50,33 @@ render() {
               <img src={project.title_image} />
           </div>
           <div className="project-info">
-            <li>{project.title}</li>
-            <li>{project.author}</li>
-
-            <li>Blurb</li>
-            <li>{project.category}</li>
-            <li>
               <Line percent="50"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     trailWidth="1.5"
                     strokeColor="#25CB68"
-                    trailColor="#f4f7f9" />
-
-              </li>
-            <li>{project.backer_count}</li>
-            <li>{project.funding_deadline}</li>
-            <li>{project.funding_deadline}</li>
+                    trailColor="#f4f7f9"
+                    width="90%"
+                    />
+              <li>{project.category}</li>
+            <li>{project.backer_count} Backers</li>
+            <li>{project.days_left} Days Left!</li>
+            <button className="back-me-button">Click Here to back this project!</button>
           </div>
         </div>
       </div>
       <div className="project-lower-page">
-        <div className="project-description-column">project description{project.description}</div>
-        <div className="rewards-column">rewards will go here</div>
+        <div className="project-description-column">
+          <h2>About this project</h2>
+          project description
+          <br></br>{project.description}
+        </div>
+        <Route path="/project/:projectId" component={RewardIndexContainer} />
+        <div className="rewards-column">
+          {
+            <RewardIndexContainer project={project}  />
+          }
+        </div>
       </div>
     </div>
   );
