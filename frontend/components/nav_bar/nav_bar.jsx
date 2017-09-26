@@ -10,10 +10,10 @@ class navBar extends React.Component {
     return(
       <nav className="theNavBar">
           <div className="nav-button-section">
-            <button  >Discover</button>
+            <button  ><i className="fa fa-compass" aria-hidden="true"></i> Explore</button>
             <button >Start a Project</button>
           </div>
-          <Link to="/"><h1>QuickStarter</h1></Link>
+          <Link to="/"><img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" /></Link>
 
           <ModalSessionForm
             login={this.props.login}

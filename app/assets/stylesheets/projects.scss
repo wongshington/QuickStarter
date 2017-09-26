@@ -1,4 +1,4 @@
-$green: #25CB68;
+$green: #2BDE73;
 
 .project-index {
   width: 1040px;
@@ -40,22 +40,42 @@ display: inline-flex;
 padding-right: 2px
 }
 
+
+
+/////
+///// show page upper half
+/////
+/////
+.project-show-upper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  background-color: #FBFBFA;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 70px;
+  box-shadow: inset 0 1px 5px 2px #d8d6d4;
+}
+
 .main-project-details {
   display: flex;
 
 }
+
 .project-show-details {
-  width: 90%;
-  height: 300px;
+  width: 1250px;
+  height: 450px;
   border: 1px black;
   margin: auto;
   display: flex;
   justify-content: center;
+
 }
 
 .project-show-image {
-  width: 55%;
-  height: 100%;
+  width: 900px;
+  height: 450px;
   display: inline;
   margin-right: 20px;
   border: 3px solid black;
@@ -63,27 +83,31 @@ padding-right: 2px
 }
 
 .project-info{
-  width:28%;
-  height:100%;
+  width: 350px;
+  height: 450px;
   list-style: none;
   background: #a8aaad;
   display: inline;
   border: 1px solid black;
   text-align: center;
-}
-.project-info li {
-  text-align: left;
+  padding-right: 18px;
+  padding-left: 18px;
+  box-sizing: border-box;
 }
 
+
+
 .project-main-info {
-  margin-top: 70px;
-  justify-content: center;
   display: flex;
+  position: relative;
+  left: 0;
+  width: 1235px;
+  box-sizing: border-box;
 }
 
 .project-author-info {
   width: 100px;
-  margin-right: 20px;
+  margin-right: 50px;
   text-align: center;
 }
 .project-author-info img {
@@ -106,8 +130,8 @@ padding-right: 2px
 }
 
 .back-me-button {
-  background: $green;
-  width: 80%;
+  background: #2BDE73;
+  width: 100%;
   height: 30px;
   text-align: center;
   margin: 5px auto;
@@ -116,11 +140,17 @@ padding-right: 2px
   border-radius: 6px;
 }
 
+
+////
+//// show page lower half
+////
+////
+
 .project-lower-page {
   text-align: center;
   display: flex;
   justify-content: center;
-  max-width: 80%;
+  max-width: 1000px;
   margin: 50px auto;
 }
 

@@ -1,5 +1,12 @@
-$green: #25CB68;
+$green: #2BDE73;
 
+.fa-compass {
+  color: $green;
+}
+
+.fa-Search {
+  margin-top: 10px;
+}
 
 .theNavBar {
 position: fixed;
@@ -25,14 +32,29 @@ z-index:9999;
 }
 
 .nav-button-section-logout {
-  width: 300px;
+  width: 140px;
+  display: flex;
   padding-right: 1%;
-  text-align: right;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .nav-button-section button {
   padding: 5px 0 3px 0;
   height: 100%;
   border-bottom: 2px solid #fff;
+}
+
+.nav-button-section-logout button {
+  padding: 5px 0 3px 0;
+  height: 100%;
+  border-bottom: 2px solid #fff;
+}
+
+.nav-button-section-logout button:hover {
+  border-bottom: 1.5px solid $green;
+  height: 100%;
+  transition-delay: 0.1s;
 }
 
 .nav-button-section button:hover {
@@ -48,8 +70,6 @@ z-index:9999;
   width: 80%;
   margin-top: 20px;
   padding: 1%;
-
-
 }
 
 
