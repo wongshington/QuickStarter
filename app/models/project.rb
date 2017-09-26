@@ -11,6 +11,19 @@ primary_key: :id,
 foreign_key: :project_id,
 class_name: 'Reward'
 
+has_many :supporters,
+primary_key: :id,
+foreign_key: :project_id,
+class_name: 'Supporter'
+
+has_many :backers,
+through: :supporters,
+source: :supporter
+#  dis be right or nah?
+#
+
+
+
 def self.searched?
   self.where("category = ?")
 end

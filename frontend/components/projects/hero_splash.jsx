@@ -7,11 +7,19 @@ constructor(props){
 
 }
 
+// $('.selector').slick({
+//   nextArrow: '<i class="fa fa-arrow-right"></i>',
+//   prevArrow: '<i class="fa fa-arrow-left"></i>',
+// // add the rest of your options here
+// });
+
+
   render() {
+
     const settings = {
       dots: true,
       infinite: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 4000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
@@ -19,6 +27,7 @@ constructor(props){
       fade: true,
       arrows: true
     };
+
 
     if (this.props.SplashItems[0] === undefined) {
       return (
@@ -29,11 +38,12 @@ constructor(props){
       <div className="hero-splash">
       <Slider {...settings}>
         <div>
+          <span className="helper"></span>
           <img src={this.props.SplashItems[0].title_image}/>
         </div>
-        <div><img src={this.props.SplashItems[1].title_image}/></div>
-        <div><img src={this.props.SplashItems[2].title_image}/></div>
-        <div><img src={this.props.SplashItems[3].title_image}/></div>
+        <div><span class="helper"></span><img src={this.props.SplashItems[1].title_image}/></div>
+        <div><span class="helper"></span><img src={this.props.SplashItems[2].title_image}/></div>
+        <div><span class="helper"></span><img src={this.props.SplashItems[3].title_image}/></div>
       </Slider>
     </div>
     );

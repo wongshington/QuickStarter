@@ -33,6 +33,20 @@ primary_key: :id,
 foreign_key: :author_id,
 class_name: 'Project'
 
+has_many :purchased_rewards,
+primary_key: :id,
+foreign_key: :backer_id,
+class_name: 'UserReward'
+
+has_many :supported_projects,
+primary_key: :id,
+foreign_key: :supporter_id,
+class_name: 'Supporter'
+
+has_many :rewards,
+through: :purchased_rewards,
+source: :reward
+
 
 # associations
 

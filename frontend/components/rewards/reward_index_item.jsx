@@ -22,12 +22,16 @@ handleClick(e) {
   render() {
 
       return(
-        <button onClick={this.handleClick} className="reward-item" >
-          <li>For only ${this.reward.pledge_amount} you will be eligible for:</li>
-          <li>{this.reward.gift}</li>
-          <li >{this.reward.gift_description}</li>
-
-        </button>
+        <div className="reward-item">
+          <button onClick={this.handleClick} >
+            <div className="overlay">
+              <div>Select this reward!</div>
+            </div>
+            <li>For only ${this.reward.pledge_amount} you will be eligible for:</li>
+            <li>{this.reward.gift}</li>
+            <li >{this.reward.gift_description}</li>
+          </button>
+        </div>
       );
     }
   }

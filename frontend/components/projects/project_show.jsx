@@ -56,8 +56,9 @@ render() {
                       strokeLinecap="round"
                       trailWidth="1.5"
                       strokeColor="#25CB68"
-                      trailColor="#f4f7f9"
-                      width="90%"
+                      trailColor="#E6E7E8"
+                      width="100%"
+                      className="project-show-line"
                       />
                     <div className="project-show-funded">
                       <span>${project.total_funded}</span><br></br>
@@ -80,8 +81,8 @@ render() {
         <div className="project-lower-page">
           <div className="project-description-column">
             <h2>About this project</h2>
-            project description
-            <br></br>{project.description}
+            <br></br>
+            <p className="project-show-description">{project.description}</p>
           </div>
           <Route path="/project/:projectId" component={RewardIndexContainer} />
           <div className="rewards-column">

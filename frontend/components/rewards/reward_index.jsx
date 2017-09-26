@@ -25,9 +25,9 @@ render() {
       return (
         <RewardIndexItem
           key={reward.id}
-          reward={reward} 
+          reward={reward}
           project={this.props.project}
-          patchFundingProject={this.props.patchFundingProject}/> );
+          patchFundingProject={this.props.patchFundingProject} /> );
     });
     return (
       <div  >
