@@ -110,6 +110,30 @@ padding-right: 2px
 
 }
 
+.project-show-funded span:nth-child(1) {
+  font-size:28px;
+}
+.project-show-funded span:nth-child(3) {
+  font-size:12px;
+}
+.project-show-backers span:nth-child(1) {
+  font-size:28px;
+}
+.project-show-backers span:nth-child(3) {
+  font-size:12px;
+}
+.project-show-days span:nth-child(1) {
+  font-size:28px;
+}
+.project-show-days span:nth-child(3) {
+  font-size:12px;
+}
+
+
+
+
+
+
 .project-show-details {
   width: 1250px;
   height: 450px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import { Line } from 'rc-progress';
+import Scroll from 'react-scroll';
 
 import RewardIndex from '../rewards/reward_index';
 import RewardIndexContainer from '../rewards/reward_index_container';
@@ -10,11 +11,30 @@ class ProjectShow extends React.Component{
   constructor(props){
     super(props);
 
+      this.scrollToRewards = this.scrollToRewards.bind(this);
+
   }
 
  componentWillMount() {
    this.props.getProject(this.props.match.params.projectId);
  }
+
+
+scrollToRewards(e) {
+  e.preventDefault();
+  const ele = document.getElementById("rewards");
+  const rect = ele.getBoundingClientRect();
+  console.log(rect);
+  window.scrollTo(0, (rect.top-100));
+// will need to make this scroll speed slower later
+}
+
+
+
+onClick(e) {
+  e.preventDefault();
+  this.scrollToRewards();
+}
 
  componentWillReceiveProps(nextProps) {
    if (this.props.match.params.projectId !== nextProps.match.params.projectId) {
@@ -73,7 +93,7 @@ render() {
                       <br></br>
                       <span>Days Left!</span>
                     </div>
-              <button className="back-me-button">Back this project!</button>
+              <button onClick={this.scrollToRewards} className="back-me-button">Back this project!</button>
             </div>
           </div>
         </div>
@@ -85,9 +105,9 @@ render() {
             <p className="project-show-description">{project.description}</p>
           </div>
           <Route path="/project/:projectId" component={RewardIndexContainer} />
-          <div className="rewards-column">
+          <div className="rewards-column"  id="rewards">
             {
-              <RewardIndexContainer project={project}  />
+              <RewardIndexContainer project={project} />
             }
           </div>
         </div>

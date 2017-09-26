@@ -6,7 +6,10 @@ import RewardIndexItem from './reward_index_item';
 class RewardIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.project;
+    this.state ={customAmount: 0};
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+
   }
 
   componentDidMount() {
@@ -16,6 +19,19 @@ class RewardIndex extends React.Component {
     this.props.getRewards(this.props.project.id);
 }
 
+handleSubmit(e) {
+  e.preventDefault();
+  debugger;
+  let updatedProject = this.props.project;
+  updatedProject.total_funded += parseInt(this.state.customAmount);
+  this.props.patchFundingProject(updatedProject).then(()=> window.scrollTo(0,0));
+
+}
+
+handleChange(e) {
+  e.preventDefault();
+  this.setState({customAmount: e.target.value});
+}
 
 render() {
   if (this.props.project.rewards === undefined) {
@@ -33,6 +49,10 @@ render() {
       <div  >
         <ul className="reward-index">
           <button className="reward-item">
+            <form onSubmit={this.handleSubmit} >
+              <input onChange={this.handleChange} type="number" placeholder="$" />
+              <input type="submit" value="Back this project" />
+            </form>
           </button>
           {rewards}
         </ul>
