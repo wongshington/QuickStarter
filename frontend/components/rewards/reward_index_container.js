@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import RewardIndex from './reward_index';
 import { getRewards } from '../../actions/reward_actions';
+import { patchFundingProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) =>{
-  debugger;
 return ({
   project: ownProps.project
 });
@@ -11,7 +11,7 @@ return ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getRewards: () => dispatch(getRewards()),
-  patchProject: (project) => dispatch(ownProps.patchProject(project))
+  patchFundingProject: (id, amount) => dispatch(patchFundingProject(id, amount))
 
 });
 

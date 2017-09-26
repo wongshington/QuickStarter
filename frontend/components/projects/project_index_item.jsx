@@ -11,8 +11,9 @@ const ProjectIndexItem = ({ project }) => (
     <br></br>
     <div >
     <li>{project.title}</li>
-    <li className="index-author-info"><img src={project.author_pic} />{project.author}</li>
-
+    <li className="index-author-info">
+      <img src={project.author_pic} />
+      {project.author}</li>
     <li>blurb{project.blurb}</li>
     <li>{project.category}</li>
     <li>

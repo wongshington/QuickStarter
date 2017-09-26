@@ -50,6 +50,7 @@ render() {
               <img src={project.title_image} />
           </div>
           <div className="project-info">
+            {console.log(project.funded_percentage)}
               <Line percent={project.funded_percentage}
                     strokeWidth="1.5"
                     strokeLinecap="round"
@@ -74,7 +75,7 @@ render() {
         <Route path="/project/:projectId" component={RewardIndexContainer} />
         <div className="rewards-column">
           {
-            <RewardIndexContainer project={project} patchProject={this.props.patchProject} />
+            <RewardIndexContainer project={project}  />
           }
         </div>
       </div>

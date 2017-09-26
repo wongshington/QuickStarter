@@ -22,10 +22,12 @@ export const createProject = project => (
   })
 );
 
-export const patchProject = project => (
+export const patchFundingProject = (project) => {
+  return (
   $.ajax({
     method: "PATCH",
     url: `api/projects/${project.id}`,
     data: {project}
   })
 );
+};

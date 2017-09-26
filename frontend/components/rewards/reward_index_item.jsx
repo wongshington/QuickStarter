@@ -2,17 +2,34 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const RewardIndexItem = ({ reward }) => (
-  <button className="reward-item" >
-    <li>For only ${reward.pledge_amount} you will be eligible for:</li>
-    <li>{reward.gift}</li>
-    <li >{reward.gift_description}</li>
+class RewardIndexItem extends React.Component{
+  constructor(props){
+    super(props);
+    this.reward = this.props.reward;
+    // this.patchFundingProject = this.props.patchFundingProject.bind(this);
+    this.handleClick=this.handleClick.bind(this);
+  }
 
+handleClick(e) {
+  e.preventDefault();
 
+  let updatedProject = this.props.project;
+  updatedProject.total_funded += this.reward.pledge_amount;
+  this.props.patchFundingProject(updatedProject);
 
+}
 
+  render() {
 
-  </button>
-);
+      return(
+        <button onClick={this.handleClick} className="reward-item" >
+          <li>For only ${this.reward.pledge_amount} you will be eligible for:</li>
+          <li>{this.reward.gift}</li>
+          <li >{this.reward.gift_description}</li>
+
+        </button>
+      );
+    }
+  }
 
 export default RewardIndexItem;

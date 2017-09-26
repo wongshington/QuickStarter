@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 import ProjectShow from './project_show';
-import { getProject, patchProject } from '../../actions/project_actions';
+import { getProject, patchFundingProject } from '../../actions/project_actions';
 
 
 
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getProject: (id) => dispatch(getProject(id)),
-  patchProject: (project) => dispatch(patchProject(project))
+  patchFundingProject: (id, amount) => dispatch(patchFundingProject(id, amount))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectShow);
