@@ -12,9 +12,13 @@ class RewardIndexItem extends React.Component{
 
 handleClick(e) {
   e.preventDefault();
+  if (this.props.currentUser) {
   let updatedProject = this.props.project;
   updatedProject.total_funded += this.reward.pledge_amount;
   this.props.patchFundingProject(updatedProject);
+} else {
+  this.props.toggleModal();
+}
 
 }
 

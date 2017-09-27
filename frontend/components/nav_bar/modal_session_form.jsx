@@ -41,9 +41,7 @@ class ModalSessionForm extends React.Component {
       username: "",
       password: "",
       email: "",
-      modalState: false,
       formType: null,
-      errors: [],
       loggedIn: false
     };
 
@@ -70,19 +68,14 @@ class ModalSessionForm extends React.Component {
   handleSubmit(action) {
     return e => {
       e.preventDefault();
-  //     if(this.state.loggedIn) {
-  //   this.setState({loggedIn: false });
-  // } else {
-  //   this.setState({loggedIn: true });
-  // }
-      // this.setState({errors: [action.sessionReducer.errorsReducer]});
-
       return action(this.state);
 
     };
   }
 
 //this function isnt even being called ever
+//jk im not even sure anymore
+
   logOut(e) {
 
     this.props.logout();
@@ -99,21 +92,22 @@ class ModalSessionForm extends React.Component {
   }
 
   toggleModalState(formType = null) {
+    this.props.toggleModal();
+    this.props.clearErrors();
     this.setState({
       username: "",
-      email: "",
       password: "",
-      modalState: !this.state.modalState,
-      formType,
-      errors: [],
-      loggedin: false
+      email: "",
+      formType: null,
+      loggedIn: false
     });
   }
 
   renderErrors() {
+
     return (
       <ul>
-        {this.state.errors.map((error, i) => (
+        {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
@@ -181,9 +175,10 @@ class ModalSessionForm extends React.Component {
 
         <ReactModal
 
-          isOpen={this.state.modalState}
+          isOpen={this.props.modalState}
           contentLabel="Modal"
           style={style}
+          onRequestClose={this.toggleModalState}
         >
           <button onClick={() => this.toggleModalState(null)}>Close</button>
           <div className="modal-inputs">

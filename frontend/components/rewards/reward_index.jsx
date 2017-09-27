@@ -21,11 +21,13 @@ class RewardIndex extends React.Component {
 
 handleSubmit(e) {
   e.preventDefault();
-  debugger;
+  if (this.props.currentUser) {
   let updatedProject = this.props.project;
   updatedProject.total_funded += parseInt(this.state.customAmount);
   this.props.patchFundingProject(updatedProject).then(()=> window.scrollTo(0,0));
-
+} else {
+  this.props.toggleModal();
+}
 }
 
 handleChange(e) {
@@ -43,8 +45,11 @@ render() {
           key={reward.id}
           reward={reward}
           project={this.props.project}
-          patchFundingProject={this.props.patchFundingProject} /> );
+          currentUser={this.props.currentUser}
+          patchFundingProject={this.props.patchFundingProject}
+          toggleModal={this.props.toggleModal}/> );
     });
+
     return (
       <div  >
         <ul className="reward-index">

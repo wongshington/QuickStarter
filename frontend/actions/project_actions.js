@@ -29,6 +29,10 @@ export const getProject = (id) => dispatch => (
   APIUtil.getProject(id).then(project => (dispatch(receiveProject(project)) )
 ));
 
+export const createProject = () => dispatch => (
+  APIUtil.createProject().then(project => (dispatch(receiveProject(project)) )
+));
+
 export const patchFundingProject = (project) => dispatch => (
   APIUtil.patchFundingProject(project)
   .then(project => (dispatch(receiveProject(project)) )
