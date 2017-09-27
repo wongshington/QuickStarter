@@ -12,7 +12,6 @@ class RewardIndexItem extends React.Component{
 
 handleClick(e) {
   e.preventDefault();
-  debugger;
   if (this.props.currentUser) {
   this.props.postFunds(this.reward);
 } else {

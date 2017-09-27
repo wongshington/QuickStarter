@@ -24,7 +24,6 @@ scrollToRewards(e) {
   e.preventDefault();
   const ele = document.getElementById("rewards");
   const rect = ele.getBoundingClientRect();
-  console.log(rect);
   window.scrollTo(0, (rect.top-100));
 // will need to make this scroll speed slower later
 }

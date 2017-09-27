@@ -33,7 +33,6 @@ export const patchFundingProject = (project) => {
 };
 
 export const postFunds = (reward) => {
-  debugger
   return (
   $.ajax({
     method: "POST",
