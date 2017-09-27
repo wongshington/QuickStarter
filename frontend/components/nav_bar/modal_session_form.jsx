@@ -9,7 +9,7 @@ const style = {
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 99999999,
+    zIndex: 0,
     overflow: "hidden",
     perspective: 1300,
     backgroundColor: "rgba(0, 0, 0, 0.3)"
@@ -18,13 +18,17 @@ const style = {
   content: {
     position: "relative",
     margin: "15% auto",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     width: "28%",
-
     border: "1px solid rgba(0, 0, 0, .2)",
     background: "white",
     overflow: "auto",
     borderRadius: "10px",
     outline: "none",
+    paddingBottom: "20px",
     boxShadow: "0 5px 10px rgba(0, 0, 0, .3)"
   }
 };
@@ -49,6 +53,8 @@ class ModalSessionForm extends React.Component {
     this.toggleModalState = this.toggleModalState.bind(this);
     this.logOut = this.logOut.bind(this);
     this.logDemo = this.logDemo.bind(this);
+    this.form = this.form.bind(this);
+    this.switchForm=this.switchForm.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,7 +74,7 @@ class ModalSessionForm extends React.Component {
   handleSubmit(action) {
     return e => {
       e.preventDefault();
-      return action(this.state);
+      return action(this.state).then(() => this.props.toggleModal());
 
     };
   }
@@ -86,14 +92,12 @@ class ModalSessionForm extends React.Component {
         modalState: false,
         formType: "none",
         errors: [],
-        loggedIn: false
-  }
-    );
+        loggedIn: false });
   }
 
 
 
-  toggleModalState(formType = null) {
+  toggleModalState(formType = "LogIn") {
     // if(formType ==='login') {
     //
     // }
@@ -137,7 +141,6 @@ class ModalSessionForm extends React.Component {
       );
     } else {
       return (
-
         <div className="nav-button-section">
           <i className="fa fa-search" aria-hidden="true"></i>
           <button onClick={() => this.toggleModalState("LogIn")}>LogIn</button>
@@ -151,59 +154,27 @@ class ModalSessionForm extends React.Component {
     }
   }
 
+switchForm(e, formType) {
+  e.preventDefault();
+  this.setState({formType});
+}
 
 
-  render() {
+form() {
 
-    let userText = "Come get your Quick Start today!";
-    let sessionAction = this.props.signup;
-    let userNameBox = (
-      <div>
-        <input
+  let userText = "Come get your Quick Start today!";
+  let sessionAction = this.props.login;
 
-          placeholder="Username"
-          value={this.state.username}
-          onChange={this.update("username")}
-          type="text"
-        />
-      </div>
-    );
+  if (this.state.formType === "Sign Up") {
+    userText = "Come get your Quick Start today!";
+    sessionAction = this.props.signup;
+  }
 
-    if (this.state.formType === "LogIn") {
-      userText = "Welcome Back";
-      sessionAction = this.props.login;
-      userNameBox = "";
-    }
-
-
-    const loginInfo = (
-      <div className="modal-inputs">
-          <form onSubmit={this.handleSubmit(sessionAction)}>
-            <h2>Welcome Back!</h2>
-            {this.renderErrors()}
-            <input
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.update("email")}
-              type="text"
-            />
-            <input
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              type="password"
-
-            />
-            <input type="submit" value={this.state.formType} />
-          </form>
-        </div>
-    );
-
-
-const signUpInfo = (
+  if (this.state.formType === "Sign Up") {
+    return (
     <div className="modal-inputs">
         <form onSubmit={this.handleSubmit(sessionAction)}>
-          <h2>Come get your QuickStart today!</h2>
+          <img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" />
           {this.renderErrors()}
           <div>
             <input
@@ -226,18 +197,42 @@ const signUpInfo = (
             type="password"
 
           />
-          <input type="submit" value={this.state.formType} />
+        <input type="submit" value="Sign Up!" />
+          <br></br>
+          <span>Alreay have an account? <button onClick={e => this.switchForm(e,"LogIn")}>Log In!</button></span>
         </form>
       </div>
-  );
-let form;
-if (this.state.formType === "LogIn") {
-  form = loginInfo;
-} else if (this.state.formType === "Sign Up"){
-  form= signUpInfo;
+    );
+  } else {
+    return (
+      <div className="modal-inputs">
+          <form onSubmit={this.handleSubmit(sessionAction)}>
+            <img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" />
+            {this.renderErrors()}
+            <input
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.update("email")}
+              type="text"
+            />
+            <input
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              type="password"
+
+            />
+          <input type="submit" value="Log In!" />
+              <br></br>
+              <span>Need to create an account? <button onClick={e => this.switchForm(e,"Sign Up")}>Sign Up Now!</button></span>
+          </form>
+        </div>
+    );
+  }
 }
 
 
+  render() {
 
     return (
       <div  className="modal-form-container">
@@ -250,8 +245,9 @@ if (this.state.formType === "LogIn") {
           style={style}
           onRequestClose={this.toggleModalState}
         >
-          <button onClick={() => this.toggleModalState(null)}>Close</button>
-          {form}
+          <button onClick={() => this.toggleModalState("LogIn")}>Close</button>
+
+          {this.form()}
         </ReactModal>
       </div>
     );

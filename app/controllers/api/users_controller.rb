@@ -8,6 +8,11 @@ class Api::UsersController < ApplicationController
     else
       render json: @user.errors.full_messages, status: 422
     end
+
+    def purchased_reward
+      p "you made it"
+    end
+
   end
 
   private

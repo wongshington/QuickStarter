@@ -12,3 +12,14 @@ export const postReward = reward => (
     data: { reward }
   })
 );
+
+export const postBacking = (userId, reward) => {
+  debugger;
+  return (
+  $.ajax({
+    method: "POST",
+    url: `/api/users/${userId}/purchased_reward`,
+    data: {reward}
+  })
+);
+};

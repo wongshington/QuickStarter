@@ -21,6 +21,7 @@ class RewardIndex extends React.Component {
 
 handleSubmit(e) {
   e.preventDefault();
+  debugger;
   if (this.props.currentUser) {
   let updatedProject = this.props.project;
   updatedProject.total_funded += parseInt(this.state.customAmount);
@@ -48,7 +49,7 @@ render() {
           currentUser={this.props.currentUser}
           patchFundingProject={this.props.patchFundingProject}
           toggleModal={this.props.toggleModal}
-          postFunds={this.props.postFunds}/> );
+          postBacking={this.props.postBacking} /> );
     });
 
     return (

@@ -39,9 +39,9 @@ export const patchFundingProject = (project) => dispatch => (
   .then(project => (dispatch(receiveProject(project)) )
 ));
 
-export const postFunds = (reward) => dispatch => (
-  APIUtil.postFunds(reward)
-  .then(project => (dispatch(receiveProject(project)) )
-));
+// export const postFunds = (reward) => dispatch => (
+//   APIUtil.postFunds(reward)
+//   .then(project => (dispatch(receiveProject(project)) )
+// ));
 
 //

@@ -2,6 +2,7 @@ import * as APIUtil from '../util/reward_api_util';
 export const RECEIVE_ALL_REWARDS = 'RECEIVE_ALL_REWARDS';
 export const RECEIVE_REWARD = 'RECEIVE_REWARD';
 
+
 const receiveAllRewards = (rewards) => ({
   type: RECEIVE_ALL_REWARDS,
   rewards
@@ -12,6 +13,8 @@ const receiveReward = (reward) => ({
   reward
 });
 
+
+
 export const getRewards = (id) => dispatch => (
   APIUtil.getRewards(id).then(rewards => (dispatch(receiveAllRewards(rewards)) )
 ));
@@ -19,4 +22,8 @@ export const getRewards = (id) => dispatch => (
 
 export const postReward = (reward) => dispatch => (
   APIUtil.postReward(reward).then(reward => (dispatch(receiveReward(reward)) )
+));
+
+export const postBacking = (userId, reward) => dispatch => (
+  APIUtil.postBacking(userId, reward).then(reward => (dispatch(receiveReward(reward)) )
 ));
