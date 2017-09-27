@@ -12,8 +12,13 @@ class Reward < ApplicationRecord
   foreign_key: :reward_id,
   class_name: 'UserReward'
 
-  has_many :bakers,
+  has_many :backers,
   through: :reward_backers,
   source: :backer
+
+  has_many :purchased_rewards,
+  primary_key: :id,
+  foreign_key: :reward_id,
+  class_name: 'PurchasedReward'
 
 end

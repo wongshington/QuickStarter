@@ -31,3 +31,14 @@ export const patchFundingProject = (project) => {
   })
 );
 };
+
+export const postFunds = (reward) => {
+  debugger
+  return (
+  $.ajax({
+    method: "POST",
+    url: `api/projects/${reward.project_id}/purchased_reward`,
+    data: {reward}
+  })
+);
+};

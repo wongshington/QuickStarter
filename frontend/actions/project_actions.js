@@ -5,6 +5,7 @@ export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_FUNDING = 'RECEIVE_FUNDING';
 
 
+
 export const receiveProject = project => ({
   type: RECEIVE_PROJECT,
   project
@@ -17,7 +18,7 @@ export const receiveAllProjects = projects => ({
 
 export const receiveFunding = (project) => ({
   type: RECEIVE_FUNDING,
-project
+  project
 });
 
 export const getProjects = () => dispatch => (
@@ -38,5 +39,9 @@ export const patchFundingProject = (project) => dispatch => (
   .then(project => (dispatch(receiveProject(project)) )
 ));
 
+export const postFunds = (reward) => dispatch => (
+  APIUtil.postFunds(reward)
+  .then(project => (dispatch(receiveProject(project)) )
+));
 
 //

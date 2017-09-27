@@ -32,11 +32,14 @@ z-index:9999;
 }
 
 .nav-button-section-logout {
-  width: 140px;
+  width: 300px;
   display: flex;
   padding-right: 1%;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
+}
+.nav-button-section-logout i{
+margin-right: 40px;
 }
 
 .nav-button-section button {
@@ -64,7 +67,7 @@ z-index:9999;
 }
 
 .modal-inputs input[type="text"], .modal-inputs input[type="password"] {
-  background: #f7fbff;
+  background: #fff;
   border: 1px solid #dad7d4;
   border-radius: 3%;
   width: 80%;
@@ -78,11 +81,29 @@ z-index:9999;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 75%;
+}
+.modal-inputs h2{
+  font-size: 20px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+.modal-inputs input:focus {
+  border: 1px solid $green;
 }
 .modal-inputs input[type="submit"] {
   background: $green;
   width: 80%;
+  height: 30px;
+  border-radius: 3%;
+  padding: 1.5%;
+  margin-top: 20px;
+}
+
+.modal-inputs input[type="submit"]:hover {
+  background: #27c466;
+  width: 80%;
+  height: 30px;
   border-radius: 3%;
   padding: 1.5%;
   margin-top: 20px;

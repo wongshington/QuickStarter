@@ -47,7 +47,8 @@ render() {
           project={this.props.project}
           currentUser={this.props.currentUser}
           patchFundingProject={this.props.patchFundingProject}
-          toggleModal={this.props.toggleModal}/> );
+          toggleModal={this.props.toggleModal}
+          postFunds={this.props.postFunds}/> );
     });
 
     return (

@@ -18,10 +18,10 @@ const style = {
   content: {
     position: "relative",
     margin: "15% auto",
-    width: "30%",
-    height: "250px",
+    width: "28%",
+
     border: "1px solid rgba(0, 0, 0, .2)",
-    background: "#fefff2",
+    background: "white",
     overflow: "auto",
     borderRadius: "10px",
     outline: "none",
@@ -41,7 +41,7 @@ class ModalSessionForm extends React.Component {
       username: "",
       password: "",
       email: "",
-      formType: null,
+      formType: "LogIn",
       loggedIn: false
     };
 
@@ -91,16 +91,20 @@ class ModalSessionForm extends React.Component {
     );
   }
 
+
+
   toggleModalState(formType = null) {
-    this.props.toggleModal();
+    // if(formType ==='login') {
+    //
+    // }
     this.props.clearErrors();
     this.setState({
       username: "",
       password: "",
       email: "",
-      formType: null,
+      formType,
       loggedIn: false
-    });
+    }, () => this.props.toggleModal());
   }
 
   renderErrors() {
@@ -122,7 +126,7 @@ class ModalSessionForm extends React.Component {
   }
 
   rightButtons() {
-    if (this.state.loggedIn) {
+    if (this.props.currentUser) {
       return (
         <div className="nav-button-section-logout">
           <i className="fa fa-search" aria-hidden="true"></i>
@@ -147,6 +151,8 @@ class ModalSessionForm extends React.Component {
     }
   }
 
+
+
   render() {
 
     let userText = "Come get your Quick Start today!";
@@ -169,6 +175,70 @@ class ModalSessionForm extends React.Component {
       userNameBox = "";
     }
 
+
+    const loginInfo = (
+      <div className="modal-inputs">
+          <form onSubmit={this.handleSubmit(sessionAction)}>
+            <h2>Welcome Back!</h2>
+            {this.renderErrors()}
+            <input
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.update("email")}
+              type="text"
+            />
+            <input
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              type="password"
+
+            />
+            <input type="submit" value={this.state.formType} />
+          </form>
+        </div>
+    );
+
+
+const signUpInfo = (
+    <div className="modal-inputs">
+        <form onSubmit={this.handleSubmit(sessionAction)}>
+          <h2>Come get your QuickStart today!</h2>
+          {this.renderErrors()}
+          <div>
+            <input
+              placeholder="Username"
+              value={this.state.username}
+              onChange={this.update("username")}
+              type="text"
+            />
+          </div>
+          <input
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.update("email")}
+            type="text"
+          />
+          <input
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.update("password")}
+            type="password"
+
+          />
+          <input type="submit" value={this.state.formType} />
+        </form>
+      </div>
+  );
+let form;
+if (this.state.formType === "LogIn") {
+  form = loginInfo;
+} else if (this.state.formType === "Sign Up"){
+  form= signUpInfo;
+}
+
+
+
     return (
       <div  className="modal-form-container">
         {this.rightButtons()}
@@ -181,30 +251,7 @@ class ModalSessionForm extends React.Component {
           onRequestClose={this.toggleModalState}
         >
           <button onClick={() => this.toggleModalState(null)}>Close</button>
-          <div className="modal-inputs">
-            <form onSubmit={this.handleSubmit(sessionAction)}>
-              {userText}
-              <br></br>
-              {this.renderErrors()}
-              {userNameBox}
-              <input
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.update("email")}
-                type="text"
-
-              />
-
-              <input
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                type="password"
-
-              />
-              <input type="submit" value={this.state.formType} />
-            </form>
-          </div>
+          {form}
         </ReactModal>
       </div>
     );

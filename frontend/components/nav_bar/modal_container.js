@@ -6,7 +6,8 @@ import { login, logout, signup, clearErrors } from '../../actions/session_action
 const mapStateToProps = (state) => {
   return ({
   modalState: state.uiReducer.modalState,
-  errors: state.errorsReducer.sessionErrReducer
+  errors: state.errorsReducer.sessionErrReducer,
+  currentUser: state.sessionReducer.currentUser
 });
 };
 

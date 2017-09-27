@@ -4,12 +4,12 @@ import { createProject } from '../actions/project_actions';
 
 const mapStateToProps = (state) => {
   return ({
-    projects: selectAllProjects(state)
+    project: state.entitiesReducer.projects[0]
   });
 };
 
 const mapDispatchToProps = dispatch => ({
-    getProjects: () => dispatch(getProjects()),
+    createProject: () => dispatch(createProject()),
 });
 
 

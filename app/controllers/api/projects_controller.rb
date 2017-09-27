@@ -28,12 +28,22 @@ class Api::ProjectsController < ApplicationController
 
   def update
   @project = Project.find(params[:id])
+
     if @project.update_attributes(project_params)
-      p @project.total_funded
+      @project.update_funds
       render :show
     else
       render @project.errors.full_messages
     end
+  end
+
+  def purchased_reward
+    @project = Project.find(params[:reward][:project_id])
+    new_rew = PurchasedReward.new(project_id: @project.id, reward_id:(params[:reward][:id].to_i))
+    new_rew.save
+  
+    @project.update_funds
+    render :show
   end
 
   private
