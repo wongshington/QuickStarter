@@ -14,7 +14,6 @@ export const postReward = reward => (
 );
 
 export const postBacking = (userId, reward) => {
-  debugger;
   return (
   $.ajax({
     method: "POST",

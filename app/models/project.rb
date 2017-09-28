@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-validates :title, :author_id, :funding_goal, :funding_deadline, :description, :total_funded, :category, presence: true
+validates :title, :author_id, :funding_goal, :funding_deadline, :description, :total_funded, :category_id, presence: true
 
 belongs_to :author,
 primary_key: :id,
@@ -29,22 +29,30 @@ has_many :purchased_rewards,
 through: :selected_rewards,
 source: :reward
 
+
+has_many :backers,
+through: :rewards,
+source: :reward_backers
+
+belongs_to :category,
+primary_key: :id,
+foreign_key: :category_id,
+class_name: 'Category'
 #  dis be right or nah?
 #
 
 
 
-def self.searched?
-  self.where("category = ?")
-end
+# def self.searched?
+#   self.where("category = ?")
+# end
 
 def update_funds
   result = 0
-  purchased_rewards.each do |reward|
-    result += reward.pledge_amount
+  self.rewards.each do |rew|
+    result += (rew.pledge_amount * rew.reward_backers.count)
   end
   self.total_funded = result
-  total_funded
   self.save
 end
 

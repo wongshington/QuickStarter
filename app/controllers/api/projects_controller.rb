@@ -9,6 +9,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
+    debugger;
     @project = Project.new(project_params)
     @project.days_left = self.days_left
     @project.author_id = current_user.id
@@ -35,15 +36,6 @@ class Api::ProjectsController < ApplicationController
     else
       render @project.errors.full_messages
     end
-  end
-
-  def purchased_reward
-    @project = Project.find(params[:reward][:project_id])
-    new_rew = PurchasedReward.new(project_id: @project.id, reward_id:(params[:reward][:id].to_i))
-    new_rew.save
-  
-    @project.update_funds
-    render :show
   end
 
   private

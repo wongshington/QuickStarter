@@ -12,9 +12,8 @@ class RewardIndexItem extends React.Component{
 
 handleClick(e) {
   e.preventDefault();
-  debugger;
   if (this.props.currentUser) {
-  this.props.postBacking(this.props.currentUser.id, this.reward);
+  this.props.postBacking(this.props.currentUser.id, this.reward).then((this.props.getProject(this.props.project.id)));
 } else {
   this.props.toggleModal();
 }

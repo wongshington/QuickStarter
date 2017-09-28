@@ -4,6 +4,7 @@ import { getRewards, postBacking } from '../../actions/reward_actions';
 import { patchFundingProject } from '../../actions/project_actions';
 // import { postFunds } from '../../actions/project_actions';
 import { toggleModal } from '../../actions/ui_actions';
+import { getProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) =>{
 return ({
@@ -17,7 +18,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   patchFundingProject: (id, amount) => dispatch(patchFundingProject(id, amount)),
   toggleModal: ()=> dispatch(toggleModal()),
   // postFunds: (reward) => dispatch(postFunds(reward)),
-  postBacking: (userId, reward) => dispatch(postBacking(userId, reward))
+  postBacking: (userId, reward) => dispatch(postBacking(userId, reward)),
+  getProject: (id) => dispatch(getProject(id))
 
 });
 

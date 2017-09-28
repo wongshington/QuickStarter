@@ -41,9 +41,9 @@ constructor(props){
           <span className="helper"></span>
           <img src={this.props.SplashItems[0].title_image}/>
         </div>
-        <div><span class="helper"></span><img src={this.props.SplashItems[1].title_image}/></div>
-        <div><span class="helper"></span><img src={this.props.SplashItems[2].title_image}/></div>
-        <div><span class="helper"></span><img src={this.props.SplashItems[3].title_image}/></div>
+        <div><span ></span><img src={this.props.SplashItems[1].title_image}/></div>
+        <div><span ></span><img src={this.props.SplashItems[2].title_image}/></div>
+        <div><span ></span><img src={this.props.SplashItems[3].title_image}/></div>
       </Slider>
     </div>
     );

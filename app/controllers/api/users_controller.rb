@@ -8,11 +8,15 @@ class Api::UsersController < ApplicationController
     else
       render json: @user.errors.full_messages, status: 422
     end
+  end
 
-    def purchased_reward
-      p "you made it"
-    end
-
+  def purchased_reward
+    @user = User.find(params[:id])
+    @user_reward = UserReward.new(backer_id: @user.id, reward_id: params[:reward][:id].to_i)
+    @user_reward.save
+    @project = Project.find(params[:reward][:project_id])
+    @project.update_funds
+    render "api/projects/show"
   end
 
   private

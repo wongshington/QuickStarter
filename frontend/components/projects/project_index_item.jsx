@@ -15,7 +15,7 @@ const ProjectIndexItem = ({ project }) => (
       <img src={project.author_pic} />
       {project.author}</li>
     <li>blurb{project.blurb}</li>
-    <li>{project.category}</li>
+    <li><i className="fa fa-tag" aria-hidden="true"></i> {project.category_name}</li>
     <li>
       <Line percent={project.funded_percentage}
             strokeWidth="1.5"
@@ -26,7 +26,8 @@ const ProjectIndexItem = ({ project }) => (
             width="260px"/>
 
       </li>
-    <li>{project.backer_count}</li>
+    <li><i className="fa fa-usd" aria-hidden="true"></i>{project.total_funded} already pledged!</li>
+    <li>{project.backer_count} Backers</li>
     <li>{project.days_left} Days Left!</li>
     </div>
     <br></br>
