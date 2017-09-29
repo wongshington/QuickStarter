@@ -1,16 +1,23 @@
 import { connect } from 'react-redux';
 import ProjectForm from './project_form';
-import { createProject } from '../actions/project_actions';
+import { createProject, clearErrors } from '../../actions/form_actions';
+import { getCategories } from '../../actions/category_actions';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+
   return ({
-    project: state.entitiesReducer.projects[0]
+    currentUser: state.sessionReducer.currentUser,
+    errors: state.errorsReducer.formErrorsReducer,
+    path: ownProps.match.params.path
   });
 };
 
-const mapDispatchToProps = dispatch => ({
-    createProject: () => dispatch(createProject()),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    createProject: (project) => dispatch(createProject(project)),
+    getCategories: () => dispatch(getCategories()),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectForm));

@@ -10,7 +10,9 @@ import {
 
 import NavBarContainer from './nav_bar/nav_bar_container';
 import ProjectContainer from './projects/project_index_container';
-import ProjectShowContainer from './/projects/project_show_container';
+import ProjectShowContainer from './projects/project_show_container';
+import ProjectFormContainer from './projects/project_form_container';
+
 
 
 const App = () =>(
@@ -18,6 +20,7 @@ const App = () =>(
       <NavBarContainer />
 
       <Switch>
+        <Route path="/projects/new" component={ProjectFormContainer} />
 
         <Route path="/projects/:projectId" component={ProjectShowContainer} />
         <Route exact path="/" component={ProjectContainer} />

@@ -5,6 +5,7 @@ const RewardsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_REWARD:
+    debugger;
       const newReward = {[action.reward.id]: action.reward};
       return merge({}, state, newReward);
     case RECEIVE_ALL_REWARDS:

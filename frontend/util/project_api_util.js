@@ -14,13 +14,16 @@ export const getProject = id => (
   })
 );
 
-export const createProject = project => (
+export const createProject = project => {
+  debugger;
+  return (
   $.ajax({
     method: "POST",
     url: `api/projects`,
-    data: project
+    data: {project}
   })
 );
+};
 
 export const patchFundingProject = (project) => {
   return (
@@ -36,7 +39,7 @@ export const postFunds = (reward) => {
   return (
   $.ajax({
     method: "POST",
-    url: `api/projects/${reward.project_id}/purchased_reward`,
+    url: `api/projects/${reward.project_id}/rewards`,
     data: {reward}
   })
 );

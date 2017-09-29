@@ -164,7 +164,7 @@ padding-right: 2px
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* text-align: center; */
   padding-right: 18px;
   padding-left: 18px;
@@ -254,7 +254,6 @@ padding-right: 2px
   width: 60%;
   height: 800px;
   margin-right: 10px;
-  border: 1px solid blue;
   display: inline-block;
   text-align: left;
   font-size: 30px;
@@ -268,15 +267,28 @@ padding-right: 2px
   display: inline-block;
 }
 
+.reward-index h2 {
+  font-weight: bold;
+}
+
 .reward-item {
-  border: 1px solid black;
+  border: 1px solid #E0E4FB;
   position: relative;
-  height: 140px;
+  height: 175px;
   width: 100%;
   margin-bottom: 20px;
   border-radius: 5px;
-
-
+  background: #F8F9FD;
+}
+.reward-item span {
+  font-weight: bold;
+  color: $green;
+}
+.alreadyFunded {
+  font-weight: bold;
+  color: $green;
+  display:flex;
+  text-align: center;
 }
 .reward-item button {
   height: 100%;
@@ -302,7 +314,7 @@ padding-right: 2px
   background-color: #2BDE73;
   color: #fff;
   text-align: center;
-  line-height: 135px;
+  line-height: 175px;
 }
 
 .overlay span{
@@ -311,7 +323,8 @@ justify-content: space-around;
 }
 
 .reward-item:hover .overlay {
-  opacity: .9;
+  opacity: .95;
+  border-radius: 5px;
 }
 
 
@@ -319,5 +332,4 @@ justify-content: space-around;
   font-size: 20px;
   margin-top: 5px;
   margin-right: 10px;
-
 }

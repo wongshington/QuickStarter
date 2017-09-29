@@ -1,21 +1,23 @@
 class Api::ProjectsController < ApplicationController
   def index
-    if params[:category]
-      @projects = projects.where(params[:category] = project.category)
-    else
-      @projects = Project.all
-    end
+    @projects = Project.all
     render :index
   end
 
+  def new
+    @project = Project.new
+  end
+
   def create
-    debugger;
     @project = Project.new(project_params)
-    @project.days_left = self.days_left
     @project.author_id = current_user.id
-    @project.total
+
     if @project.save
+        @project.days_left = self.days_left
+      @projec.save
       render :show
+    else
+      render json: @project.errors.full_messages, status: 422
     end
   end
 
@@ -41,6 +43,6 @@ class Api::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :funding_deadline, :funding_goal, :description, :category, :total_funded)
+    params.require(:project).permit(:title, :funding_deadline, :funding_goal, :description, :category_id, :total_funded, :title_image, :blurb)
   end
 end

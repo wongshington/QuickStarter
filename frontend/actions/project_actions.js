@@ -3,7 +3,7 @@ import * as APIUtil from '../util/project_api_util';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_FUNDING = 'RECEIVE_FUNDING';
-
+ 
 
 
 export const receiveProject = project => ({
@@ -30,14 +30,10 @@ export const getProject = (id) => dispatch => (
   APIUtil.getProject(id).then(project => (dispatch(receiveProject(project)) )
 ));
 
-export const createProject = () => dispatch => (
-  APIUtil.createProject().then(project => (dispatch(receiveProject(project)) )
-));
-
-export const patchFundingProject = (project) => dispatch => (
-  APIUtil.patchFundingProject(project)
-  .then(project => (dispatch(receiveProject(project)) )
-));
+// export const patchFundingProject = (project) => dispatch => (
+//   APIUtil.patchFundingProject(project)
+//   .then(project => (dispatch(receiveProject(project)) )
+// ));
 
 // export const postFunds = (reward) => dispatch => (
 //   APIUtil.postFunds(reward)

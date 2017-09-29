@@ -27,8 +27,8 @@ const ProjectIndexItem = ({ project }) => (
 
       </li>
     <li><i className="fa fa-usd" aria-hidden="true"></i>{project.total_funded} already pledged!</li>
-    <li>{project.backer_count} Backers</li>
-    <li>{project.days_left} Days Left!</li>
+    <li><i className="fa fa-users" aria-hidden="true"></i> {project.backer_count} Backers</li>
+    <li><i className="fa fa-calendar" aria-hidden="true"></i> {project.days_left} Days Left!</li>
     </div>
     <br></br>
 

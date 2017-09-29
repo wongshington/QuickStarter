@@ -55,12 +55,8 @@ render() {
     return (
       <div  >
         <ul className="reward-index">
-          <button className="reward-item">
-            <form onSubmit={this.handleSubmit} >
-              <input onChange={this.handleChange} type="number" placeholder="$" />
-              <input type="submit" value="Back this project" />
-            </form>
-          </button>
+            <h2>Fund a Project, Reward Yourself!</h2>
+            <br></br>
           {rewards}
         </ul>
       </div>
