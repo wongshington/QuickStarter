@@ -5,3 +5,9 @@ export const selectAllProjects = state =>{
  values(state.entitiesReducer.projects)
  );
 };
+
+export const selectAllCategories = state => {
+  return (
+    values(state.entitiesReducer.categories)
+  );
+};

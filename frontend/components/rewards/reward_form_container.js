@@ -5,7 +5,6 @@ import RewardForm from './reward_form';
 import { postReward, clearErrors } from '../../actions/form_actions';
 
 const mapStateToProps = (state, ownProps) => {
-debugger
   return ({
     currentUser: state.sessionReducer.currentUser,
     errors: state.errorsReducer.formErrorsReducer,

@@ -15,7 +15,6 @@ export const getProject = id => (
 );
 
 export const createProject = project => {
-  debugger;
   return (
   $.ajax({
     method: "POST",

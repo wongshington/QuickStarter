@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_CATEGORY, RECEIVE_ALL_CATEGORIES } from '../actions/project_actions';
+import { RECEIVE_CATEGORY, RECEIVE_ALL_CATEGORIES } from '../actions/category_actions';
 
 const CategoriesReducer = (state = {}, action) => {
 

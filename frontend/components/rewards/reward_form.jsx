@@ -24,7 +24,6 @@ class RewardForm extends React.Component {
     let newReward = Object.assign({}, this.state);
      newReward = Object.assign(newReward, {project_id: this.props.match.params.projectID});
     this.props.postReward(newReward).then((result) => {
-      debugger;
       return (this.props.history.push(`/projects/${result.reward.project_id}`));
     });
 
@@ -37,7 +36,6 @@ class RewardForm extends React.Component {
   }
 
   renderErrors() {
-    // debugger
     if (this.props.errors.length > 0) {
     return (
       <ul className="form-errors">

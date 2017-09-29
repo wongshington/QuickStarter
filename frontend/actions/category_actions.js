@@ -8,7 +8,7 @@ export const receiveCategory = category => ({
   category
 });
 
-export const receiveCategories = categories => ({
+export const receiveAllCategories = categories => ({
   type: RECEIVE_ALL_CATEGORIES,
   categories
 });

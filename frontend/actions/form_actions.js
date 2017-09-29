@@ -34,7 +34,6 @@ export const createProject = (project) => dispatch => {
 };
 
 export const postReward = (reward) => dispatch => {
-debugger
   return (
     APIRewardUtil.postReward(reward)
     .then(reward => (dispatch(receiveReward(reward))

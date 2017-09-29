@@ -7,7 +7,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // testing
-import { getProject, getProjects,  } from './actions/project_actions';
+import { getCategories } from './actions/category_actions';
 
 
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Testing Start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.getProjects = getProjects;
+  window.getCategories = getCategories;
 
 // Testing End
 
