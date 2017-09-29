@@ -9,7 +9,7 @@ const receiveAllRewards = (rewards) => ({
   rewards
 });
 
-const receiveReward = (reward) => ({
+export const receiveReward = (reward) => ({
   type: RECEIVE_REWARD,
   reward
 });

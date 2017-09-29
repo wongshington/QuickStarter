@@ -4,19 +4,25 @@ class Api::RewardsController < ApplicationController
     render :index
   end
 
+  def show
+    @reward = Reward.find(params[:id])
+  end
+
   def create
     @reward = Reward.new(reward_params)
-    @reward.project_id = params[:project_id]
+
     if @reward.save
+     @project = Project.find(params[:reward][:project_id])
+    render :show
     else
-      render json: @reward.errors.messages, status: 404
+      render json: @reward.errors.full_messages, status: 422
     end
   end
 
   private
 
   def reward_params
-    params.require(:reward).permit(:project_id, :gift, :pledge_amount)
+    params.require(:reward).permit(:project_id, :gift, :pledge_amount, :gift_description)
   end
 
 end

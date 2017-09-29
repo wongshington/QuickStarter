@@ -5,15 +5,18 @@ export const getRewards = (projectId) => (
   })
 );
 
-export const postReward = reward => (
+export const postReward = reward => {
+  return (
   $.ajax({
     method: 'POST',
     url: `/api/projects/${reward.project_id}/rewards`,
     data: { reward }
   })
 );
+};
 
 export const postBacking = (userId, reward) => {
+
   return (
   $.ajax({
     method: "POST",

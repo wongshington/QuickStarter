@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import RewardForm from './reward_form';
-import { createReward, clearErrors } from '../../actions/form_actions';
+import { postReward, clearErrors } from '../../actions/form_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
+debugger
   return ({
     currentUser: state.sessionReducer.currentUser,
     errors: state.errorsReducer.formErrorsReducer,
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    createReward: (project) => dispatch(createReward(project)),
+    postReward: (project) => dispatch(postReward(project)),
     clearErrors: () => dispatch(clearErrors())
 });
 

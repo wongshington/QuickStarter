@@ -20,14 +20,14 @@ class ProjectShow extends React.Component{
  }
 
  openRewardForm() {
-   this.props.history.push("/rewards/new");
+   this.props.history.push(`/projects/${this.props.project.id}/rewards/new`);
  }
 
 makeReward() {
-  debugger;
-  if (this.props.currentUser === undefined){
-  console.log("halooo"); }
-  else if (this.props.currentUser.id === this.props.project.author_id) {
+
+  if (this.props.currentUser === null){
+    return (<div></div>);
+   } else if (this.props.currentUser.id === this.props.project.author_id) {
     return(<button onClick={()=>this.openRewardForm()} className="new-reward-button">Add a new Reward!</button>);
   }
 }

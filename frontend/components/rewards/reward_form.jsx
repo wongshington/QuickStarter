@@ -9,7 +9,7 @@ class RewardForm extends React.Component {
               gift: "",
               project_id: 1,
               gift_description: "",
-              pledge_amount: 0
+              pledge_amount: ""
             };
     this.handleSubmit= this.handleSubmit.bind(this);
     this.renderErrors= this.renderErrors.bind(this);
@@ -22,9 +22,10 @@ class RewardForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let newReward = Object.assign({}, this.state);
-
-    this.props.createReward(newReward).then((result) => {
-      return (this.props.history.push(`/projects/${result.project.id}`));
+     newReward = Object.assign(newReward, {project_id: this.props.match.params.projectID});
+    this.props.postReward(newReward).then((result) => {
+      debugger;
+      return (this.props.history.push(`/projects/${result.reward.project_id}`));
     });
 
   }
@@ -36,13 +37,12 @@ class RewardForm extends React.Component {
   }
 
   renderErrors() {
+    // debugger
     if (this.props.errors.length > 0) {
     return (
       <ul className="form-errors">
         <span>"Whoa Whoa Whoa not so fast there!"</span>
         <br></br>
-
-
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
@@ -64,13 +64,20 @@ render() {
         {this.renderErrors()}
         <label>Reward Gift
           <br></br>
-        <input type="text" placeholder="What gift will we get?" onChange={this.update('gift')}></input>
+        <input type="text" placeholder="What gift will the users get?" onChange={this.update('gift')}></input>
         </label>
-
-
-
-
-
+          <br></br>
+        <label>Gift Description
+          <br></br>
+        <textarea placeholder="What sorts of goodies does that gift entail?" onChange={this.update('gift_description')}></textarea>
+        </label>
+          <br></br>
+        <label>Donation Amount
+          <br></br>
+        <input type="number" placeholder="How much will users be donating?" onChange={this.update('pledge_amount')}></input>
+        </label>
+          <br></br>
+        <input type="submit" value="Create Your Reward!" />
         </form>
       </div>
     </div>

@@ -10,7 +10,7 @@ root "root#root"
     end
     resource :session, only: [:create, :destroy]
     resources :projects, only: [:create, :show, :new, :index, :update] do
-      resources :rewards, only: [:index, :create, :update]
+      resources :rewards, only: [:index, :create, :update, :show]
     end
     # resources :project_rewards, only: [:create]
   end

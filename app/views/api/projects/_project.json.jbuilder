@@ -8,9 +8,12 @@ json.days_left project.days_left
 json.rewards do
   json.array! project.rewards.each do |reward|
     json.extract! reward, :gift, :gift_description, :id, :pledge_amount, :project_id
-    json.paid_users reward.backers.pluck(:id).include?(current_user.id)
+    if current_user
+      json.paid_users reward.backers.pluck(:id).include?(current_user.id)
+    end
     end
   end
+
 
 json.funded_percentage project.funded_percentage
 json.backer_count project.backers.count
