@@ -58,6 +58,7 @@ end
 
 def days_left
   (funding_deadline-Date.today).to_i
+
 end
 
 def funded_percentage

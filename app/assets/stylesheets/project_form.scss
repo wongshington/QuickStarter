@@ -1,3 +1,6 @@
+$green: #2BDE73;
+
+
 .form-page {
   display: flex;
 }
@@ -7,8 +10,33 @@
   align-items: left;
   display: flex;
   margin: 0 auto;
-  margin-top: 300px;
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 200px;
+}
+.form-header {
+  margin-top: 150px;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 100;
+}
+.form-errors {
+  margin: 0 auto;
+  color: red;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.form-errors span {
+  font-size: 25px;
+}
 
+.FileUpload div{
+  margin:0 auto;
+}
+.project-form img {
+margin-top: 15px;
+  max-width: 400px;
 }
 
 .project-form input{
@@ -18,14 +46,21 @@
   border-radius: 5px;
   margin: 0 auto;
 }
+.project-form input:focus {
+  border: 1px solid $green;
+}
 .project-form select {
-  width: 250px;
+  width: 500px;
   height: 40px;
   font-size: 30px;
+
+}
+.project-form textarea:focus {
+  border: 1px solid $green;
 }
 
 .project-form label {
-  margin-right: 10px;
+  margin: 0 auto;
   margin-bottom: 15px;
 }
 
@@ -42,4 +77,16 @@
   height: 200px;
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.form-submit {
+  border: 1px solid $green !important;
+  background: $green;
+  color: white;
+  font-weight: bold;
+  height:50px !important;
+}
+.form-submit:hover {
+  border: 1px solid #21bc60 !important;
+  background: #21bc60;
 }
