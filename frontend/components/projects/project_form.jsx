@@ -25,19 +25,19 @@ class ProjectForm extends React.Component {
           funding_goal: "",
           total_funded: 0
     };
-
-
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-
   }
 
 
-// componentDidMount() {
-//   // will need this for when i make the edit form part of this form
-// }
+componentDidMount() {
+this.props.clearErrors();
+}
 
+
+componentWillReceiveProps(nextProps) {
+this.props.clearErrors();
+}
 
 onImageDrop(files) {
 this.setState({
@@ -65,14 +65,10 @@ handleImageUpload(file) {
 }
 
 
-
-
-
   handleSubmit(e) {
     e.preventDefault();
     let newProject = Object.assign({}, this.state);
     if (this.state.title_image === "") {
-      console.log("hello", PHOTO);
       newProject = Object.assign(newProject, {title_image: PHOTO});
     }
 
@@ -106,12 +102,6 @@ handleImageUpload(file) {
   }
 
 render () {
-
-
-
-
-
-
 
 
 

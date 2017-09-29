@@ -9,7 +9,8 @@ import { getProject, patchFundingProject} from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-  project: state.entitiesReducer.projects[ownProps.match.params.projectId]
+  project: state.entitiesReducer.projects[ownProps.match.params.projectId],
+  currentUser: state.sessionReducer.currentUser
 });
 };
 

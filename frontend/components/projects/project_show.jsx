@@ -12,13 +12,25 @@ class ProjectShow extends React.Component{
     super(props);
 
       this.scrollToRewards = this.scrollToRewards.bind(this);
-
+      this.makeReward = this.makeReward.bind(this);
   }
 
  componentWillMount() {
    this.props.getProject(this.props.match.params.projectId);
  }
 
+ openRewardForm() {
+   this.props.history.push("/rewards/new");
+ }
+
+makeReward() {
+  debugger;
+  if (this.props.currentUser === undefined){
+  console.log("halooo"); }
+  else if (this.props.currentUser.id === this.props.project.author_id) {
+    return(<button onClick={()=>this.openRewardForm()} className="new-reward-button">Add a new Reward!</button>);
+  }
+}
 
 scrollToRewards(e) {
   e.preventDefault();
@@ -105,6 +117,7 @@ render() {
           </div>
           <Route path="/project/:projectId" component={RewardIndexContainer} />
           <div className="rewards-column"  id="rewards">
+            {this.makeReward()}
             {
               <RewardIndexContainer project={project} />
             }
