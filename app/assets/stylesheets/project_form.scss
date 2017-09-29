@@ -3,10 +3,43 @@
 }
 
 .project-form {
+  flex-direction: column;
+  align-items: left;
+  display: flex;
+  margin: 0 auto;
   margin-top: 300px;
+
 }
 
 .project-form input{
   border: 1px solid blue;
-  margin-right: 15px;
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.project-form select {
+  width: 250px;
+  height: 40px;
+  font-size: 30px;
+}
+
+.project-form label {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.form-blurb{
+  border: 1px solid blue;
+  width: 500px;
+  height: 100px;
+  border-radius:5px;
+}
+
+.form-description {
+  border: 1px solid blue;
+  width: 500px;
+  height: 200px;
+  border-radius: 5px;
+  margin: 0 auto;
 }

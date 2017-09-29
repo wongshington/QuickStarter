@@ -2,21 +2,14 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import { getCategories } from '../../actions/category_actions';
+import UploadPhoto from './photo_upload';
 
 
-// const DEFAULT_PHOTO = "http://res.cloudinary.com/ds1qfel8a/image/upload/c_scale,w_1080/v1495403855/sample.jpg";
-//
-// const defaultState = (currentUser) => ({
-//   title: "",
-//   url: "",
-//   description: "",
-//   end_date: "",
-//   main_image_url: "",
-//   creator_id: currentUser.id,
-//   category: "",
-//   funding_goal: 0
-// });
+
 const PHOTO = "http://res.cloudinary.com/quickstarter/image/upload/c_scale,w_900/v1506312200/octavio-fossatti-37556_zgdbn9.jpg";
+const CLOUDINARY_UPLOAD_PRESET = "pysl5ph0";
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/quickstarter/upload';
+
 
 class ProjectForm extends React.Component {
   constructor(props) {
@@ -49,6 +42,8 @@ class ProjectForm extends React.Component {
     this.props.createProject(newProject);
   }
 
+
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -69,60 +64,52 @@ render () {
 
 
   return (
-    <div className="form-page">
-      <form onSubmit={this.handleSubmit} className="project-form">
-            {this.renderErrors()}
-        <label>Project Title
-          <br></br>
-        <input type="text" placeholder="What will you call your QuickStart?" onChange={this.update('title')}></input>
-        </label>
-          <br></br>
-        <label>Project Blurb/Short Snippet
-          <br></br>
-        <input type="textarea" placeholder="If you only had two sentences to describe your project..." onChange={this.update('blurb')}></input>
-        </label>
-          <br></br>
-        <label>Project Description
-          <br></br>
-        <input type="textarea" placeholder="Let's see your story telling skills at work here"onChange={this.update('description')}></input>
-        </label>
-          <br></br>
-        <label>Image
-          <br></br>
-        <input type="textarea" placeholder="an image input will replace this eventually"></input>
-        </label>
-          <br></br>
-        <label>Category
-          <br></br>
-          <select onChange={this.update('category_id')}>
-            <option value="1" >Art</option>
-            <option value="2">Food</option>
-            <option value="3">Music</option>
-            <option value="4">Technology</option>
-            <option value="5">Fashion</option>
-            <option value="6">Film & Video</option>
-          </select>
-        </label>
-          <br></br>
-        <label>Funding Deadline
-          <br></br>
-        <input type="date" ></input>
-        </label>
+    <div >
+        <div className="form-container">
+        <h2 className="form-header">Get you QuickStart in just a few minutes here!</h2>
+        <form onSubmit={this.handleSubmit} className="project-form">
+              {this.renderErrors()}
+          <label>Project Title
+            <br></br>
+          <input type="text" placeholder="What will you call your QuickStart?" onChange={this.update('title')}></input>
+          </label>
+            <br></br>
+          <label>Project Blurb/Short Snippet
+            <br></br>
+          <textarea placeholder="If you only had two sentences to describe your project..." onChange={this.update('blurb')} className="form-blurb"></textarea>
+          </label>
+            <br></br>
+          <label>Project Description
+            <br></br>
+          <textarea  placeholder="Let's see your story telling skills at work here"onChange={this.update('description')} className="form-description"></textarea>
+          </label>
+            <br></br>
+          <label>Image
+            <br></br>
+            <UploadPhoto/>
+          </label>
+            <br></br>
+          <label>Category
+            <br></br>
+            <select onChange={this.update('category_id')}>
+              <option value="1" >Art</option>
+              <option value="2">Food</option>
+              <option value="3">Music</option>
+              <option value="4">Technology</option>
+              <option value="5">Fashion</option>
+              <option value="6">Film & Video</option>
+            </select>
+          </label>
+            <br></br>
+          <label>Funding Deadline
+            <br></br>
+          <input type="date" ></input>
+          </label>
+        <br></br>
+          <input type="submit" value="Get Your QuickStart!" />
+        </form>
       <br></br>
-        <input type="submit" value="Get Your QuickStart!" />
-      </form>
-      <div>
-        what's good?
-      </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <div>hallooo</div>
+    </div>
     </div>
   );
 }
