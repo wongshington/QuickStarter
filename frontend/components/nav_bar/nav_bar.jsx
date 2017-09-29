@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalContainer from './modal_container';
+import { toggleModal } from '../../actions/ui_actions';
 
 
 class navBar extends React.Component {
@@ -9,10 +10,14 @@ class navBar extends React.Component {
     super(props);
     this.openCreate = this.openCreate.bind(this);
     this.openExplore = this.openExplore.bind(this);
+
   }
 
   openCreate() {
-    this.props.history.push("/projects/new");
+    if (this.props.currentUser === null) {
+        this.props.toggleModal();}
+        else {
+    this.props.history.push("/projects/new");}
   }
 
   openExplore() {
@@ -21,6 +26,7 @@ class navBar extends React.Component {
 
 
   render () {
+  
     return(
       <nav className="theNavBar">
           <div className="nav-button-section">

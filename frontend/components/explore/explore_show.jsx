@@ -39,11 +39,12 @@ render() {
     });
 
   return(
-    <div>
-      <h1>{this.props.category.name}</h1>
+    <div className="category-project-index-items">
+      <h1 className="category-title">Check out these amazing <span>{this.props.category.name}</span> QuickStarter Projects!</h1>
 
-      <div>
-        <ul>
+      <div className="category-list-div" >
+        <ul className="category-index-list">
+
           {projects}
         </ul>
       </div>

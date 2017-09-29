@@ -35,9 +35,9 @@ this.props.clearErrors();
 }
 
 
-componentWillReceiveProps(nextProps) {
-this.props.clearErrors();
-}
+// componentWillReceiveProps(nextProps) {
+// this.props.clearErrors();
+// }
 
 onImageDrop(files) {
 this.setState({
@@ -91,8 +91,7 @@ handleImageUpload(file) {
         <ul className="form-errors">
           <span>"Whoa Whoa Whoa not so fast there!"</span>
           <br></br>
-
-
+          <br></br>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>{error}</li>
           ))}

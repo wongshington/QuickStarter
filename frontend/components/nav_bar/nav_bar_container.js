@@ -3,6 +3,7 @@ import { login, logout, signup } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 import navBar from './nav_bar';
+import { toggleModal } from '../../actions/ui_actions';
 
 const mapStateToProps = ({ errorsReducer, sessionReducer }) => ({
   currentUser: sessionReducer.currentUser,
@@ -15,7 +16,9 @@ const mapStateToProps = ({ errorsReducer, sessionReducer }) => ({
 const mapDispatchToProps = dispatch => ({
   login: (user) => dispatch(login(user)),
   signup: (user) => dispatch(signup(user)),
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  toggleModal: () => dispatch(toggleModal())
+
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(navBar));

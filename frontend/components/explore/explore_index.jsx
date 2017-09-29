@@ -24,13 +24,11 @@ render() {
 
 const categories = this.props.categories;
 return (
-    <div>
+    <div className="explore-index">
       <h1>wut</h1>
-  <ul>
-    <li></li>
-  </ul>
+
       <h3>Categories</h3>
-        <ul>
+        <ul className="category-list">
           <Link to="/categories/1" ><li>{categories[1].name}<span>{categories[1].project_count}</span></li></Link>
           <Link to="/categories/2" ><li>{categories[2].name}<span>{categories[2].project_count}</span></li></Link>
           <Link to="/categories/3" ><li>{categories[3].name}<span>{categories[3].project_count}</span></li></Link>

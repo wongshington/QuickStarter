@@ -16,9 +16,6 @@ class RewardForm extends React.Component {
   }
 
 
-
-
-
   handleSubmit(e) {
     e.preventDefault();
     let newReward = Object.assign({}, this.state);
@@ -40,6 +37,7 @@ class RewardForm extends React.Component {
     return (
       <ul className="form-errors">
         <span>"Whoa Whoa Whoa not so fast there!"</span>
+        <br></br>
         <br></br>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
@@ -75,7 +73,8 @@ render() {
         <input type="number" placeholder="How much will users be donating?" onChange={this.update('pledge_amount')}></input>
         </label>
           <br></br>
-        <input type="submit" value="Create Your Reward!" />
+          <br></br>
+        <input className="form-submit" type="submit" value="Create Your Reward!" />
         </form>
       </div>
     </div>

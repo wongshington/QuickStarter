@@ -171,15 +171,7 @@ padding-right: 2px
   box-sizing: border-box;
 }
 
-.project-show-line {
-}
-// .project-show-line :nth-child(1){
-//   margin-bottom: 10px;
-//   background: blue;
-//   font-size: 50px;
-// this css doesnt seem to change anything-------
-// looking for way to affect only the size of the first span within this div or only the second span
-// }
+
 .project-show-funded {
   text-align: left;
 
@@ -234,6 +226,10 @@ padding-right: 2px
   color: #fff;
   font-weight: bold;
   border-radius: 6px;
+}
+
+.back-me-button:hover {
+  background: #22b75e;
 }
 
 
@@ -299,6 +295,11 @@ padding-right: 2px
 .reward-item li {
   margin-right: 5px;
   padding-right: 1px;
+  margin-bottom: 5px;
+}
+.reward-item li span {
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .overlay {

@@ -5,14 +5,14 @@ import { Line } from 'rc-progress';
 
 const CategoryIndexItem = ({ project }) => {
   return (
-  <li className="project-item" >
+  <li className="category-project-item" >
     <Link to={`/projects/${project.id}`}>
-      <img src={project.title_image} className="index-title-img"/>
+      <img src={project.title_image} className="category-index-title-img"/>
       </Link>
     <br></br>
     <div >
     <li>{project.title}</li>
-    <li className="index-author-info">
+    <li className="category-index-author-info">
       <img src={project.author_pic} />
       {project.author}</li>
     <li>blurb{project.blurb}</li>
