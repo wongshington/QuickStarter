@@ -148,7 +148,7 @@ class ModalSessionForm extends React.Component {
             Sign Up
           </button>
           <button onClick={this.logDemo}>Guest</button>
-        </div >
+        </div>
 
       );
     }
