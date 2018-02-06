@@ -56,10 +56,11 @@ def update_funds
   self.save
 end
 
+
 def days_left
   (funding_deadline-Date.today).to_i
-
 end
+
 
 def funded_percentage
   return "0" if total_funded == 0
