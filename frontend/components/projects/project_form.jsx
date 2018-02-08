@@ -34,11 +34,6 @@ componentDidMount() {
 this.props.clearErrors();
 }
 
-
-// componentWillReceiveProps(nextProps) {
-// this.props.clearErrors();
-// }
-
 onImageDrop(files) {
 this.setState({
   uploadedFile: files[0]
@@ -55,7 +50,6 @@ handleImageUpload(file) {
     if (err) {
       console.error(err);
     }
-
     if (response.body.secure_url !== '') {
       this.setState({
         title_image: response.body.secure_url
@@ -63,7 +57,6 @@ handleImageUpload(file) {
     }
   });
 }
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -75,9 +68,7 @@ handleImageUpload(file) {
     this.props.createProject(newProject).then((result) => {
       return (this.props.history.push(`/projects/${result.project.id}`));
     });
-
   }
-
 
   update(field) {
     return e => this.setState({
@@ -85,7 +76,7 @@ handleImageUpload(file) {
     });
   }
 
-    renderErrors() {
+  renderErrors() {
       if (this.props.errors.length > 0) {
       return (
         <ul className="form-errors">

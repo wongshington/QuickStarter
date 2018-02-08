@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 
 import ProjectShow from './project_show';
 import { getProject, patchFundingProject} from '../../actions/project_actions';
-// import { postFunds } from '../../actions/project_actions';
-
-
 
 const mapStateToProps = (state, ownProps) => {
   return ({

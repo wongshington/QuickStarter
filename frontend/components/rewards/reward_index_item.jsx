@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-
 class RewardIndexItem extends React.Component{
   constructor(props){
     super(props);
@@ -22,12 +21,11 @@ class RewardIndexItem extends React.Component{
 
 handleClick(e) {
   e.preventDefault();
-
-if (this.props.currentUser === null) {
-    this.props.toggleModal();
-} else if (this.props.reward.paid_users === false ) {
-  this.props.postBacking(this.props.currentUser.id, this.reward).then((this.props.getProject(this.props.project.id)));
-}
+  if (this.props.currentUser === null) {
+      this.props.toggleModal();
+  } else if (this.props.reward.paid_users === false ) {
+    this.props.postBacking(this.props.currentUser.id, this.reward).then((this.props.getProject(this.props.project.id)));
+  }
 }
 
 
