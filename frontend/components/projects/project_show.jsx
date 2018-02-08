@@ -119,7 +119,7 @@ render() {
           <div className="rewards-column"  id="rewards">
             {this.makeReward()}
             {
-              <RewardIndexContainer project={project} />
+              <RewardIndexContainer projectId={project.id} />
             }
           </div>
         </div>
