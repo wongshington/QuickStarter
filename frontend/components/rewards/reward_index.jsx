@@ -12,13 +12,12 @@ class RewardIndex extends React.Component {
   }
 
 componentWillMount() {
-  // this.props.getRewards(this.props.projectId)
   debugger
   this.props.getRewards(this.props.projectId);
   }
 
 componentWillReceiveProps(nextProps) {
-  this.props.getRewards(this.props.projectId);
+  // this.props.getRewards(this.props.projectId);
 }
 
 handleSubmit(e) {
@@ -38,15 +37,16 @@ handleChange(e) {
 }
 
 render() {
-  if (this.props.project.rewards === undefined) {
+  debugger
+  if (!(this.props.rewards.length)) {
     return null;
   }
-  const rewards = this.props.project.rewards.map(reward => {
+  const rewards = this.props.rewards.map(reward => {
       return (
         <RewardIndexItem
           key={reward.id}
           reward={reward}
-          project={this.props.project}
+          projectId={this.props.projectId}
           currentUser={this.props.currentUser}
           patchFundingProject={this.props.patchFundingProject}
           toggleModal={this.props.toggleModal}
@@ -59,7 +59,6 @@ render() {
         <ul className="reward-index">
             <h2>Fund a Project, Reward Yourself!</h2>
             <br></br>
-          {rewards}
         </ul>
       </div>
     );
@@ -67,6 +66,8 @@ render() {
 }
 
 }
+// {rewards}
+// this ^^ goes on line 61 just below the <br></br>
 
 
 export default RewardIndex;

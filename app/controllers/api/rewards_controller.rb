@@ -1,6 +1,7 @@
 class Api::RewardsController < ApplicationController
   def index
-    @rewards = Reward.all
+    debugger
+    @rewards = Reward.where(project_id: params[:project_id])
     render :index
   end
 

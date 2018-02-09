@@ -11,3 +11,9 @@ export const selectAllCategories = state => {
     values(state.entitiesReducer.categories)
   );
 };
+
+export const selectRewards = rewards => {
+  return (
+    values(rewards)
+  );
+};
