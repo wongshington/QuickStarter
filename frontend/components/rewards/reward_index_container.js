@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) =>{
   return ({
     projectId: ownProps.projectId,
     currentUser: state.sessionReducer.currentUser,
-    rewards: state.rewards
+    rewards: state.entitiesReducer.rewards
   });
 };
 

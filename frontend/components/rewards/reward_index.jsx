@@ -9,16 +9,16 @@ class RewardIndex extends React.Component {
     this.state ={customAmount: 0};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
   }
 
-  componentDidMount() {
-    // this.props.getRewards(this.props.projectId)
-    // debugger
+componentWillMount() {
+  // this.props.getRewards(this.props.projectId)
+  debugger
+  this.props.getRewards(this.props.projectId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.props.getRewards(this.props.project.id);
+componentWillReceiveProps(nextProps) {
+  this.props.getRewards(this.props.projectId);
 }
 
 handleSubmit(e) {
@@ -27,9 +27,9 @@ handleSubmit(e) {
   let updatedProject = this.props.project;
   updatedProject.total_funded += parseInt(this.state.customAmount);
   this.props.patchFundingProject(updatedProject).then(()=> window.scrollTo(0,0));
-} else {
-  this.props.toggleModal();
-}
+  } else {
+    this.props.toggleModal();
+  }
 }
 
 handleChange(e) {

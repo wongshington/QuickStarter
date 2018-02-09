@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
+// might not need getRewards
+
+
 class RewardIndexItem extends React.Component{
   constructor(props){
     super(props);
