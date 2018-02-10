@@ -59,6 +59,7 @@ render() {
         <ul className="reward-index">
             <h2>Fund a Project, Reward Yourself!</h2>
             <br></br>
+            {rewards}
         </ul>
       </div>
     );
@@ -66,8 +67,6 @@ render() {
 }
 
 }
-// {rewards}
-// this ^^ goes on line 61 just below the <br></br>
 
 
 export default RewardIndex;

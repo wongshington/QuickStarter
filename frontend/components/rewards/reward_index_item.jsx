@@ -27,7 +27,7 @@ handleClick(e) {
   if (this.props.currentUser === null) {
       this.props.toggleModal();
   } else if (this.props.reward.paid_users === false ) {
-    this.props.postBacking(this.props.currentUser.id, this.reward).then((this.props.getProject(this.props.project.id)));
+    this.props.postBacking(this.props.currentUser.id, this.reward).then((this.props.getProject(this.props.projectId)));
   }
 }
 

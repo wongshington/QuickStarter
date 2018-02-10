@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) =>{
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  getRewards: () => dispatch(getRewards()),
+  getRewards: (id) => dispatch(getRewards(id)),
   patchFundingProject: (id, amount) => dispatch(patchFundingProject(id, amount)),
   toggleModal: ()=> dispatch(toggleModal()),
   postBacking: (userId, reward) => dispatch(postBacking(userId, reward)),
