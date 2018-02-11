@@ -7,8 +7,6 @@ import { getProject } from '../../actions/project_actions';
 import { selectRewards } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) =>{
-  debugger
-
   return ({
     projectId: ownProps.projectId,
     currentUser: state.sessionReducer.currentUser,

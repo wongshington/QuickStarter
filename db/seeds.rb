@@ -46,3 +46,16 @@ Reward.create(project_id: project3.id, pledge_amount: 200, gift: "a really big t
 Reward.create(project_id: project4.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
 Reward.create(project_id: project4.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
 Reward.create(project_id: project4.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+
+
+
+
+
+
+
+
+
+
+
+# RESUME PROJECT
+# user17 = User.create(username: "Your Next Developer", email: "name@email.com", password:"123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/q_100/v1518325619/headshot_fyzldg.jpg" )
