@@ -15,13 +15,14 @@ import ProjectFormContainer from './projects/project_form_container';
 import RewardFormContainer from './rewards/reward_form_container';
 import ExploreIndexContainer from './explore/explore_index_container';
 import ExploreShowContainer from './explore/explore_show_container';
+import SearchContainer from './search/search_container';
 
 
 
 const App = () =>(
   <div>
       <NavBarContainer />
-
+      <SearchContainer />
       <Switch>
         <Route path="/explore" component={ExploreIndexContainer}/>
         <Route path="/projects/new" component={ProjectFormContainer} />

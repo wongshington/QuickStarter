@@ -1,4 +1,3 @@
-
 import { getProjectSearch } from '../util/search_util';
 
 export const RECEIVE_SEARCHES = 'RECEIVE_SEARCHES';

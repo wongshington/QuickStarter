@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import SearchIndex from './SearchIndex';
-import { selectSearches } from '../reducers/selectors';
-import { fetchSearch } from '../actions/search_actions';
+import SearchIndex from './search_index';
+import { selectSearches } from '../../reducers/selectors';
+import { fetchSearch } from '../../actions/search_actions';
 
 const mapStateToProps = state => ({
 projects: selectSearches(state)
