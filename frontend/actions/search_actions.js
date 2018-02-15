@@ -11,3 +11,4 @@ const receiveSearches = searches => ({
 export const fetchSearch = (input) => dispatch => (
   getProjectSearch(input).then( searches => dispatch(receiveSearches(searches)))
 );
+// might need to add some error handling if there are not results for that search

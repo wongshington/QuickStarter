@@ -17,3 +17,9 @@ export const selectRewards = rewards => {
     values(rewards)
   );
 };
+
+export const selectSearches = state => {
+  return (
+    values(state.search)
+  );
+};

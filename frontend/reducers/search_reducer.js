@@ -10,3 +10,5 @@ const SearchReducer = (state = [], action) => {
   }
 
 };
+
+export default SearchReducer;
