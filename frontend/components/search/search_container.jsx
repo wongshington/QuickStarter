@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SearchIndex from './search_index';
+import SearchInput from './search_input';
 import { selectSearches } from '../../reducers/selectors';
 import { fetchSearch } from '../../actions/search_actions';
 
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
   fetchSearch: (input) => dispatch(fetchSearch(input))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchInput);

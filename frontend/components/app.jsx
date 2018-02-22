@@ -18,11 +18,11 @@ import ExploreShowContainer from './explore/explore_show_container';
 import SearchContainer from './search/search_container';
 
 
+// <SearchContainer />
 
 const App = () =>(
   <div>
       <NavBarContainer />
-      <SearchContainer />
       <Switch>
         <Route path="/explore" component={ExploreIndexContainer}/>
         <Route path="/projects/new" component={ProjectFormContainer} />
