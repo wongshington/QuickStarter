@@ -10,10 +10,6 @@ class SearchInput extends React.Component {
     };
   }
 
-  componentDidMount() {
-    debugger
-  }
-
   update(field) {
       return e=> this.setState({
         [field]: e.currentTarget.value
