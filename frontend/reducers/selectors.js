@@ -18,8 +18,8 @@ export const selectRewards = rewards => {
   );
 };
 
-export const selectSearches = state => {
+export const selectSearches = action => {
   return (
-    values(state.search)
+    values(action.searches)
   );
 };

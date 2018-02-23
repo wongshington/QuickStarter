@@ -6,6 +6,9 @@ class SearchIndex extends React.Component {
     super(props);
   }
 
+  componentWillReceiveProps(nextProps) {
+    debugger
+  }
 
 
   render() {
