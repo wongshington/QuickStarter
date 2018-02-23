@@ -10,7 +10,7 @@ class SearchIndex extends React.Component {
 
   render() {
     return (
-    <div className= "Searchbar">word up breh</div>
+    <div className="searchIndex">word up breh</div>
     );
   }
 }
