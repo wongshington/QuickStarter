@@ -12,10 +12,20 @@ class SearchIndex extends React.Component {
 
 
   render() {
+    let results = this.props.results;
+    debugger
+    if (results[0] === undefined) {
+      return <div>Loading....</div>;
+    } else {
+
+
     return (
-    <div className="searchIndex">word up breh</div>
+    <div className="searchIndex">
+      {results[0].title}
+    </div>
     );
   }
+}
 }
 
 export default SearchIndex;
