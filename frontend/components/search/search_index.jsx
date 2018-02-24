@@ -13,7 +13,6 @@ class SearchIndex extends React.Component {
 
   render() {
     let results = this.props.results;
-    debugger
     if (results[0] === undefined) {
       return <div>Loading....</div>;
     } else {

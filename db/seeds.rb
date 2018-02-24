@@ -10,10 +10,10 @@
 # Project.destroy_all
 # Reward.destroy_all
 
+jesse = User.create(username: 'Jesse Wong', email: "jessewong@email.com", password: "123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308070/katrina_user_rmzxd2.jpg" )
 user1 = User.create(username: "jesse_wong", email: "name@email.com", password:"123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308070/katrina_user_rmzxd2.jpg" )
 user2 = User.create(username: 'guest', email: "email@email.com", password: 'password', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
 user3 = User.create(username: 'Quick_Silver', email: "LookAround@email.com", password: 'secure', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
-
 
 cat1 = Category.create(name: "Art")
 cat2 = Category.create(name: "Food")
@@ -22,6 +22,8 @@ cat4 = Category.create(name: "Technology")
 cat5 = Category.create(name: "Fashion")
 cat6 = Category.create(name: "Film & Video")
 
+
+jesse_project = Project.create(title: "", author_id: jesse.id, funding_goal: 100000, funding_deadline: '2018-08-05', description: "Description about myself", category_id: cat1, title_image: "img" , backer_count: 0, total_funded: 1993 )
 project1= Project.create(title: "Get Rich Quick", author_id: user1.id, funding_goal: 5410, funding_deadline: '2019-08-05', description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", category_id: cat1.id, title_image: "http://res.cloudinary.com/quickstarter/image/upload/c_scale,w_900/v1506312204/christian-joudrey-98245_gba6la.jpg", backer_count: 0, total_funded: 0 )
 project2= Project.create(title: "Get Poor Slow", author_id: user1.id, funding_goal: 3410, funding_deadline: Date.new(2018, 1, 9), description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", category_id: cat2.id, title_image: "http://res.cloudinary.com/quickstarter/image/upload/c_scale,w_900/v1506312207/lily-lvnatikk-267356_mkeshi.jpg", backer_count: 0, total_funded: 0 )
 project3= Project.create(title: "Title #3", author_id: user2.id, funding_goal: 2110, funding_deadline: Date.new(2018, 10, 12), description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", category_id: cat1.id, title_image: "http://res.cloudinary.com/quickstarter/image/upload/c_scale,w_900/v1506312200/octavio-fossatti-37556_zgdbn9.jpg", backer_count: 0, total_funded: 0  )
