@@ -5,7 +5,6 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_REWARD = "RECEIVE_REWARD";
 import { receiveReward } from './reward_actions';
-// import { postReward } from '../util/reward_api_util';
 import * as APIRewardUtil from '../util/reward_api_util';
 
 export const receiveProject = project => ({

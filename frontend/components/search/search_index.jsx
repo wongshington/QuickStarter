@@ -9,7 +9,7 @@ class SearchIndex extends React.Component {
   componentWillReceiveProps(nextProps) {
     // debugger
     if (nextProps.results[0]){
-      console.log("I'm going to clear errors here");
+      this.props.clearErrors();
     }
   }
 
