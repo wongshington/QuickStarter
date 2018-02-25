@@ -2,6 +2,7 @@ import { getProjectSearch } from '../util/search_util';
 
 export const RECEIVE_SEARCHES = 'RECEIVE_SEARCHES';
 export const RECEIVE_SEARCH_ERRORS = 'RECEIVE_SEARCH_ERRORS';
+export const CLEAR_SEARCHES = 'CLEAR_SEARCHES';
 
 
 const receiveSearches = searches => ({
@@ -12,6 +13,10 @@ const receiveSearches = searches => ({
 const receiveSearchErrors = errors => ({
   type: RECEIVE_SEARCH_ERRORS,
   errors
+});
+
+export const clearSearches = () => ({
+  type: CLEAR_SEARCHES
 });
 
 export const fetchSearch = (input) => dispatch => (
