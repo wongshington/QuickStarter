@@ -8,7 +8,7 @@ results: state.search
 });
 
 const mapDispatchToProps = dispatch => ({
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
   clearSearches: () => dispatch(clearSearches())
 });
 

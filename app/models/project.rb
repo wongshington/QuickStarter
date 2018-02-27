@@ -58,8 +58,12 @@ end
 
 def days_left
   (funding_deadline-Date.today).to_i
-
 end
+
+# def searcher
+#   @project = Project.find(params[:id]).includes(:rewards)
+# end
+
 
 def funded_percentage
   return "0" if total_funded == 0

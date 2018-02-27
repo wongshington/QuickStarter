@@ -18,6 +18,9 @@ class SearchInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if(this.props.searches[0] !== undefined) {
+      this.props.clearSearches();
+    }
     this.props.fetchSearch(this.state.query);
   }
 
