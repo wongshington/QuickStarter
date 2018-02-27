@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import ShowcaseSplash from './showcase_splash';
+import ShowcaseDashboard from './showcase_dashboard';
+import { getProject } from '../../actions/project_actions';
 
 
 const mapStateToProps = state => ({
@@ -7,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  getProject: (id) => dispatch(getProject)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowcaseSplash);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowcaseDashboard);

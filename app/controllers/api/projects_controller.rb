@@ -1,6 +1,6 @@
 class Api::ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.all.limit(3)
     render :index
   end
 
