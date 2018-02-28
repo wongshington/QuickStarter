@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getProject: (id) => dispatch(getProject)
+  getProject: (id) => dispatch(getProject(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowcaseDashboard);

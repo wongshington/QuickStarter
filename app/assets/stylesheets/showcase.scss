@@ -1,0 +1,22 @@
+.showcase-dashboard {
+  border: 10px solid black;
+  height: 400px;
+  position: relative;
+  margin: 30px auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.showcase-photo {
+  border: 5px solid red;
+  height: 350px;
+  min-width: 400px;
+
+}
+
+.showcase-information {
+  border: 5px solid green;
+  height: 350px;
+  min-width: 300px;
+}
