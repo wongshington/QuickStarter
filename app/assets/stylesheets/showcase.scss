@@ -2,7 +2,7 @@
   border: 10px solid black;
   height: 400px;
   position: relative;
-  margin: 30px auto 10px;
+  margin: 30px 60px 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -19,4 +19,7 @@
   border: 5px solid green;
   height: 350px;
   min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
