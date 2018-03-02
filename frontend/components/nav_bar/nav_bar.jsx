@@ -30,13 +30,16 @@ class navBar extends React.Component {
 
     return(
       <nav className="theNavBar">
-          <div className="nav-button-section">
+          <div className="left-nav-button-section">
             <button  onClick={()=> this.openExplore()}><i className="fa fa-compass" aria-hidden="true"></i> Explore</button>
+            <br></br>
             <button onClick={() => this.openCreate()}>Start a Project</button>
           </div>
           <Link to="/"><img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" /></Link>
+          <div className="right-nav-button-section" >
           <SearchContainer />
           <ModalContainer />
+          </div>
       </nav>
     );
   }

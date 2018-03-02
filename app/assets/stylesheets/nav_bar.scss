@@ -12,7 +12,6 @@ $green: #2BDE73;
   position: fixed;
       top: 0;
       width: 94%;
-      display: flex;
       background: white;
       padding: 0px 3%;
       display: flex;
@@ -23,12 +22,16 @@ $green: #2BDE73;
       z-index: 9999;
 }
 
-.nav-button-section {
-  width: 300px;
+.left-nav-button-section {
   display: flex;
-  padding-right: 1%;
+  width: 30%;
   justify-content: space-between;
-  align-items: center;
+
+}
+
+.right-nav-button-section {
+  display: flex;
+
 }
 
 .nav-button-section-logout {
@@ -42,7 +45,7 @@ $green: #2BDE73;
 margin-right: 40px;
 }
 
-.nav-button-section button {
+.left-nav-button-section button {
   padding: 18px 0;
   border-bottom: 2px solid #fff;
 
@@ -59,7 +62,7 @@ margin-right: 40px;
   transition-delay: 0.1s;
 }
 
-.nav-button-section button:hover {
+.left-nav-button-section button:hover {
   border-bottom: 1.5px solid $green;
   height: 100%;
   transition-delay: 0.1s;

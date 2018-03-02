@@ -11,14 +11,14 @@ primary_key: :id,
 foreign_key: :project_id,
 class_name: 'Reward'
 
-          has_many :supporters,
-          primary_key: :id,
-          foreign_key: :project_id,
-          class_name: 'Supporter'
+          # has_many :supporters,
+          # primary_key: :id,
+          # foreign_key: :project_id,
+          # class_name: 'Supporter'
 # maybe don't need
-          has_many :backers,
-          through: :supporters,
-          source: :supporter
+          # has_many :backers,
+          # through: :supporters,
+          # source: :supporter
 
 has_many :selected_rewards,
 primary_key: :id,

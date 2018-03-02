@@ -16,7 +16,8 @@ json.rewards do
 
 
 json.funded_percentage project.funded_percentage
-json.backer_count project.backers.count
+json.backer_count project.backers.length
+# .count will trigger a group by query
 json.category_name project.category.name
 
 
