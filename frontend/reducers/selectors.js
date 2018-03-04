@@ -23,3 +23,14 @@ export const selectSearches = action => {
     values(action.searches)
   );
 };
+
+export const SelectPayloadProject = ({ payload }) => {
+  let projects = [];
+  let payloadValues = Object.values(payload);
+
+Object.values(payload).forEach(
+        (el) => projects.push(el.project)
+        );
+
+  return ( projects);
+};
