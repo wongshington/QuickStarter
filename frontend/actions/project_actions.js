@@ -11,9 +11,9 @@ export const receiveProject = payload => ({
   payload
 });
 
-export const receiveAllProjects = projects => ({
+export const receiveAllProjects = payload => ({
   type: RECEIVE_ALL_PROJECTS,
-  projects
+  payload
 });
 
 export const receiveFunding = (project) => ({

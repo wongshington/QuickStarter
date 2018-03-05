@@ -24,13 +24,16 @@ export const selectSearches = action => {
   );
 };
 
-export const SelectPayloadProject = ({ payload }) => {
-  let projects = [];
-  let payloadValues = Object.values(payload);
+export const parsePayload = ( payload ) => {
+  let projects = {};
+  let rewards = {};
+  // let payloadValues = Object.values(payload);
 
 Object.values(payload).forEach(
-        (el) => projects.push(el.project)
-        );
-
-  return ( projects);
+        function (el) {
+          projects[el.project.id] = el.project;
+            el.rewards.forEach(rewardEl => {rewards[rewardEl.id] = rewardEl;}
+            );
+        });
+  return ( { projects, rewards } );
 };

@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_PROJECT, RECEIVE_ALL_PROJECTS, RECEIVE_FUNDING } from '../actions/project_actions';
+import { parsePayload } from './selectors';
 
 const ProjectsReducer = (state = {}, action) => {
 
@@ -9,7 +10,8 @@ const ProjectsReducer = (state = {}, action) => {
       const newProject = {[action.project.id]: action.payload.project};
       return merge({}, state, newProject);
     case RECEIVE_ALL_PROJECTS:
-      return action.payload.project;
+    let parseProjects = parsePayload(action.payload).projects;
+      return parseProjects;
     default:
       return state;
   }

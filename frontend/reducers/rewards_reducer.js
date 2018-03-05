@@ -1,6 +1,8 @@
 import merge from 'lodash/merge';
 import { RECEIVE_REWARD, RECEIVE_ALL_REWARDS } from '../actions/reward_actions';
-import { RECEIVE_PROJECT } from '../actions/project_actions';
+import { RECEIVE_PROJECT, RECEIVE_ALL_PROJECTS } from '../actions/project_actions';
+import { parsePayload } from './selectors';
+
 
 const RewardsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -9,9 +11,11 @@ const RewardsReducer = (state = {}, action) => {
       const newReward = action.reward;
       return merge({}, state, newReward);
     case RECEIVE_ALL_REWARDS:
+    // let parseResults = parsePayload(action.payload);
       return action.rewards;
-    case RECEIVE_PROJECT:
-      return action.payload.reward;
+    case RECEIVE_ALL_PROJECTS:
+    let parseRewards = parsePayload(action.payload).rewards;
+      return parseRewards;
     default:
       return state;
   }
