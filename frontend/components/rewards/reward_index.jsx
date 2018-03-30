@@ -12,7 +12,7 @@ class RewardIndex extends React.Component {
   }
 
 componentWillMount() {
-  this.props.getRewards(this.props.projectId);
+  // this.props.getRewards(this.props.projectId);
   }
 
 componentWillReceiveProps(nextProps) {

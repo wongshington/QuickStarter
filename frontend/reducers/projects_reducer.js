@@ -7,7 +7,7 @@ const ProjectsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PROJECT:
-      const newProject = {[action.project.id]: action.payload.project};
+      const newProject = {[action.payload.project.id]: action.payload.project};
       return merge({}, state, newProject);
     case RECEIVE_ALL_PROJECTS:
     let parseProjects = parsePayload(action.payload).projects;
