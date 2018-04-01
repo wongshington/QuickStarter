@@ -12,6 +12,10 @@ root "root#root"
     resources :projects, only: [:create, :show, :new, :index, :update] do
       resources :rewards, only: [:index, :create, :update, :show]
     end
+    resources :project_searches, only: [:index] do
+      # might not need this line below
+      get 'projects', on: :collection
+    end
     # resources :project_rewards, only: [:create]
   end
 

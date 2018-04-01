@@ -1,15 +1,21 @@
 import merge from 'lodash/merge';
 import { RECEIVE_PROJECT, RECEIVE_ALL_PROJECTS, RECEIVE_FUNDING } from '../actions/project_actions';
+import { parsePayload } from './selectors';
 
 const ProjectsReducer = (state = {}, action) => {
-
+let newState;
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PROJECT:
-      const newProject = {[action.project.id]: action.project};
-      return merge({}, state, newProject);
+         newState = merge({}, state);
+         newState[action.payload.project.id] = action.payload.project;
+         // just redid this file
+      return newState;
+
+
     case RECEIVE_ALL_PROJECTS:
-      return action.projects;
+    let parseProjects = parsePayload(action.payload).projects;
+      return parseProjects;
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 class Api::ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.all.limit(3)
     render :index
   end
 
@@ -25,7 +25,12 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.includes(
+      :author,
+      :category,
+      :backers,
+      rewards: [:backers]
+    ).find(params[:id])
   end
 
   def update

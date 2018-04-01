@@ -9,16 +9,14 @@ class RewardIndex extends React.Component {
     this.state ={customAmount: 0};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
   }
 
-  componentDidMount() {
-    // this.props.getRewards(this.props.projectId)
-    // debugger
+componentWillMount() {
+  // this.props.getRewards(this.props.projectId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.props.getRewards(this.props.project.id);
+componentWillReceiveProps(nextProps) {
+  // this.props.getRewards(this.props.projectId);
 }
 
 handleSubmit(e) {
@@ -27,9 +25,9 @@ handleSubmit(e) {
   let updatedProject = this.props.project;
   updatedProject.total_funded += parseInt(this.state.customAmount);
   this.props.patchFundingProject(updatedProject).then(()=> window.scrollTo(0,0));
-} else {
-  this.props.toggleModal();
-}
+  } else {
+    this.props.toggleModal();
+  }
 }
 
 handleChange(e) {
@@ -38,15 +36,15 @@ handleChange(e) {
 }
 
 render() {
-  if (this.props.project.rewards === undefined) {
+  if (!(this.props.rewards.length)) {
     return null;
   }
-  const rewards = this.props.project.rewards.map(reward => {
+  const rewards = this.props.rewards.map(reward => {
       return (
         <RewardIndexItem
           key={reward.id}
           reward={reward}
-          project={this.props.project}
+          projectId={this.props.projectId}
           currentUser={this.props.currentUser}
           patchFundingProject={this.props.patchFundingProject}
           toggleModal={this.props.toggleModal}
@@ -59,7 +57,7 @@ render() {
         <ul className="reward-index">
             <h2>Fund a Project, Reward Yourself!</h2>
             <br></br>
-          {rewards}
+            {rewards}
         </ul>
       </div>
     );

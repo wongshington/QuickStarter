@@ -7,9 +7,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // testing
-import { getCategories } from './actions/category_actions';
-
-
+import { fetchSearch } from './actions/search_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Testing Start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.getCategories = getCategories;
+  window.fetchSearch = fetchSearch;
 
 // Testing End
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectIndexItem from './project_index_item';
 import HeroSplashContainer from './hero_splash_container';
+import ShowcaseDashboard from '../showcase/showcase_container';
+
 
 class ProjectIndex extends React.Component {
   constructor(props){
@@ -26,7 +28,8 @@ render() {
     return (
       <div>
         <div>
-          <HeroSplashContainer SplashItems={SplashItems} />
+          // this is where the HeroSplashContainer went
+          <ShowcaseDashboard />
         </div>
         <div className="line"></div>
         <div >
@@ -41,4 +44,5 @@ render() {
 
 }
 
+// <HeroSplashContainer SplashItems={SplashItems} />
 export default ProjectIndex;

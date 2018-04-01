@@ -130,10 +130,11 @@ class ModalSessionForm extends React.Component {
   }
 
   rightButtons() {
+    // <i className="fa fa-search" aria-hidden="true"></i>
+
     if (this.props.currentUser) {
       return (
         <div className="nav-button-section-logout">
-          <i className="fa fa-search" aria-hidden="true"></i>
           <button onClick={()=> this.logOut()} >
             Sign Out
           </button>
@@ -142,7 +143,6 @@ class ModalSessionForm extends React.Component {
     } else {
       return (
         <div className="nav-button-section">
-          <i className="fa fa-search" aria-hidden="true"></i>
           <button onClick={() => this.toggleModalState("LogIn")}>LogIn</button>
           <button onClick={() => this.toggleModalState("Sign Up")}>
             Sign Up

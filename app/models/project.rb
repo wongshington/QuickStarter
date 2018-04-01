@@ -11,14 +11,14 @@ primary_key: :id,
 foreign_key: :project_id,
 class_name: 'Reward'
 
-          has_many :supporters,
-          primary_key: :id,
-          foreign_key: :project_id,
-          class_name: 'Supporter'
+          # has_many :supporters,
+          # primary_key: :id,
+          # foreign_key: :project_id,
+          # class_name: 'Supporter'
 # maybe don't need
-          has_many :backers,
-          through: :supporters,
-          source: :supporter
+          # has_many :backers,
+          # through: :supporters,
+          # source: :supporter
 
 has_many :selected_rewards,
 primary_key: :id,
@@ -60,6 +60,10 @@ end
 def days_left
   (funding_deadline-Date.today).to_i
 end
+
+# def searcher
+#   @project = Project.find(params[:id]).includes(:rewards)
+# end
 
 
 def funded_percentage

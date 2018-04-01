@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalContainer from './modal_container';
+import SearchContainer from '../search/search_container';
 import { toggleModal } from '../../actions/ui_actions';
 
 
@@ -26,16 +27,18 @@ class navBar extends React.Component {
 
 
   render () {
-  
+
     return(
       <nav className="theNavBar">
-          <div className="nav-button-section">
+          <div className="left-nav-button-section">
             <button  onClick={()=> this.openExplore()}><i className="fa fa-compass" aria-hidden="true"></i> Explore</button>
             <button onClick={() => this.openCreate()}>Start a Project</button>
           </div>
           <Link to="/"><img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" /></Link>
-
+          <div className="right-nav-button-section" >
+          <SearchContainer />
           <ModalContainer />
+          </div>
       </nav>
     );
   }

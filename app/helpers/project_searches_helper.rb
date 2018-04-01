@@ -1,0 +1,2 @@
+module ProjectSearchesHelper
+end
