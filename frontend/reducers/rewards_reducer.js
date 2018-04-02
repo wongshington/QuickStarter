@@ -5,6 +5,7 @@ import { parsePayload } from './selectors';
 
 
 const RewardsReducer = (state = {}, action) => {
+  let newState;
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_REWARD:
@@ -18,8 +19,10 @@ const RewardsReducer = (state = {}, action) => {
       return parseRewards;
     case RECEIVE_PROJECT:
     // need to finish this file for suuuure
-      let parseRewards = {[action.payload.rewards.id]: action.payload.reward;
-      return merge({}, state, parseRewards);
+       // {[action.payload.rewards.id]: action.payload.reward};
+      newState = merge({}, state);
+      // newState[action.payload.reward]
+      return newState;
     default:
       return state;
   }
