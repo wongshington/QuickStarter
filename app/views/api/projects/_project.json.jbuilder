@@ -14,6 +14,7 @@ json.backer_count project.backers.length
 json.category_name project.category.name
 end
 #
+
 json.rewards do
   json.array! project.rewards.each do |reward|
     json.extract! reward, :id, :pledge_amount, :gift, :gift_description
