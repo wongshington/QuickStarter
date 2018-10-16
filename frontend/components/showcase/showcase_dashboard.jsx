@@ -17,7 +17,9 @@ class ShowcaseDashboard extends React.Component {
     // debugger
     return (
       <div className="showcase-dashboard">
-        <div className="showcase-photo" style={ {backgroundImage: `${project.title_image}`} }><span>{project.title}</span></div>
+        <div className="showcase-photo" style={ {backgroundImage: `url(${project.title_image})`} }>
+          <span className="showcase-title" >{project.title}</span>
+        </div>
         <div className="showcase-information">
           <li>"this is item #1"</li>
           <li>"this is item #2"</li>

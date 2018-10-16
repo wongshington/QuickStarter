@@ -9,10 +9,25 @@
 }
 
 .showcase-photo {
-  border: 5px solid red;
   height: 350px;
   min-width: 400px;
+  background-size: cover;
+  position: relative;
 
+  .showcase-title {
+    background-color: white;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 2em;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .showcase-title:hover{
+    opacity: 1;
+    font-size: 135%;
+    transition: .3s;
+  }
 }
 
 .showcase-information {
