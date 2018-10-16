@@ -1,14 +1,23 @@
 import { connect } from 'react-redux';
 import ShowcaseDashboard from './showcase_dashboard';
-import { getProject } from '../../actions/project_actions';
+import { getRandomProject } from '../../actions/project_actions';
 
 
-const mapStateToProps = state => ({
-  state
+const mapStateToProps = ({ entitiesReducer, uiReducer }) => {
+  if ( !entitiesReducer && !uiReducer ){
+    return {project: undefined, randId: undefined}
+  } 
+  const randId = uiReducer.randProject || undefined;
+  if (!randId) {console.log("no randID")}
+debugger
+  return({
+  project: entitiesReducer.projects[randId],
+  randId
 });
+};
 
 const mapDispatchToProps = dispatch => ({
-  getProject: (id) => dispatch(getProject(id))
+  getRandomProject: (id) => dispatch(getRandomProject(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowcaseDashboard);

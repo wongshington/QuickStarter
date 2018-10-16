@@ -25,12 +25,18 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.includes(
-      :author,
-      :category,
-      :backers,
-      rewards: [:backers]
-    ).find(params[:id])
+
+    if params[:id] == "-1"
+      @project = Project.limit(1).order("RANDOM()")[0]
+      return @project
+    else
+      @project = Project.includes(
+        :author,
+        :category,
+        :backers,
+        rewards: [:backers]
+      ).find(params[:id])
+    end
   end
 
   def update
