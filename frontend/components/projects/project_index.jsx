@@ -27,7 +27,6 @@ render() {
     });
     return (
       <div>
-          // this is where the HeroSplashContainer went
           <ShowcaseDashboard />
         <div className="line"></div>
           <ul className="project-index">
