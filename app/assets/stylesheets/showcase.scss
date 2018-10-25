@@ -1,6 +1,7 @@
+$green: #2BDE73;
 
 .showcase-dashboard {
-  border: 10px solid black;
+  // border: 10px solid black;
   height: 35em;
   margin-top: 4em;
   display: flex;
@@ -17,32 +18,53 @@
 }
 
 .showcase-photo {
-  height: 450px;
+  height: 500px;
   min-width: 60%;
   background-size: cover;
   position: relative;
 
   .showcase-title {
     background-color: white;
-    opacity: 0.5;
+    font-size: 28px;
     position: absolute;
     bottom: 2em;
     padding: 10px;
     text-align: center;
-  }
 
-  .showcase-title:hover{
-    opacity: 1;
-    font-size: 135%;
-    transition: .3s;
+  }
+}
+.showcase-photo:hover{
+
+    .showcase-title{
+    color: $green;
   }
 }
 
 .showcase-information {
-  border: 5px solid green;
   height: 450px;
   min-width: 35%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+
+}
+
+.dashboard-item {
+  border: 1px dashed black;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 20%;
+
+
+  .item-photo {
+    background-size: cover;
+    width: 25%;
+    margin-right: 10px;
+  }
+
+  .item-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
