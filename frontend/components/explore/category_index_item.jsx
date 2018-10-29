@@ -7,7 +7,7 @@ const CategoryIndexItem = ({ project }) => {
   return (
   <li className="category-project-item" >
     <Link to={`/projects/${project.id}`}>
-      <img src={project.title_image} className="category-index-title-img"/>
+        <div style={{ backgroundImage: `url(${project.title_image})` }} className="category-index-title-img"></div>
       </Link>
     <br></br>
     <div >

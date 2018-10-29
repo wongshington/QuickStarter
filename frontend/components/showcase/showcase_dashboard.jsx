@@ -24,6 +24,7 @@ class ShowcaseDashboard extends React.Component {
           <h3>Featured Project</h3>
           <div className="showcase-photo" style={ {backgroundImage: `url(${project.title_image})`} }>
             <span className="showcase-title" >{project.title}</span>
+            <span className="showcase-author" >By {project.author}</span>
           </div>
         </Link>
         <div className={"dashboard-2"}>

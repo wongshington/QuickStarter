@@ -1,6 +1,6 @@
 class Api::ProjectsController < ApplicationController
   def index
-    @projects = Project.all.limit(3)
+    @projects = Project.all.limit(5)
     render :index
   end
 
@@ -27,7 +27,7 @@ class Api::ProjectsController < ApplicationController
   def show
 
     if params[:id] == "-1"
-      @project = Project.limit(1).order("RANDOM()")[0]
+      @project = Project.random_project
       return @project
     else
       @project = Project.includes(

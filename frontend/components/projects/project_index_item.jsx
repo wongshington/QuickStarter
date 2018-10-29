@@ -6,7 +6,7 @@ import { Line } from 'rc-progress';
 const ProjectIndexItem = ({ project }) => (
   <li className="project-item" >
     <Link to={`/projects/${project.id}`}>
-      <img src={project.title_image} className="index-title-img"/>
+      <div style={{ backgroundImage: `url(${project.title_image})` }} className="index-title-img"></div>
       </Link>
     <br></br>
     <div >

@@ -8,10 +8,10 @@ const mapStateToProps = ({ entitiesReducer, uiReducer }) => {
     return {project: undefined, randId: undefined};
   } 
   const randId = uiReducer.randProject || undefined;
-  let elements = Object.values(entitiesReducer.projects);
+  let projects = Object.values(entitiesReducer.projects).slice(0,4);
   return({
   project: entitiesReducer.projects[randId],
-  projects: elements,
+  projects: projects,
   randId
 });
 };
