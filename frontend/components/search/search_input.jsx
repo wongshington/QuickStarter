@@ -2,6 +2,8 @@ import React from 'react';
 
 class SearchInput extends React.Component {
 
+  // kickstarter.com just renders this on top of the existing navbar and makes an animation fade in to do it
+
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);

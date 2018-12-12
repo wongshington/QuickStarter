@@ -9,6 +9,7 @@ import { toggleModal } from '../../actions/ui_actions';
 class navBar extends React.Component {
   constructor(props){
     super(props);
+
     this.openCreate = this.openCreate.bind(this);
     this.openExplore = this.openExplore.bind(this);
 
@@ -17,27 +18,28 @@ class navBar extends React.Component {
   openCreate() {
     if (this.props.currentUser === null) {
         this.props.toggleModal();}
-        else {
-    this.props.history.push("/projects/new");}
+    else {
+      this.props.history.push("/projects/new");
+    }
   }
 
   openExplore() {
     this.props.history.push("/explore");
   }
 
-
-  render () {
+  render() {
 
     return(
-      <nav className="theNavBar">
-          <div className="left-nav-button-section">
-            <button  onClick={()=> this.openExplore()}><i className="fa fa-compass" aria-hidden="true"></i> Explore</button>
-            <button onClick={() => this.openCreate()}>Start a Project</button>
+      <nav className="navbar flex">
+          <div className="">
+            <button className="navbar--button button" onClick={()=> this.openExplore()}><i className="fa fa-compass" aria-hidden="true"></i> Explore</button>
+            <button className="navbar--button button" onClick={() => this.openCreate()}>Start a Project</button>
           </div>
-          <Link to="/"><img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" /></Link>
-          <div className="right-nav-button-section" >
-          <SearchContainer />
-          <ModalContainer />
+          <Link className="flex navbar--image"to="/"><img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" /></Link>
+          <div className="flex" >
+          <button className="navbar--button button" onClick={() => console.log("this is search")}>Search</button>
+            {/* <SearchContainer /> */}
+            <ModalContainer />
           </div>
       </nav>
     );
