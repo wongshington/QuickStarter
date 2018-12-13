@@ -31,13 +31,13 @@ class navBar extends React.Component {
 
     return(
       <nav className="navbar flex">
-          <div className="">
-            <button className="navbar--button button" onClick={()=> this.openExplore()}><i className="fa fa-compass" aria-hidden="true"></i> Explore</button>
+        <div className="navbar--section navbar--section-left">
+            <button className="navbar--button button" onClick={()=> this.openExplore()}>Explore</button>
             <button className="navbar--button button" onClick={() => this.openCreate()}>Start a Project</button>
           </div>
           <Link className="flex navbar--image"to="/"><img src="http://res.cloudinary.com/quickstarter/image/upload/c_scale,q_100,w_214/v1506394239/quickstarter_logo_b6yrvz.png" /></Link>
-          <div className="flex" >
-          <button className="navbar--button button" onClick={() => console.log("this is search")}>Search</button>
+          <div className="flex navbar--section navbar--section-right" >
+            <button className="navbar--button button" onClick={() => console.log("this is search")}>Search</button>
             {/* <SearchContainer /> */}
             <ModalContainer />
           </div>

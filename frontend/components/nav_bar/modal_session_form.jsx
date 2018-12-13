@@ -144,7 +144,7 @@ class ModalSessionForm extends React.Component {
       
       return (
         <div>
-          <button className="navbar--button button" onClick={() => this.toggleModalState("LogIn")}>Log In</button>
+          <button className="navbar--button button" onClick={() => this.toggleModalState("LogIn")}>Sign In</button>
           {/* <button className="navbar--button button" onClick={() => this.toggleModalState("Sign Up")}>
             Sign Up
           </button> */}
