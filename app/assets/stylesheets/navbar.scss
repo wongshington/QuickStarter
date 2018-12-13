@@ -52,29 +52,27 @@
 
 }
 
-// .flex {
-//   display: flex;
-// }
+.navbar {
+  border: 1px solid green;
+  justify-content: space-between;
+  height: 5vh;
+}
 
-// .navbar {
-//   border: 1px solid green;
-//   justify-content: space-between;
-// }
+.button {
+  border: 1px solid blue;
+  border-radius: 3px;
+  padding: 5px;
+}
 
-// .button {
-//   border: 1px solid blue;
-//   border-radius: 3px;
-//   padding: 5px;
-// }
+.navbar--button {
+  border-radius: 0px;
+  height: -webkit-fill-available;
+}
 
-// .navbar--button {
-//   border-radius: 0px;
-// }
+.navbar--button:hover {
+  color: green;
+}
 
-// .navbar--button:hover {
-//   color: green;
-// }
-
-// .navbar--image {
-//   margin: auto;
-// }
+.navbar--image {
+  margin: auto;
+}
