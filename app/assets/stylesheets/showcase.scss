@@ -1,0 +1,57 @@
+.showcase {
+  font-size: 35px;
+}
+
+// web
+@media  (min-device-width:601px) {
+  .showcase {
+    width: 500px;
+    height: 1000px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+}
+
+// mobile
+@media  (max-device-width:600px) {
+  .showcase {
+    width: 100%;
+    height: 1000px;
+    border: 1px solid black;
+  
+  }
+
+  .showcase--image {
+
+    // this might need to be in here if we have other "showcase--image" elements tht aren't divs
+    // div {
+    //   background-size: cover;
+    // }
+    background-size: cover;
+  }
+
+  .showcase--text {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .showcase--content {
+    flex-direction: column;
+  }
+
+  .showcase--image-main {
+    height: 500px;
+  }
+
+  .showcase--text-header {
+    color: gray;
+  }
+
+  .showcase--text-title {
+
+  }
+
+  .showcase--text-author {
+    color: gray;
+  }
+}

@@ -18,6 +18,11 @@ class Api::UsersController < ApplicationController
     @project.update_funds
     render "api/projects/show"
   end
+  
+  def show
+    @user = User.first
+    render :show
+  end
 
   private
 

@@ -19,17 +19,16 @@ class ShowcaseDashboard extends React.Component {
     let items = this.props.projects.map( (el) =>  (<DashboardItem key={el.title} project={el}/> ) );
 
     return (
-      <div to={`/projects/${project.id}`} className="showcase-dashboard">
-        <Link to={`/projects/${project.id}`} className={"dashboard-1"}>
-          <h3>Featured Project</h3>
-          <div className="showcase-photo" style={ {backgroundImage: `url(${project.title_image})`} }>
-            <span className="showcase-title" >{project.title}</span>
-            <span className="showcase-author" >By {project.author}</span>
-          </div>
+      <div to={`/projects/${project.id}`} className="showcase">
+        <Link to={`/projects/${project.id}`} className="showcase--content flex">
+          <h3 className="showcase--text showcase--text-header">Featured Project</h3>
+          <div className="showcase--image showcase--image-main" style={ {backgroundImage: `url(${project.title_image})`} }></div>
+          <span className="showcase--text showcase--text-title" >{project.title}</span>
+          <span className="showcase--text showcase--text-author" >By {project.author}</span>
         </Link>
-        <div className={"dashboard-2"}>
+        <div className="">
           <h3>See More!</h3>
-          <div className="showcase-information">
+          <div className="">
             {items}
           </div>
         </div>

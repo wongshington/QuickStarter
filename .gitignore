@@ -4,3 +4,8 @@ node_modules/
 notey_notes.md
 css_html_reminders
 todo.md
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+storage.yml
+
