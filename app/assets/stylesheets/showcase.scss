@@ -8,6 +8,9 @@
   .grid {
     display: grid;
   }
+  .flex {
+    display: flex;
+  }
 
   .showcase {
     width: 100%;
@@ -18,22 +21,22 @@
   }
 
   .showcase--list {
-    background: red;
     grid-template-rows: 1fr 1fr 10fr 5fr;
   }
   
   .showcase--list-projects{
-    background: green;
     grid-template-rows: 1fr 1fr 1fr;
   }
 
   .showcase--project{
     // height: 100%;
-    grid-template-columns: 1fr 3fr 5fr;
+    grid-template-columns: 3fr 5fr;
     // grid-gap: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    // border-bottom: 1px dashed black;
+    border-bottom: 1px dashed gray;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .showcase--header{
@@ -42,9 +45,31 @@
 
   .showcase--project-photo{
     height: 100%;
+    margin-left: 20px;
+    margin-right: 15px;
   }
+
   .showcase--project-info{
     font-size: 15px;
+    list-style: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .showcase--content-left {
+    border-right: 1px dashed gray;
+    grid-template-rows: 1fr 1fr 10fr;
+    background: pink;
+    height: inherit;
+  }
+
+  .showcase--feature {
+    grid-template-rows: 10fr 1fr 1fr; 
+    background-size: cover;
+  }
+
+  .showcase--content-right {
+    grid-template-rows: 10fr 3fr 1fr;
   }
 
   .app-body {

@@ -20,14 +20,18 @@ class ShowcaseDashboard extends React.Component {
 
     return (
       <div to={`/projects/${project.id}`} className="showcase grid">
-        <Link to={`/projects/${project.id}`} className="showcase--content flex">
-          <h3 className="showcase--text showcase--text-header">Featured Project</h3>
-          <div className="showcase--image showcase--image-main" style={ {backgroundImage: `url(${project.title_image})`} }></div>
-          <span className="showcase--text showcase--text-title" >{project.title}</span>
-          <span className="showcase--text showcase--text-author" >By {project.author}</span>
-        </Link>
-        <div className="showcase--content showcase--list grid">
-        <div></div>
+        <div className="showcase--content-left grid">
+          <div></div>
+          <span className="showcase--text showcase--header">Featured Project</span>
+          <Link to={`/projects/${project.id}`} className="showcase--feature grid">
+            <div className="showcase--image showcase--image-main" style={{ backgroundImage: `url(${project.title_image})`, backgroundSize: "cover"} }></div>
+            <span className="showcase--text showcase--text-title" >{project.title}</span>
+            <span className="showcase--text showcase--text-author" >By {project.author}</span>
+          </Link>
+          <div></div>
+        </div>
+        <div className="showcase--content-right showcase--list grid">
+          <div></div>
           <span className="showcase--header">See More!</span>
           <div className="showcase--list-projects grid">
             {items}
