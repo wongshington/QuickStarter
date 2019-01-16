@@ -28,7 +28,7 @@ render() {
     return (
       <div>
           <ShowcaseDashboard />
-        <div className="line"></div>
+        {/* <div className="line">where is this line?</div> */}
           <ul className="project-index">
             {projects}
           </ul>

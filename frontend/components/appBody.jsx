@@ -19,16 +19,19 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const Other = (props) => {
 
   return (
-    <div className="app-body">
-      <Switch>
-        <Route path="/explore" component={ExploreIndexContainer} />
-        <ProtectedRoute path="/projects/new" component={ProjectFormContainer} />
-        <Route path="/projects/:projectID/rewards/new" component={RewardFormContainer} />
-        <Route path="/categories/:categoryId" component={ExploreShowContainer} />
-        <Route path="/projects/:projectId" component={ProjectShowContainer} />
-        <Route path="/" component={ProjectIndexContainer} />
-      </Switch>
-
+    <div className="app-body grid">
+      <div></div>
+      <div>
+        <Switch>
+          <Route path="/explore" component={ExploreIndexContainer} />
+          <ProtectedRoute path="/projects/new" component={ProjectFormContainer} />
+          <Route path="/projects/:projectID/rewards/new" component={RewardFormContainer} />
+          <Route path="/categories/:categoryId" component={ExploreShowContainer} />
+          <Route path="/projects/:projectId" component={ProjectShowContainer} />
+          <Route path="/" component={ProjectIndexContainer} />
+        </Switch>
+      </div>
+      <div></div>
     </div>
   );
 };
