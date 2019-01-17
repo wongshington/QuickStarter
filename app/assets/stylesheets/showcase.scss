@@ -14,8 +14,7 @@
 
   .showcase {
     width: 100%;
-    height: 800px;
-    border: 1px solid black;
+    height: 625px; // this might need to be changed
     margin: 0 auto;
     grid-template-columns: 5fr 4fr;
   }
@@ -34,13 +33,17 @@
     // grid-gap: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed gray;
+    border-bottom: 1px dashed lightgray;
     margin-left: 20px;
     margin-right: 20px;
   }
 
   .showcase--header{
     font-size: 20px;
+  }
+
+  .showcase--header-right{
+    margin-left: 20px;
   }
 
   .showcase--project-photo{
@@ -57,19 +60,36 @@
   }
 
   .showcase--content-left {
-    border-right: 1px dashed gray;
-    grid-template-rows: 1fr 1fr 10fr;
-    background: pink;
+    border-right: 1px dashed lightgray;
+    grid-template-rows: 1fr 1fr 10fr 1fr;
     height: inherit;
   }
 
   .showcase--feature {
-    grid-template-rows: 10fr 1fr 1fr; 
-    background-size: cover;
+    grid-template-rows: 4fr .5fr 1fr .5fr 1fr; 
+    margin-right: 40px;
+  }
+
+  .showcase--text-title{
+    font-size: 28px;
+    margin: 10px 0;
+  }
+
+  .showcase--description{
+    font-size: 18px;
+  }
+
+  .showcase--text-author{
+    font-size: 15px;
+    margin: 10px 0;
   }
 
   .showcase--content-right {
-    grid-template-rows: 10fr 3fr 1fr;
+    grid-template-rows: .5fr 1fr 8fr 5fr;
+  }
+
+  .showcase--image{
+    // height: 375px;
   }
 
   .app-body {

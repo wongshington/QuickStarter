@@ -15,7 +15,8 @@
 @media (min-device-width: 601px){
   .navbar {
     justify-content: space-between;
-    height: 5vh;
+    height: 9vh;
+    border-bottom: .5px solid lightgray;
   }
 
   .navbar--button {
