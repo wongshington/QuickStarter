@@ -29,7 +29,7 @@ render() {
       <div>
           <ShowcaseDashboard />
         {/* <div className="line">where is this line?</div> */}
-          <ul className="project-index">
+          <ul className="project-index grid">
             {projects}
           </ul>
       </div>

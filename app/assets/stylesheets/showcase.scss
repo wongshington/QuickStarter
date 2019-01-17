@@ -2,15 +2,16 @@
   font-size: 35px;
 }
 
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
 // web
 @media  (min-device-width:601px) {
-
-  .grid {
-    display: grid;
-  }
-  .flex {
-    display: flex;
-  }
 
   .showcase {
     width: 100%;
