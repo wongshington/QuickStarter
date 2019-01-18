@@ -10,14 +10,24 @@
   display: flex;
 }
 
+.showcase--content-left {
+  grid-area: project;
+}
+
+.showcase--content-right {
+  grid-area: project-list;
+}
 // web
 @media  (min-device-width:601px) {
 
   .showcase {
-    width: 100%;
+    // width: 100%;
     height: 625px; // this might need to be changed
     margin: 0 auto;
     grid-template-columns: 5fr 4fr;
+    padding: 0 10%;
+    grid-template-areas: 
+      "project project-list" 
   }
 
   .showcase--list {
@@ -86,7 +96,9 @@
   }
 
   .showcase--content-right {
+    grid-area: project-list;
     grid-template-rows: .5fr 1fr 8fr 5fr;
+    font-size: 14px;
   }
 
   .showcase--image{
@@ -94,19 +106,22 @@
   }
 
   .app-body {
-    // background: blue;
     grid-template-columns: 1fr 10fr 1fr;
   }
 
 }
 
+
+
 // mobile
 @media  (max-device-width:600px) {
   .showcase {
-    width: 100%;
-    height: 1000px;
+    // width: 100%;
+    // height: 1000px;
     border: 1px solid black;
-  
+    grid-template-areas: 
+        "project"
+        "project-list";
   }
 
   .showcase--image {
@@ -118,13 +133,31 @@
     background-size: cover;
   }
 
+  .showcase--feature{
+    background: palegreen;
+  }
+
   .showcase--text {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 50px; 
+  }
+  .showcase--description{
+    padding: 0 50px;
   }
 
   .showcase--content {
     flex-direction: column;
+  }
+
+  .showcase--content-left {
+    font-size: 15px;
+  }
+
+  .showcase--header-container{
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .showcase--header-right{
+    padding: 0 50px;
   }
 
   .showcase--image-main {
@@ -135,9 +168,47 @@
     color: gray;
   }
 
-  .showcase--text-title {
-
+  .showcase--list-projects{
+    padding: 50px;
+    height: 50vh;
+    padding-top: 0;
+    grid-template-rows: 1fr 1fr 1fr;
   }
+  .showcase--project{
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+  }
+  .showcase--project-photo{
+    background-position: center;
+    margin: 30px 0 30px 0;
+  }
+  .showcase--project:first-child{
+    padding-top: 0;
+    a {
+      margin-top: 0;
+    }
+  }
+  .showcase--project-info{
+    padding-left: 50px;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+  }
+  .showcase--project-info * {
+    padding-top: 15px;
+  }
+  .showcase--project-author{
+    color: gray;
+  }
+  .showcase--more-container{
+    padding: 50px;
+  }
+  .showcase--more{
+    font-size: 16px;
+    color: #0000EE;
+  }
+
 
   .showcase--text-author {
     color: gray;

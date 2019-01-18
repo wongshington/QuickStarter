@@ -13,7 +13,7 @@ const DashboardItem = ({project}) => {
           <li>{project.title}</li>
         </Link>
         <li>${project.total_funded} funded!</li>
-        <li>By {project.author}</li>
+        <li className="showcase--project-author">By {project.author}</li>
       </div>
     </li>
   );
