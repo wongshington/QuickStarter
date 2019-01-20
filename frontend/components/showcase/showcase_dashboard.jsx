@@ -26,7 +26,7 @@ class ShowcaseDashboard extends React.Component {
             <span className="showcase--text showcase--header">Featured Project</span>
           </div>
           <Link to={`/projects/${project.id}`} className="showcase--feature grid">
-            <div className="showcase--image showcase--image-main" style={{ backgroundImage: `url(${project.title_image})`, backgroundSize: "cover", backgroundPosition: "center"} }></div>
+            <div className="showcase--image showcase--image-main" style={{ backgroundImage: `url(${project.title_image})`} }></div>
             <span className="showcase--text showcase--text-title" >{project.title}</span>
             <div className="showcase--description"> {/* this section needs to be kept to a certain length otherwise it will mess with the css */}
               this is some descriptive stuffs?? 

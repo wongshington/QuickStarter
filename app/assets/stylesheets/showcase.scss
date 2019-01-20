@@ -111,10 +111,16 @@
 
 }
 
+// small desktop screen
+@media only screen and (max-width: 800px) {
+  .showcase{
+    background: coral;
+  }
+}
 
 
 // mobile
-@media  (max-device-width:600px) {
+@media only screen and (max-device-width:600px) {
   .showcase {
     // width: 100%;
     // height: 1000px;
@@ -131,6 +137,7 @@
     //   background-size: cover;
     // }
     background-size: cover;
+    // background-position: center; 
   }
 
   .showcase--feature{
@@ -138,6 +145,7 @@
   }
 
   .showcase--text {
+    font-size: 20px;
     padding: 50px; 
   }
   .showcase--description{
@@ -162,6 +170,7 @@
 
   .showcase--image-main {
     height: 500px;
+    background-position: center;
   }
 
   .showcase--text-header {
@@ -180,6 +189,7 @@
     padding: 10px 0;
   }
   .showcase--project-photo{
+    background-size: cover;
     background-position: center;
     margin: 30px 0 30px 0;
   }
