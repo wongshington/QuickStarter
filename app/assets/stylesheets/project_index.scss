@@ -1,12 +1,55 @@
 .project-index {
-  background: lightblue;
+  // background: lightblue;
+  border-top: 1px solid lightgray;
   margin-top: 25px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 0 10%;
+  grid-column-gap: 25px;
+  padding: 0 8%;
+  height: 55vh; // for now
+}
+.project-index-headers{
+ grid-column: span 4;
+ grid-template-columns: 1fr 1fr;
+  padding-top: 25px;
+ span:nth-child(2){
+  justify-self: right;
+  color: #0000EE;
+ }
 
 }
 
 .project-item{
-  height: 300px;
-  width: 200px;
+  // height: auto; might not need
+  width: 100%;
+  padding: 10% 0;
+  grid-row: 2 / 4;
+  grid-template-rows: 1fr 2fr .5fr;
+  grid-gap: 15px;
+  margin: 0 auto;
 }
+.index--project-img{
+  height: 100%; //temporary
+  flex-direction: column-reverse;
+}
+.index--project-info{
+  // border: 1px solid black;
+  grid-template-rows: 2fr 2fr .75fr .75fr
+}
+.index--project-title{
+  font-size: 20px;
+}
+.index--project-author{
+  color: gray;
+}
+.line{
+  width: 100%;
+}
+.index--photo{
+  height: 100%;
+}
+// index
+
+// the break points for this section will be different than the ones for the showcase
+// on big screen will have 4 across
+// on med screen will have a square of 2 x 2
+// small screen is one per row

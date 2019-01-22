@@ -2,14 +2,6 @@
   font-size: 35px;
 }
 
-.grid {
-  display: grid;
-}
-
-.flex {
-  display: flex;
-}
-
 .showcase--content-left {
   grid-area: project;
 }
@@ -28,7 +20,7 @@
     height: 650px; // this might need to be changed
     margin: 0 auto;
     grid-template-columns: 5fr 4fr;
-    padding: 0 10%;
+    padding: 0 8%;
     grid-template-areas: 
       "project project-list";
     max-width: 1200px;

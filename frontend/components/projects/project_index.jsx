@@ -16,10 +16,9 @@ class ProjectIndex extends React.Component {
   }
 
 render() {
-  const SplashItems = [this.props.projects[3],this.props.projects[1], this.props.projects[5], this.props.projects[2]];
+  // const SplashItems = [this.props.projects[3],this.props.projects[1], this.props.projects[5], this.props.projects[2]];
 
-  const projects = this.props.projects.map(project => {
-
+  const projects = this.props.projects.map( project => {
       return (
         <ProjectIndexItem
           key={project.id}
@@ -30,6 +29,10 @@ render() {
           <ShowcaseDashboard />
         {/* <div className="line">where is this line?</div> */}
           <ul className="project-index grid">
+          <div className="project-index-headers grid">
+            <span>Favorites!</span>
+            <span>See More!</span> {/* this needs to be a link?*/}
+          </div>
             {projects}
           </ul>
       </div>

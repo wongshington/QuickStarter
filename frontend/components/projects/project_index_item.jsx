@@ -4,31 +4,31 @@ import { Line } from 'rc-progress';
 // import rewardContainer from 'wherever';
 
 const ProjectIndexItem = ({ project }) => (
-  <li className="project-item" >
-    <Link to={`/projects/${project.id}`}>
-      <div style={{ backgroundImage: `url(${project.title_image})` }} className="index-title-img"></div>
-    </Link>
-    <div >
-      <li>{project.title}</li>
-      <li className="index-author-info">
-        <img src={project.author_pic} />
-        {project.author}
-      </li>
-      <li>blurb{project.blurb}</li>
-      <li><i className="fa fa-tag" aria-hidden="true"></i> {project.category_name}</li>
-      <li>
-        <Line percent={project.funded_percentage}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              trailWidth="1.5"
-              strokeColor="#25CB68"
-              trailColor="#f4f7f9"
-              width="260px"/>
+  <li className="project-item grid" >
+    <Link className="index--photo" to={`/projects/${project.id}`}>
+      <div style={{ backgroundImage: `url(${project.title_image})` }} className="index--project-img flex img">
+        <Line 
+          className="line"
+          percent={project.funded_percentage}
+          strokeWidth="5.5"
+          strokeLinecap="square"
+          trailWidth="5.5"
+          strokeColor="#25CB68"
+          trailColor="#f4f7f9" />      
+      </div>
 
-        </li>
-      <li><i className="fa fa-usd" aria-hidden="true"></i>{project.total_funded} already pledged!</li>
-      <li><i className="fa fa-users" aria-hidden="true"></i> {project.backer_count} Backers</li>
-      <li><i className="fa fa-calendar" aria-hidden="true"></i> {project.days_left} Days Left!</li>
+    </Link>
+    <div className="grid index--project-info">
+      <li className="index--project-title">{project.title}</li>
+      <li>blurb sldif gsdkb kdsjlf sdkfds 
+        ksdfb sdkfjb sdkfjb sfkjb sdkjb skdjfb 
+        lwefb l y kn rltkhn lk  lrktnh  oejrbg 
+        {project.blurb}
+      </li> {/* will need a character limit for the blurb*/}
+      <li><i className="fa fa-tag" aria-hidden="true"></i> {project.category_name}</li>
+      <li className="index--project-author">
+        By {project.author}
+      </li>
     </div>
   </li>
 

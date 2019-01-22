@@ -2,7 +2,7 @@ import values from 'lodash/values';
 
 export const selectAllProjects = state =>{
   return (
- values(state.entitiesReducer.projects)
+ values(state.entitiesReducer.projects).slice(0,4)
  );
 };
 

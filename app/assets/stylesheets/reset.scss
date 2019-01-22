@@ -18,7 +18,6 @@ span, article, footer, time, small {
   background: transparent;
   font-family: 'Quicksand', sans-serif;
 
-
 }
 
 ul {
@@ -49,4 +48,17 @@ button {
 button,
 input[type="submit"] {
   cursor: pointer;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.img{
+  background-size: cover;
+  background-position: center;
 }
