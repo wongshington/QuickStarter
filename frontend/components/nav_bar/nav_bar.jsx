@@ -30,7 +30,7 @@ class navBar extends React.Component {
   render() {
 
     return(
-      <nav className="navbar flex">
+      <nav className="navbar grid">
         <div className="navbar--section navbar--section-left">
             <button className="navbar--button button" onClick={()=> this.openExplore()}>Explore</button>
             <button className="navbar--button button" onClick={() => this.openCreate()}>Start a Project</button>
