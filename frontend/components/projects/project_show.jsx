@@ -40,8 +40,6 @@ scrollToRewards(e) {
 // will need to make this scroll speed slower later
 }
 
-
-
 onClick(e) {
   e.preventDefault();
   this.scrollToRewards();
@@ -63,63 +61,57 @@ render() {
   let project = this.props.project;
   return (
     <div>
-      <div className="project-show-upper">
-        <div className="project-main-info">
-          <div className="project-author-info">
-            By {project.author}
+      <div className="show--upper">
+        <div className="show--main-info grid">
+          <div className="show--author-info grid">
             <img src={project.author_pic} />
+            By {project.author}
           </div>
-            <div className="project-title-info">
-              {project.title}
-              <br></br>
-              <li>and blurb info will go here eventually, but for now enjoy this text</li>
-            </div>
+          <div className="show--title-container grid">
+            <li className="show--title">{project.title}</li>
+            <li className="show--title-blurb">and blurb info will go here eventually, but for now enjoy this text</li>
+          </div>
         </div>
-        <br></br>
-        <div className="main-project-details">
-          <div className="project-show-details">
-            <div className="project-show-image">
-                <img src={project.title_image} />
-            </div>
-            <div className="project-info">
-                <Line percent={project.funded_percentage}
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      trailWidth="1.5"
-                      strokeColor="#25CB68"
-                      trailColor="#E6E7E8"
-                      width="100%"
-                      className="project-show-line"
-                      />
-                    <div className="project-show-funded">
-                      <span>${project.total_funded}</span><br></br>
-                      <span>pledged of ${project.funding_goal}</span>
-                    </div>
-                    <div className="project-show-backers">
-                      <span>{project.backer_count}</span><br></br>
-                      <span>Backers</span>
-                    </div>
-                    <div className="project-show-days">
-                      <span>{project.days_left}</span>
-                      <br></br>
-                      <span>Days Left!</span>
-                    </div>
-              <button onClick={this.scrollToRewards} className="back-me-button">Back this project!</button>
-            </div>
+        <div className="show--main-details grid">
+          <div className="show--image img" style={{ backgroundImage: `url(${project.title_image})` }}>
+          </div>
+          <div className="show--info grid">
+              <Line percent={50} 
+              // project.funded_percentage
+                  strokeWidth="1"
+                  strokeLinecap="square"
+                  trailWidth="1"
+                  strokeColor="#25CB68"
+                  trailColor="#E6E7E8"
+                  width="100%"
+                  className="show-line"
+                  />
+                  <div className="show--project-notes show--funded">
+                    <li>${project.total_funded}</li>
+                    <li>pledged of ${project.funding_goal}</li>
+                  </div>
+                  <div className="show--project-notes show--backers">
+                    <li>{project.backer_count}</li>
+                    <li>Backers</li>
+                  </div>
+                  <div className="show--days show--project-notes">
+                    <li>{project.days_left}</li>
+                    <li>Days Left!</li>
+                  </div>
+            <button onClick={this.scrollToRewards} className="back-me-button btn">Back this project!</button>
           </div>
         </div>
       </div>
-        <div className="project-lower-page">
-          <div className="project-description-column">
+        <div className="show--bottom grid">
+          <div className="show--description-column grid">
             <h2>About this project</h2>
-            <br></br>
-            <p className="project-show-description">{project.description}</p>
+            <p className="show--description">{project.description}</p>
           </div>
-          <Route path="/project/:projectId" component={RewardIndexContainer} />
-          <div className="rewards-column"  id="rewards">
+          {/* <Route path="/project/:projectId" component={RewardIndexContainer} /> */}
+          <div className=""  id="rewards">
             {this.makeReward()}
             {
-              <RewardIndexContainer projectId={project.id} />
+            <RewardIndexContainer projectId={project.id} />
             }
           </div>
         </div>

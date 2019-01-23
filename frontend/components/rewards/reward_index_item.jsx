@@ -35,9 +35,9 @@ handleClick(e) {
   render() {
 
       return(
-        <div className="reward-item">
-          <button onClick={this.handleClick} >
-            <div className="overlay">
+        <div className="show--reward-item">
+          <button className="here" onClick={this.handleClick} >
+            <div className="show--reward-overlay">
               <div>Select this reward!</div>
             </div>
             <li>A $<span>{this.reward.pledge_amount}</span> pledge will be eligible for:</li>

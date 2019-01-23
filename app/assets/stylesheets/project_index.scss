@@ -15,7 +15,6 @@
   justify-self: right;
   color: #0000EE;
  }
-
 }
 
 .project-item{
@@ -23,7 +22,7 @@
   width: 100%;
   padding: 10% 0;
   grid-row: 2 / 4;
-  grid-template-rows: 1fr 2fr .5fr;
+  grid-template-rows: 2fr 2fr .5fr;
   grid-gap: 15px;
   margin: 0 auto;
 }
@@ -53,3 +52,20 @@
 // on big screen will have 4 across
 // on med screen will have a square of 2 x 2
 // small screen is one per row
+
+@media only screen and (max-device-width: 600px){
+  .project-index{
+    background: cornflowerblue;
+    grid-template-rows: 75px 1fr 1fr;
+    grid-column-gap: 30px; //probs don't need
+
+  }
+  .project-index-headers{
+    // grid-column: span 4;
+  }
+  .project-item{
+    grid-row: span 2;
+    grid-column: span 2;
+    grid-template-rows: 2fr 2fr .5fr;
+  }
+}

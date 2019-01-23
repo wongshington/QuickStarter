@@ -39,7 +39,8 @@ render() {
   if (!(this.props.rewards.length)) {
     return null;
   }
-  const rewards = this.props.rewards.map(reward => {
+
+  const rewards = this.props.rewards.slice(0,5).map(reward => {
       return (
         <RewardIndexItem
           key={reward.id}
@@ -54,9 +55,8 @@ render() {
 
     return (
       <div  >
-        <ul className="reward-index">
-            <h2>Fund a Project, Reward Yourself!</h2>
-            <br></br>
+        <ul className="show--rewards-column grid">
+            <h2>Support a Project!</h2>
             {rewards}
         </ul>
       </div>
