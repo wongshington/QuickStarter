@@ -13,6 +13,7 @@ import ProjectFormContainer from './projects/project_form_container';
 import RewardFormContainer from './rewards/reward_form_container';
 import ExploreIndexContainer from './explore/explore_index_container';
 import ExploreShowContainer from './explore/explore_show_container';
+import AuthContainer from './auth/auth_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
@@ -23,6 +24,8 @@ const Other = (props) => {
     
 
         <Switch>
+          <Route path="/login" component={AuthContainer}/>
+          <Route path="/signup" component={AuthContainer}/>
           <Route path="/explore" component={ExploreIndexContainer} />
           <ProtectedRoute path="/projects/new" component={ProjectFormContainer} />
           <Route path="/projects/:projectID/rewards/new" component={RewardFormContainer} />
