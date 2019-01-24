@@ -1,0 +1,38 @@
+.form--container{
+  border: 1px solid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 8% 1fr 8%;
+}
+.form--header{
+  font-size: 35px;
+  grid-column:2;
+  text-align: center;
+}
+.form--main{
+  grid-column: 2;
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 15px;
+  label{
+    display: grid;
+    grid-template-columns: 225px 1fr 225px;
+  }
+  label textarea{
+    height: 50px;
+  } 
+  label *{
+    border: 1px solid;
+  }
+}
+.form--upload{
+
+}
+
+.form--first{
+  grid-column: 2;
+  width: 400px;
+  background: lightpink;
+  grid-template-columns: 1fr 1fr 1fr;
+  * {
+    grid-column: 2;
+  }
+}

@@ -24,8 +24,8 @@ const Other = (props) => {
     
 
         <Switch>
-          <Route path="/login" component={AuthContainer}/>
-          <Route path="/signup" component={AuthContainer}/>
+          <AuthRoute path="/login" component={AuthContainer}/>
+          <AuthRoute path="/signup" component={AuthContainer}/>
           <Route path="/explore" component={ExploreIndexContainer} />
           <ProtectedRoute path="/projects/new" component={ProjectFormContainer} />
           <Route path="/projects/:projectID/rewards/new" component={RewardFormContainer} />

@@ -5,7 +5,7 @@
   height: 91vh;
 }
 
-.auth--form{
+.auth--form{ 
   grid-column: 2;
   grid-row: 2;
   max-width: 440px; // so doesn't grow huge with errors
@@ -31,8 +31,10 @@
   span{
     height: 45px;
     text-align: center;
-    button{
+    div{
       color: #0000EE;
+      cursor: pointer;
+      display: inline;
     }
   }
 }

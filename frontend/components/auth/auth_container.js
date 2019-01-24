@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { login, logout, signup, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
-  let formType = ownProps.location.pathname == "/login" ? "Login" : "SignUp";
+  let formType = ownProps.location.pathname == "/login" ? "Login" : "Sign Up";
   return ({
     modalState: state.uiReducer.modalState,
     errors: state.errorsReducer.sessionErrReducer,
@@ -15,13 +14,14 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 
-const mapDispatchToProps = (dispatch) => ({
-
-  login: (user) => dispatch(login(user)),
-  signup: (user) => dispatch(signup(user)),
-  logout: () => dispatch(logout()),
-  clearErrors: () => dispatch(clearErrors())
-
-});
+const mapDispatchToProps = (dispatch) => {
+  console.log("clear")
+  return ({
+    login: (user) => dispatch(login(user)),
+    signup: (user) => dispatch(signup(user)),
+    logout: () => dispatch(logout()),
+    clearErrors: () => dispatch(clearErrors())
+  })
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

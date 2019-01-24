@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import FirstForm from '../forms/first_page';
 
 import { getCategories } from '../../actions/category_actions';
 
@@ -27,6 +28,7 @@ class ProjectForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.update = this.update.bind(this);
   }
 
 
@@ -81,8 +83,6 @@ handleImageUpload(file) {
       return (
         <ul className="form-errors">
           <span>"Whoa Whoa Whoa not so fast there!"</span>
-          <br></br>
-          <br></br>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>{error}</li>
           ))}
@@ -93,79 +93,68 @@ handleImageUpload(file) {
 
 render () {
 
-
-
   return (
-    <div >
-        <div className="form-container">
-        <h2 className="form-header">Get your QuickStart in just a few minutes here!</h2>
-        <form onSubmit={this.handleSubmit} className="project-form">
-              {this.renderErrors()}
-          <label>Project Title
-            <br></br>
-          <input type="text" placeholder="What will you call your QuickStarter?" onChange={this.update('title')}></input>
-          </label>
-            <label>Image
-              <br></br>
-              <div>
-                <div className="FileUpload">
-                  <Dropzone
-                    onDrop={this.onImageDrop.bind(this)}
-                    multiple={false}
-                    accept="image/*">
-                    <div>Upload your QuickStarter project photo here!</div>
-                  </Dropzone>
-                </div>
-
-                <div>
-                  {this.state.title_image === '' ? null :
-                    <div>
-                      <p>{this.state.uploadedFile.name}</p>
-                      <img src={this.state.title_image} />
-                    </div>}
-                  </div>
-                </div>
-              </label>
-            <br></br>
-          <label>Project Blurb/Short Snippet
-            <br></br>
-          <textarea placeholder="If you only had two sentences to describe your project..." onChange={this.update('blurb')} className="form-blurb"></textarea>
-          </label>
-            <br></br>
-          <label>Project Description
-            <br></br>
-          <textarea  placeholder="Let's see your story telling skills at work here!" onChange={this.update('description')} className="form-description"></textarea>
-          </label>
-            <br></br>
-          <label>Category
-            <br></br>
-            <select onChange={this.update('category_id')}>
-              <option>What kind of QuickStarter is yours?</option>
-              <option value="1" >Art</option>
-              <option value="2">Food</option>
-              <option value="3">Music</option>
-              <option value="4">Technology</option>
-              <option value="5">Fashion</option>
-              <option value="6">Film & Video</option>
-            </select>
-          </label>
-            <br></br>
-          <label>Funding Deadline
-            <br></br>
-          <input type="date" onChange={this.update('funding_deadline')} ></input>
-          </label>
-          <br></br>
-            <label>Funding Goal
-              <br></br>
-            <input type="number" onChange={this.update('funding_goal')}placeholder="How much to get your QuickStart?"></input>
-            </label>
-        <br></br>
-          <input className="form-submit" type="submit" value="Get Your QuickStart!" />
-        </form>
-      <br></br>
-    </div>
+    <div className="form--container grid">
+      <h2 className="form--header">Get your QuickStart in just a few minutes here!</h2>
+      <FirstForm update={this.update} />
     </div>
   );
+
+  // return (
+  //   <div className="form--container grid">
+  //     <h2 className="form--header">Get your QuickStart in just a few minutes here!</h2>
+  //     <form onSubmit={this.handleSubmit} className="form--main grid">
+  //           {this.renderErrors()}
+  //         <label>Project Title
+  //           <input type="text" placeholder="What will you call your QuickStarter?" onChange={this.update('title')}></input>
+  //         </label>
+  //         <label>Image
+  //           <div>
+  //             <div className="from--upload">
+  //               {/* <Dropzone
+  //                 onDrop={this.onImageDrop.bind(this)}
+  //                 multiple={false}
+  //                 accept="image/*">
+  //                 <div>Upload your QuickStarter project photo here!</div>
+  //               </Dropzone> */}
+  //             </div>
+  //             <div>
+  //               {this.state.title_image === '' ? null :
+  //                 <div>
+  //                   <p>{this.state.uploadedFile.name}</p>
+  //                   <img src={this.state.title_image} />
+  //                 </div>
+  //               }
+  //             </div>
+  //           </div>
+  //         </label>
+  //         <label>Project Blurb/Short Snippet
+  //           <textarea placeholder="If you only had two sentences to describe your project..." onChange={this.update('blurb')} className="form-blurb"></textarea>
+  //         </label>
+  //         <label>Project Description
+  //           <textarea  placeholder="Let's see your story telling skills at work here!" onChange={this.update('description')} className="form-description"></textarea>
+  //         </label>
+  //         <label>Category
+  //           <select onChange={this.update('category_id')}>
+  //             <option>What kind of QuickStarter is yours?</option>
+  //             <option value="1" >Art</option>
+  //             <option value="2">Food</option>
+  //             <option value="3">Music</option>
+  //             <option value="4">Technology</option>
+  //             <option value="5">Fashion</option>
+  //             <option value="6">Film & Video</option>
+  //           </select>
+  //         </label>
+  //         <label>Funding Deadline
+  //           <input type="date" onChange={this.update('funding_deadline')} ></input>
+  //         </label>
+  //         <label>Funding Goal
+  //           <input type="number" onChange={this.update('funding_goal')}placeholder="How much to get your QuickStart?"></input>
+  //         </label>
+  //         <input className="form-submit btn" type="submit" value="Get Your QuickStart!" />
+  //       </form>
+  //   </div>
+  // );
 }
 }
 
