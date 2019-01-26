@@ -12,6 +12,7 @@ class navBar extends React.Component {
 
     this.logOut = this.logOut.bind(this);
     this.logDemo = this.logDemo.bind(this);
+    this.searchToggle = this.searchToggle.bind(this);
   }
 
   logDemo(e) {
@@ -29,6 +30,12 @@ class navBar extends React.Component {
     this.props.logout(this.props.currentUser.id);
   }
 
+  searchToggle(e){
+    e.preventDefault();
+    console.log("sdlhdsgklsdjh")
+    this.props.toggleSearch();
+  }
+
   rightNav(){
     let signIn, guest, signOut;
     if (this.props.currentUser){
@@ -39,8 +46,8 @@ class navBar extends React.Component {
     }
 
     return (
-      <div className="flex navbar--section navbar--section-right" >
-        <button className="navbar--button button" onClick={() => console.log("this is search")}>Search</button>
+      <div className="grid navbar--section navbar--section-right" >
+        <button className="navbar--button button" onClick={this.searchToggle}>Search</button>
         {signIn}
         {guest}
         {signOut}
@@ -53,7 +60,7 @@ class navBar extends React.Component {
 
     return(
       <nav className="navbar grid">
-        <div className="navbar--section navbar--section-left">
+        <div className="grid navbar--section navbar--section-left">
           <button className="navbar--button button" onClick={() => this.props.history.push("/explore")}>Explore</button>
           <button className="navbar--button button" onClick={() => this.props.history.push("/projects/new")}>Start a Project</button>
         </div>

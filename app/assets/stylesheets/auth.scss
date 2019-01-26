@@ -2,7 +2,7 @@
   grid-template-columns: 1fr auto 1fr;
   background: #F7F7F6;
   grid-template-rows: .25fr auto 1fr;
-  height: 91vh;
+  height: 91vh; 
 }
 
 .auth--form{ 
@@ -11,7 +11,7 @@
   max-width: 440px; // so doesn't grow huge with errors
   border: 1px solid lightgray; 
   // grid-template-columns: 1fr 100% 1fr;
-}
+} 
 .auth--inputs{
   grid-template-rows: repeat(4, 1fr);  
   grid-gap: 20px;

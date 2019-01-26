@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from "react-router-dom";
+import { puts } from 'util';
 
 class AuthForm extends React.Component{
   constructor(props){
@@ -180,7 +181,7 @@ class AuthForm extends React.Component{
       <span>{text}<div onClick={this.clicker}>{`${linkText}!`}</div></span>
     )
   }
-
+ 
   componentDidUpdate(prevProps, prevState){
     // clear erros switching between forms
     if (this.props.location.pathname !== prevProps.location.pathname) this.props.clearErrors();
@@ -225,3 +226,16 @@ class AuthForm extends React.Component{
 }
 
 export default AuthForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
