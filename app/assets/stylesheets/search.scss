@@ -1,8 +1,25 @@
-
+.none{
+  display: none;
+}
+.search--overlay{
+  height: min-content;
+  width: 100vw;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+ 
+}
+.search--full-screen{
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: scroll;
+  background: white;
+}
 .search--input-bar{
   border: 1px solid;
-  position: absolute;
-  top: 0;
+  // top: 0;
   height: 9vh;
   background: white;
   width: 100vw;
@@ -20,8 +37,8 @@
 }
 
 .search--results{
-  
-}
+
+} 
 .search--item{
   border: 1px solid;
   grid-template-columns: 1fr 5fr;

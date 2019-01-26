@@ -1,10 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import {
   Route,
   Redirect,
   Switch,
-  HashRouter
+  withRouter
 } from 'react-router-dom';
 
 import ProjectIndexContainer from './projects/project_index_container';
@@ -15,12 +16,17 @@ import ExploreIndexContainer from './explore/explore_index_container';
 import ExploreShowContainer from './explore/explore_show_container';
 import AuthContainer from './auth/auth_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { strictEqual } from 'assert';
 
 
 const Other = (props) => {
-
+    let hideClass = "";
+    // debugger
+    if (props.displayNone && props.results.length > 0){ //need to also check if there are responses
+      hideClass = " none";
+    }
   return (
-    <div className=" grid">
+    <div className={`grid ${hideClass}`}>
     
 
         <Switch>
@@ -39,4 +45,12 @@ const Other = (props) => {
   );
 };
 
-export default Other;
+const mSTP = (state) => {
+
+  return ({
+    displayNone: state.uiReducer.searchState,
+    results: state.search
+  });
+};
+
+export default connect(mSTP, null)(Other);

@@ -10,6 +10,8 @@ class SearchIndex extends React.Component {
       // photo: ""
     };
     this.renderResults = this.renderResults.bind(this);
+    this.searchToggle = this.searchToggle.bind(this);
+
   }
  
   componentWillReceiveProps(nextProps) {
@@ -42,11 +44,24 @@ class SearchIndex extends React.Component {
     // this.unsplash();
     // uncomment this when the limit is back up
   }
+  
+  searchToggle(e){ //should rename this later
+    e.preventDefault(); //might not need
+    this.props.toggleSearch();
+    this.props.clearSearches();
+    this.props.clearErrors();
+  }
 
   render() {
     let results = this.props.results;
+    
+    let fullSearchWindow = ""; // to show the full screen only when there are search results
+    if (this.props.results.length > 0) fullSearchWindow = "search--full-screen";
 
     let show = this.props.searchState; //this will control if the search components should be showing
+    if (!show){
+      return null
+    }
     // let invisibleClass = "";
     // if (show) invisibleClass = "none";
     // if (show) {
@@ -55,13 +70,13 @@ class SearchIndex extends React.Component {
 
     // if (results[0]) {
       return (
-        <div>
+        <div className={`search--overlay ` + fullSearchWindow}>
           <div className="search--input-bar flex">
             <Search 
                 clearSearches={this.props.clearSearches} 
                 fetchSearch={this.props.fetchSearch}
                 />
-            <div className="search--input-close" onClick={() => console.log("this should close this")}>X</div>
+            <div className="search--input-close" onClick={this.searchToggle}>X</div>
             {/* Loading....(search_index) */}
           </div>
           <div className="grid search--results">
