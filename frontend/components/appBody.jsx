@@ -21,10 +21,10 @@ import { strictEqual } from 'assert';
 
 const Other = (props) => {
     let hideClass = "";
-    // debugger
     if (props.displayNone && props.results.length > 0){ //need to also check if there are responses
       hideClass = " none";
     }
+
   return (
     <div className={`grid ${hideClass}`}>
     
@@ -45,12 +45,13 @@ const Other = (props) => {
   );
 };
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
 
   return ({
     displayNone: state.uiReducer.searchState,
-    results: state.search
+    results: state.search,
+    route: ownProps.location.pathname // need this so that props change and triggers a rerender
   });
 };
 
-export default connect(mSTP, null)(Other);
+export default withRouter(connect(mSTP, null)(Other));

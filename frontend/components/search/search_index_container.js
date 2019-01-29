@@ -7,7 +7,8 @@ import { toggleSearch } from '../../actions/ui_actions';
 const mapStateToProps = state => {
   return ({
       results: state.search,
-      searchState: state.uiReducer.searchState
+      searchState: state.uiReducer.searchState,
+      errors: !!state.errorsReducer.searchErrorsReducer[0]
     });
 };
 

@@ -65,7 +65,6 @@
   grid-gap: 35px;
   border-top: 1px solid lightgray;
   min-height: 65vh;
-
   h2{
     font-size: 24px;
   }
@@ -81,14 +80,30 @@
   height: 200px;
   width: 300px;
   border: 1px solid lightgray;
-  padding: 10%;
   box-sizing: border-box;
 }
 .show--reward-overlay{
+  display: none;
   transition: .5s ease;
   background-color: #2BDE73;
   color: #fff;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  justify-content: center;
+  cursor: pointer;
+  div {
+    align-self: center;
+  } 
 }
 .here{
   height: inherit;
+  width: inherit;
+  padding: 10%;
 }  
+.show--reward-item:hover{
+  .show--reward-overlay{
+    display: flex;
+  }
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 
 
 // might not need getRewards
@@ -24,8 +24,8 @@ class RewardIndexItem extends React.Component{
 
 handleClick(e) {
   e.preventDefault();
-  if (this.props.currentUser === null) {
-      this.props.toggleModal();
+  if (this.props.currentUser === null) { 
+      this.props.history.push("/login");
   } else if (this.props.reward.paid_users === false ) {
     this.props.postBacking(this.props.currentUser.id, this.reward).then((this.props.getProject(this.props.projectId)));
   }
@@ -36,10 +36,10 @@ handleClick(e) {
 
       return(
         <div className="show--reward-item">
-          <button className="here" onClick={this.handleClick} >
-            <div className="show--reward-overlay">
-              <div>Select this reward!</div>
-            </div>
+          <div className="show--reward-overlay " onClick={this.handleClick}>
+            <div>Select this reward!</div>
+          </div>
+          <button className="here"  >
             <li>A $<span>{this.reward.pledge_amount}</span> pledge will be eligible for:</li>
             <li>{this.reward.gift}</li>
             <li >{this.reward.gift_description}</li>
@@ -50,4 +50,4 @@ handleClick(e) {
     }
   }
 
-export default RewardIndexItem;
+export default withRouter(RewardIndexItem);

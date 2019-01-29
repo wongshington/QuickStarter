@@ -15,8 +15,7 @@ class SearchIndex extends React.Component {
   }
  
   componentWillReceiveProps(nextProps) {
-    // debugger
-    if (nextProps.results[0]){
+    if (nextProps.results[0] && nextProps.errors){ // only clear if there is something to clear
       this.props.clearErrors();
     }
   }
