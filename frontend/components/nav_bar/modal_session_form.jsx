@@ -223,7 +223,6 @@ form() {
 
             />
           <input type="submit" value="Log In!" />
-              <br></br>
               <span>Need to create an account? <button onClick={e => this.switchForm(e,"Sign Up")}>Sign Up Now!</button></span>
           </form>
         </div>

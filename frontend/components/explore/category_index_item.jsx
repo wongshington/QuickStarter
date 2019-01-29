@@ -4,12 +4,12 @@ import { Line } from 'rc-progress';
 // import rewardContainer from 'wherever';
 
 const CategoryIndexItem = ({ project }) => {
+  // debugger
   return (
   <li className="category-project-item" >
     <Link to={`/projects/${project.id}`}>
-        <div style={{ backgroundImage: `url(${project.title_image})` }} className="category-index-title-img"></div>
+        <div style={{ backgroundImage: `url(${project.title_image})` }} className="category--index-img img"></div>
       </Link>
-    <br></br>
     <div >
     <li>{project.title}</li>
     <li className="category-index-author-info">
@@ -31,8 +31,6 @@ const CategoryIndexItem = ({ project }) => {
     <li><i className="fa fa-users" aria-hidden="true"></i> {project.backer_count} Backers</li>
     <li><i className="fa fa-calendar" aria-hidden="true"></i> {project.days_left} Days Left!</li>
     </div>
-    <br></br>
-
   </li>
 
 );

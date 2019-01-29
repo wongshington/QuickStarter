@@ -39,7 +39,7 @@ class navBar extends React.Component {
   rightNav(){
     let signIn, guest, signOut, space;
     if (this.props.currentUser){
-      space = <div></div>
+      space = <div></div>;
       signOut = <div onClick={this.logOut}>Sign Out</div>;
     } else{
       signIn = <Link to="/login" >Sign In</Link>;
@@ -55,7 +55,6 @@ class navBar extends React.Component {
         {signOut}
       </div>
     );
-
   }
 
   render() {

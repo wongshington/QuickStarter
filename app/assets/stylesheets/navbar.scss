@@ -50,10 +50,14 @@
 
   .navbar {
     justify-content: space-between;
-    height: 300px;
-    // might need to make this navbar bigger here
+    height: 320px;
     font-size: 35px;
     position: relative;
+    grid-template-areas: 
+    "logo logo logo"
+    "left space right";
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 2fr 3fr 2fr;
   }
 
   .navbar--button {
@@ -63,24 +67,30 @@
   }
 
   .navbar--image {
-    width: 500px;
-    position: absolute;
-    height: 50px;
-    left: 25vw;
-    top: 4vh;
+    grid-area: logo;
+    padding: 0 150px;
+    display: grid;
+    border-bottom: 1px solid lightgrey;
+    img{
+      align-self: center;
+    }
   }
 
   .navbar--section {
-    width: 700px;
-    position: absolute;
-    bottom: 0;
+    height: auto;
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
   }
 
   .navbar--section-right{
-    right: 0;
-    justify-content: flex-end;
+    grid-area: right;
+    grid-template-columns: 1fr 1fr;
+    :last-child{
+      display: none; // hide guest button on mobile
+    }
+  }
+  .navbar--section-left{
+    grid-area: left;
   }
 
 }

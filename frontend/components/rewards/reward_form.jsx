@@ -37,8 +37,6 @@ class RewardForm extends React.Component {
     return (
       <ul className="form-errors">
         <span>"Whoa Whoa Whoa not so fast there!"</span>
-        <br></br>
-        <br></br>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
@@ -59,21 +57,14 @@ render() {
         <form onSubmit={this.handleSubmit} className="reward-form">
         {this.renderErrors()}
         <label>Reward Gift
-          <br></br>
         <input type="text" placeholder="What gift will the users get?" onChange={this.update('gift')}></input>
         </label>
-          <br></br>
         <label>Gift Description
-          <br></br>
         <textarea placeholder="What sorts of goodies does that gift entail?" onChange={this.update('gift_description')}></textarea>
         </label>
-          <br></br>
         <label>Donation Amount
-          <br></br>
         <input type="number" placeholder="How much will users be donating?" onChange={this.update('pledge_amount')}></input>
         </label>
-          <br></br>
-          <br></br>
         <input className="form-submit" type="submit" value="Create Your Reward!" />
         </form>
       </div>

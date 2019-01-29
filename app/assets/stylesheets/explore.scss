@@ -5,7 +5,7 @@
   h3{
     grid-column: 2 / 3;
     font-size: 20px;
-    color: #2BDE73;
+    color: #029469;
     border-bottom: 1px solid lightgray;
   }
 }
@@ -18,9 +18,30 @@
   span{
     padding-left: 10px;
     font-size: 20px;
-    color: #2BDE73;
+    color: #029469;
   }
 }
+
+//category index page
+.category{
+  padding:0 8%;
+}
+.category--title{
+  font-size: 30px;
+  padding: 10px;
+  span{
+    color:#029469
+  }
+}
+.category--index-list{
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 35px;
+}
+.category--index-img{
+  height: 100px;
+  width: 100px;
+}
+
 
 //mobile
 @media only screen and (max-device-width:600px) {
