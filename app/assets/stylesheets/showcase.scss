@@ -47,6 +47,9 @@
 
   .showcase--header{
     font-size: 20px;
+    align-self: center;
+  }
+  .showcase--header-container{
   }
 
   .showcase--header-right{
@@ -69,7 +72,7 @@
 
   .showcase--content-left {
     border-right: 1px dashed lightgray;
-    grid-template-rows: 30px 1fr 10fr 1fr;
+    grid-template-rows: 30px 50px 10fr 1fr;
     height: inherit;
   }
 
@@ -94,7 +97,7 @@
 
   .showcase--content-right {
     grid-area: project-list;
-    grid-template-rows: 30px 1fr 8fr 5fr;
+    grid-template-rows: 30px 50px 8fr 5fr;
     font-size: 14px;
   }
 
@@ -112,7 +115,7 @@
   .showcase--more{
     font-size: 16px;
     color: #0000EE;
-    margin-left: 20px;
+    margin: 20px;
   }
 
 }

@@ -22,7 +22,7 @@ class ShowcaseDashboard extends React.Component {
       <div to={`/projects/${project.id}`} className="showcase grid">
         <div className="showcase--content-left grid">
           <div></div>
-          <div className="showcase--header-container">
+          <div className="showcase--header-container grid">
             <span className="showcase--text showcase--header">Featured Project</span>
           </div>
           <Link to={`/projects/${project.id}`} className="showcase--feature grid">
@@ -38,14 +38,14 @@ class ShowcaseDashboard extends React.Component {
         </div>
         <div className="showcase--content-right showcase--list grid">
           <div></div>
-          <div className="showcase--header-container">
+          <div className="showcase--header-container grid">
             <span className="showcase--header showcase--header-right">See More!</span>
           </div>
           <div className="showcase--list-projects grid">
             {items}
           </div>
           <div className="showcase--more-container">
-            <span className="showcase--more">View More Projects</span>
+            <div className="showcase--more">View More Projects</div>
           </div>
         </div>
       </div>

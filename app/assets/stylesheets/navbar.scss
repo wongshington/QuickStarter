@@ -10,8 +10,7 @@
 }
 
 .navbar--section{
-  // justify-content: space-evenly;
-  // align-self: center;
+  justify-items: center;
   height: inherit;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
@@ -19,14 +18,14 @@
     align-self: center;
   }
   *:hover {
-    color: green;
+    color: #029469;
     cursor: pointer;
   }
  
 }
 
-.navbar--section-left{
-  // grid-template-columns: 1fr 1fr;
+.navbar--section-right{
+
 }
 
 // web

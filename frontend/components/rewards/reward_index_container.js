@@ -8,7 +8,7 @@ import { selectRewards } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) =>{
   return ({
-    projectId: ownProps.projectId,
+    projectId: ownProps.match.params.projectId,
     currentUser: state.sessionReducer.currentUser,
     rewards: selectRewards(state.entitiesReducer.rewards)
   });

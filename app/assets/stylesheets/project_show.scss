@@ -50,7 +50,7 @@
   font-size: 15px;
 }
 .show--funded > li{ //first li child
-  color: #25CB68;
+  color: #029469;
 }
 .back-me-button{
   grid-row: 6;
@@ -83,15 +83,17 @@
   box-sizing: border-box;
 }
 .show--reward-overlay{
-  display: none;
+  opacity: 0;
+  display: flex;
+  background-color: #029469;
   transition: .5s ease;
-  background-color: #2BDE73;
   color: #fff;
   position: absolute;
   width: inherit;
   height: inherit;
   justify-content: center;
   cursor: pointer;
+  font-size: 20px;
   div {
     align-self: center;
   } 
@@ -103,7 +105,7 @@
 }  
 .show--reward-item:hover{
   .show--reward-overlay{
-    display: flex;
+    opacity: .9;
   }
 }
 

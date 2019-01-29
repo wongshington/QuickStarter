@@ -35,7 +35,7 @@ makeReward() {
 scrollToRewards(e) {
   e.preventDefault();
   const ele = document.getElementById("rewards");
-  const rect = ele.getBoundingClientRect();
+  const rect = ele.getBoundingClientRect(); // this returns a DOMRect object with directional properties
   window.scrollTo(0, (rect.top-100));
 // will need to make this scroll speed slower later
 }
@@ -50,6 +50,7 @@ onClick(e) {
      this.props.getProject(nextProps.match.params.projectId);
    }
  }
+
 
 render() {
   if (this.props.project === undefined) {
@@ -81,7 +82,7 @@ render() {
                   strokeWidth="1"
                   strokeLinecap="square"
                   trailWidth="1"
-                  strokeColor="#25CB68"
+                  strokeColor="#029469"
                   trailColor="#E6E7E8"
                   width="100%"
                   className="show-line"
@@ -111,7 +112,7 @@ render() {
           <div className=""  id="rewards">
             {this.makeReward()}
             {
-            <RewardIndexContainer projectId={project.id} />
+            <Route path="/projects/:projectId" component={RewardIndexContainer} />
             }
           </div>
         </div>

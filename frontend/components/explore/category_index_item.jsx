@@ -22,7 +22,7 @@ const CategoryIndexItem = ({ project }) => {
             strokeWidth="1.5"
             strokeLinecap="round"
             trailWidth="1.5"
-            strokeColor="#25CB68"
+            strokeColor="#029469"
             trailColor="#f4f7f9"
             width="260px"/>
 

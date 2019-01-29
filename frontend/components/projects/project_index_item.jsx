@@ -13,8 +13,8 @@ const ProjectIndexItem = ({ project }) => (
           strokeWidth="5.5"
           strokeLinecap="square"
           trailWidth="5.5"
-          strokeColor="#25CB68"
-          trailColor="#f4f7f9" />      
+          strokeColor="#029469"
+          trailColor="#f4f7f9" /> 
       </div>
 
     </Link>

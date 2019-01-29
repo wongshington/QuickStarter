@@ -37,8 +37,9 @@ class navBar extends React.Component {
   }
 
   rightNav(){
-    let signIn, guest, signOut;
+    let signIn, guest, signOut, space;
     if (this.props.currentUser){
+      space = <div></div>
       signOut = <div onClick={this.logOut}>Sign Out</div>;
     } else{
       signIn = <Link to="/login" >Sign In</Link>;
@@ -47,6 +48,7 @@ class navBar extends React.Component {
 
     return (
       <div className="grid navbar--section navbar--section-right" >
+        {space}
         <button className="navbar--button button" onClick={this.searchToggle}>Search</button>
         {signIn}
         {guest}
