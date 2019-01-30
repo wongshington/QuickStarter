@@ -1,23 +1,16 @@
 .auth--main{
-  grid-template-columns: 1fr auto 1fr;
   background: #F7F7F6;
   grid-template-rows: .25fr auto 1fr;
   height: 91vh; 
 }
  
 .auth--form{ 
-  grid-column: 2;
-  grid-row: 2;
-  max-width: 440px; // so doesn't grow huge with errors
   border: 1px solid lightgray; 
-  // grid-template-columns: 1fr 100% 1fr;
 }
 .auth--inputs{
-  grid-template-rows: repeat(4, 1fr);  
+  grid-template-rows: repeat(5, 1fr);  
   grid-gap: 20px;
-  grid-column: 2;
   grid-template-columns: 15px 1fr 15px;
-  // grid-template-rows: 15px 1fr 15px; // not sure if i still need this
   input{
     height: 45px;
     padding: 0 10px;
@@ -50,4 +43,45 @@
 }
 .auth--error-grid{
   grid-template-rows: 1fr auto repeat(4, 1fr);
+}
+
+//web
+@media (min-device-width:601px) {
+  .auth--main{
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .auth--form{
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 440px; // so doesn't grow huge with errors
+  }
+  .auth--inputs{
+    grid-column: 2;
+  }
+}
+
+// mobile
+@media only screen and (max-device-width:600px) {
+  .auth--main{
+    height: 85vh;
+  }
+  .auth--form{
+    padding: 10%;
+  }
+  .auth--inputs{
+    grid-row-gap: 35px;
+    h2 { 
+      font-size: 70px;
+    }
+    input{
+      height: 100%;
+      font-size: 32px;
+    }
+    span{
+      font-size: 35px;
+    }
+  }
+  .auth--errors{
+    font-size: 30px;
+  }
 }
