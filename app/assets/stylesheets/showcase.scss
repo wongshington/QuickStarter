@@ -131,8 +131,6 @@
 // mobile
 @media only screen and (max-device-width:600px) {
   .showcase {
-    // width: 100%;
-    // height: 1000px;
     border-top: 1px solid lightgray;
     grid-template-areas: 
         "project"
@@ -144,8 +142,8 @@
   }
 
   .showcase--feature{
-    background: palegreen;
     grid-template-rows: 5fr 1fr 3fr 1fr;
+    border-bottom: 1px solid lightgray;
     * {
       align-self: center;
     }
@@ -161,6 +159,9 @@
   .showcase--text {
     font-size: 30px;
     padding-left: 50px; 
+  }
+  .showcase--text-author{
+    font-size: 14px;
   }
   .showcase--description{
     padding: 0 50px;

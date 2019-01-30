@@ -1,5 +1,4 @@
 .project-index {
-  // background: lightblue;
   border-top: 1px solid lightgray;
   margin-top: 25px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -8,13 +7,13 @@
   height: 55vh; // for now
 }
 .project-index-headers{
- grid-column: span 4;
- grid-template-columns: 1fr 1fr;
+  grid-column: span 4;
+  grid-template-columns: 1fr 1fr;
   padding-top: 25px;
- span:nth-child(2){
-  justify-self: right;
-  color: #0000EE;
- }
+  span:nth-child(2){
+    justify-self: right;
+    color: #0000EE;
+  }
 }
 
 .project-item{
@@ -55,17 +54,34 @@
 
 @media only screen and (max-device-width: 600px){
   .project-index{
-    background: cornflowerblue;
-    grid-template-rows: 75px 1fr 1fr;
-    grid-column-gap: 30px; //probs don't need
-
+    height: auto;
+    > li:nth-of-type(1) { // first item in the index
+      padding-top: 0;
+    }
   }
   .project-index-headers{
-    // grid-column: span 4;
+    grid-column: 1/ 5;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    font-size: 17px;
+    span:nth-child(2){
+      text-align: right;
+      width: -webkit-fill-available;
+    }
   }
   .project-item{
-    grid-row: span 2;
-    grid-column: span 2;
-    grid-template-rows: 2fr 2fr .5fr;
+    grid-row: auto;
+    grid-column: 1/5;
+    grid-template-rows: 3.5fr 2fr;
+    padding: 5% 0;
+  }
+  .index--project-info{
+    grid-template-rows: 1fr 2fr .75fr;
+    font-size: 13px;
+    align-items: center;
+  }
+  .index--project-title{
+    font-size: 23px;
+    padding: 10px 0;
   }
 }
