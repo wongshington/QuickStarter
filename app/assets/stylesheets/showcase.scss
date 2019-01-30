@@ -133,29 +133,34 @@
   .showcase {
     // width: 100%;
     // height: 1000px;
-    border: 1px solid black;
+    border-top: 1px solid lightgray;
     grid-template-areas: 
         "project"
         "project-list";
   }
 
   .showcase--image {
-
-    // this might need to be in here if we have other "showcase--image" elements tht aren't divs
-    // div {
-    //   background-size: cover;
-    // }
     background-size: cover;
-    // background-position: center; 
   }
 
   .showcase--feature{
     background: palegreen;
+    grid-template-rows: 5fr 1fr 3fr 1fr;
+    * {
+      align-self: center;
+    }
+  }
+
+  .showcase--text-title{
+  }
+
+  .showcase--text-author{
+    font-size: 14px;
   }
 
   .showcase--text {
-    font-size: 20px;
-    padding: 50px; 
+    font-size: 30px;
+    padding-left: 50px; 
   }
   .showcase--description{
     padding: 0 50px;
