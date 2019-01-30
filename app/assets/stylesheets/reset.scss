@@ -17,10 +17,12 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: transparent;
   font-family: 'Quicksand', sans-serif;
-
 }
 
 ul {
+  list-style: none;
+}
+li{
   list-style: none;
 }
 

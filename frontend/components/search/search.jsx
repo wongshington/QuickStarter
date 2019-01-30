@@ -27,7 +27,6 @@ class Search extends React.Component{
   update(e){
     // the following two lines act as a debouncing functionality
     let time = window.setTimeout(this.debounced, 2000);
-
     this.setState({search: e.target.value, timeout: time});
   }
 

@@ -25,7 +25,6 @@ const ProjectIndexItem = ({ project }) => (
         lwefb l y kn rltkhn lk  lrktnh  oejrbg 
         {project.blurb}
       </li> {/* will need a character limit for the blurb*/}
-      {/* <li><i className="fa fa-tag" aria-hidden="true"></i> {project.category_name}</li> */}
       <li className="index--project-author">
         By {project.author}
       </li>
