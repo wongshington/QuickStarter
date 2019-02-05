@@ -59,40 +59,26 @@ class SearchIndex extends React.Component {
 
     let show = this.props.searchState; //this will control if the search components should be showing
     if (!show){
-      return null
+      return null;
     }
-    // let invisibleClass = "";
-    // if (show) invisibleClass = "none";
-    // if (show) {
-    //   return null;
-    // }
 
-    // if (results[0]) {
-      return (
-        <div className={`search--overlay ` + fullSearchWindow}>
-          <div className="search--input-bar flex">
-            <Search 
-                clearSearches={this.props.clearSearches} 
-                fetchSearch={this.props.fetchSearch}
-                />
-            <div className="search--input-close" onClick={this.searchToggle}>X</div>
-            {/* Loading....(search_index) */}
-          </div>
-          <div className="grid search--results">
-            {this.renderResults()}
-          </div>
+    return (
+      <div className={`search--overlay ` + fullSearchWindow}>
+        <div className="search--input-bar flex">
+          <Search 
+              clearSearches={this.props.clearSearches} 
+              fetchSearch={this.props.fetchSearch}
+              />
+          <div className="search--input-close" onClick={this.searchToggle}>X</div>
+          {/* Loading....(search_index) */}
         </div>
-      );
-//     } else {
-// // by including this classname in this else statement it just wont appear before you search
+        <div className="grid search--results">
+          {this.renderResults()}
+        </div>
+      </div>
+    );
 
-//     return (
-//     <div className="searchIndex">
-//       {results[0].title}
-//     </div>
-//     );
-//   }
-}
+  }
 }
 
 export default SearchIndex;

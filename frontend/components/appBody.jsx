@@ -18,7 +18,6 @@ import AuthContainer from './auth/auth_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { strictEqual } from 'assert';
 
-
 const Other = (props) => {
     let hideClass = "";
     if (props.displayNone && props.results.length > 0){ //need to also check if there are responses
@@ -27,7 +26,6 @@ const Other = (props) => {
 
   return (
     <div className={`grid ${hideClass}`}>
-    
 
         <Switch>
           <AuthRoute path="/login" component={AuthContainer}/>

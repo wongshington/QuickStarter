@@ -2,14 +2,12 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalContainer from './modal_container';
-import SearchContainer from '../search/search_container';
 import { toggleModal } from '../../actions/ui_actions';
-
 
 class navBar extends React.Component {
   constructor(props){
     super(props);
-
+    
     this.logOut = this.logOut.bind(this);
     this.logDemo = this.logDemo.bind(this);
     this.searchToggle = this.searchToggle.bind(this);
@@ -32,7 +30,6 @@ class navBar extends React.Component {
 
   searchToggle(e){
     e.preventDefault();
-    console.log("sdlhdsgklsdjh")
     this.props.toggleSearch();
   }
 
