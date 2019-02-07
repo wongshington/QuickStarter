@@ -12,6 +12,7 @@
   padding-top: 25px;
   span:nth-child(2){
     justify-self: right;
+    cursor: pointer;
     color: #0000EE;
   }
 }
@@ -64,10 +65,12 @@
     margin-top: 50px;
     margin-bottom: 35px;
     font-size: 17px;
-    span:nth-child(2){
-      text-align: right;
-      width: -webkit-fill-available;
-    }
+    // span:nth-child(2){ // don't think i need this
+    //   text-align: right;
+    //   border: 1px solid;
+    //   cursor: pointer;
+    //   width: -webkit-fill-available;
+    // }
   }
   .project-item{
     grid-row: auto;

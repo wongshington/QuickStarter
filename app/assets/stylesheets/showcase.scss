@@ -9,6 +9,9 @@
 .showcase--content-right {
   grid-area: project-list;
 }
+.showcase--more{
+  cursor: pointer;
+}
 
 // will need to account for super wide screens
 // the showcase spreads too wide as of now, will need to set max width of showcase
@@ -18,7 +21,7 @@
 
   .showcase {
     height: 650px; // this might need to be changed
-    margin: 0 auto;
+    margin: 20px auto;
     grid-template-columns: 5fr 4fr;
     padding: 0 8%;
     grid-template-areas: 
