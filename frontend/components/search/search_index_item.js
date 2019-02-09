@@ -11,8 +11,11 @@ const indexItem = ({item}) =>{
               </div>
             </div>
             <div className="search--item-info grid">
-                <li>{item.title}</li>
-                <li>{item.days_left} days to go</li>
+                  <li>{item.title}</li>
+                <div className="search--item-keyline flex">
+                  <li className="green-text">{item.funded_percentage}% Funded</li>
+                  <li>{item.days_left} days to go</li>
+                </div>
                 <li>By {item.author}</li>
             </div>
       </Link>

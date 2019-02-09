@@ -1,4 +1,5 @@
-
+// header button font size a little smaller?
+// sign out -> logout?
 
 .button {
   border-radius: 3px;
@@ -26,10 +27,6 @@
  
 }
 
-// .navbar--section-right{
-
-// }
-
 // web
 @media (min-device-width: 601px){
   .navbar {
@@ -45,6 +42,14 @@
     margin: auto;
   }
 }
+
+// web small window
+@media (max-width: 600px){
+  .navbar{
+    min-width: 440px;
+  }
+} 
+
 
 // mobile
 @media (max-device-width:600px) {

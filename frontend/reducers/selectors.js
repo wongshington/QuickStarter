@@ -54,4 +54,3 @@ export const categoryProjects = (catId, projects) => {
     }, []);
     return result;
 };
-
