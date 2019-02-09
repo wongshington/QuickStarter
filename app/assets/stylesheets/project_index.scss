@@ -18,7 +18,6 @@
 }
 
 .project-item{
-  // height: auto; might not need
   width: 100%;
   padding: 10% 0;
   grid-row: 2 / 4;
@@ -31,7 +30,6 @@
   flex-direction: column-reverse;
 }
 .index--project-info{
-  // border: 1px solid black;
   grid-template-rows: 2fr 2fr .75fr .75fr
 }
 .index--project-title{

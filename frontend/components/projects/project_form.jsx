@@ -132,16 +132,15 @@ class ProjectForm extends React.Component {
   }
 
   displayNavButtons(){
-    const next = this.state.formPage >= 3 ? <div></div> : <div onClick={this.pageTurner("next")}>Next</div>;
-    const prev = this.state.formPage <= 1 ? <div></div> : <div onClick={this.pageTurner("prev")}>Previous</div>;
+    const next = this.state.formPage >= 3 ? <div></div> : <div className="btn" disabled onClick={this.pageTurner("next")}>Next</div>;
+    const prev = this.state.formPage <= 1 ? <div></div> : <div className="btn" onClick={this.pageTurner("prev")}>Previous</div>;
 
     return (
-      <div className="grid">
+      <div className="form--nav grid">
         {prev}
         {next}
       </div>
     );
-
   }
 
   render () {
@@ -153,6 +152,9 @@ class ProjectForm extends React.Component {
         {this.formRender()}
       </div>
     );
+
+      // still need to account for photo upload;
+
 
     // return (
     //   <div className="form--container grid">

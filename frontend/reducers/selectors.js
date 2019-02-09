@@ -37,3 +37,21 @@ Object.values(payload).forEach(
         });
   return ( { projects, rewards } );
 };
+
+export const formatProjects = (projects) =>(
+  projects.reduce( (acc, curr) => {
+    acc[curr.id] = curr;
+    return acc;
+  }, {} )
+);
+
+export const categoryProjects = (catId, projects) => {
+  const result = Object.values(projects).reduce( (acc, proj) => {
+      if (proj.category_id == catId){
+        acc.push(proj);
+      }
+      return acc;
+    }, []);
+    return result;
+};
+

@@ -6,8 +6,9 @@ import { selectAllCategories } from '../../reducers/selectors';
 
 
 const mapStateToProps = (state) => {
+
   return ({
-    categories: state.entitiesReducer.categories
+    categories: state.entitiesReducer.categories,
   });
 };
 

@@ -3,7 +3,8 @@ import React from 'react';
 const thirdForm = (props) => {
 
   return (
-    <div className="form--third grid">
+    <div className="form--section form--third grid">
+      <div className="form--section-header">Last Step!</div>
       <label>Funding Deadline
         <input 
           type="date" 
@@ -19,7 +20,7 @@ const thirdForm = (props) => {
           value={props.goal}>
           </input>
       </label>
-      <input className="form-submit btn" type="submit" value="Get Your QuickStart!" />
+      <input className="form--submit btn" type="submit" value="Get Your QuickStart!" />
     </div>
   );
 };

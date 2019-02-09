@@ -7,6 +7,8 @@
 
 .navbar{
   grid-template-columns: 1.5fr 5fr 1.5fr;
+  border-bottom: .5px solid lightgray;
+
 }
 
 .navbar--section{
@@ -24,15 +26,14 @@
  
 }
 
-.navbar--section-right{
+// .navbar--section-right{
 
-}
+// }
 
 // web
 @media (min-device-width: 601px){
   .navbar {
     height: 9vh;
-    border-bottom: .5px solid lightgray;
   }
 
   .navbar--button {

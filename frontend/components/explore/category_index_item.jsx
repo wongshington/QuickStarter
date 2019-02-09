@@ -4,32 +4,27 @@ import { Line } from 'rc-progress';
 // import rewardContainer from 'wherever';
 
 const CategoryIndexItem = ({ project }) => {
-  // debugger
   return (
-  <li className="category-project-item" >
+  <li className="index--item grid" >
     <Link to={`/projects/${project.id}`}>
-        <div style={{ backgroundImage: `url(${project.title_image})` }} className="category--index-img img"></div>
-      </Link>
-    <div >
-    <li>{project.title}</li>
-    <li className="category-index-author-info">
-      <img src={project.author_pic} />
-      {project.author}</li>
-    <li>blurb{project.blurb}</li>
-    <li><i className="fa fa-tag" aria-hidden="true"></i> {project.category_name}</li>
-    <li>
-      <Line percent={project.funded_percentage}
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            trailWidth="1.5"
+        <div style={{ backgroundImage: `url(${project.title_image})` }} className="index--project-img flex img">
+          <Line 
+            percent={project.funded_percentage}
+            strokeWidth="5.5"
+            strokeLinecap="square"
+            trailWidth="5.5"
             strokeColor="#029469"
-            trailColor="#f4f7f9"
-            width="260px"/>
-
-      </li>
-    <li><i className="fa fa-usd" aria-hidden="true"></i>{project.total_funded} already pledged!</li>
-    <li><i className="fa fa-users" aria-hidden="true"></i> {project.backer_count} Backers</li>
-    <li><i className="fa fa-calendar" aria-hidden="true"></i> {project.days_left} Days Left!</li>
+            trailColor="#f4f7f9" 
+            className="line"/>
+        </div>
+      </Link>
+    <div className="index--item-info grid">
+      <li>title{project.title}</li>
+      <li>blurb{project.blurb}</li>
+      <li><i className="fa fa-tag" aria-hidden="true"></i> {project.category_name}</li>
+      <li><i className="fa fa-usd" aria-hidden="true"></i>{project.total_funded} already pledged!</li>
+      <li><i className="fa fa-users" aria-hidden="true"></i> {project.backer_count} Backers</li>
+      <li><i className="fa fa-calendar" aria-hidden="true"></i> {project.days_left} Days Left!</li>
     </div>
   </li>
 

@@ -24,7 +24,7 @@ render() {
     );
   }
 
-  const projects = this.props.category.projects.map(project => {
+  const projects = this.props.projects.map(project => {
       return (
         <CategoryIndexItem
           key={project.id}
@@ -37,7 +37,8 @@ render() {
         Check out these amazing <span>{this.props.category.name}</span> QuickStarter Projects!
       </h1>
       <div className="category--index-container" >
-        <ul className="category--index-list grid">
+        <ul className="index--list grid">
+          {projects}
           {projects}
         </ul>
       </div>

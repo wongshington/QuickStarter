@@ -4,17 +4,18 @@ const firstForm = (props) => {
   // debugger
   const categories = props.categories.map( (el, i) => <option value={i + 1} >{el.name}</option> );
   return (
-    <div className="form--first grid">
-      <label>Project Title
+    <div className="form--section form--first grid">
+      <div className="form--section-header">Let's get you set up!</div>
+      <label>What will the world call your QuickStarter?
         <input 
           type="text" 
-          placeholder="What will you call your QuickStarter?" 
+          placeholder="Pick a good title!" 
           onChange={props.update('title')}
           value={props.title}></input>
       </label>
-      <label>Category
+      <label>What kind of QuickStarter is yours?
         <select value={props.category} onChange={props.update('category_id')}>
-          <option>What kind of QuickStarter is yours?</option>
+          <option>Select a Category?</option>
           {categories}
         </select>
       </label>
