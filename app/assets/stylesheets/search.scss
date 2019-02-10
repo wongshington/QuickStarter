@@ -41,10 +41,13 @@
 }
 .search--item{
   grid-template-columns: 1fr 5fr;
-  padding-left: 35px;
+  padding: 5px 35px;
+}
+.search--item:hover{
+  border: 1px solid lightgrey;
+  box-shadow: 5px 4px 5px lightgrey;
 }
 .search--item-img{
-  // padding: 10px;
   width: 100%;
   height: 100%;
 }

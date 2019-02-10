@@ -3,11 +3,7 @@
   padding: 15px 8% 0; // padding-bottom == 0
   background: #FBFBFA;
 }
-.show--main-info{
-  grid-template-columns: 1fr 5fr 1fr;
-}
 .show--author-info{
-  grid-template-rows: 1fr 1fr;
   img{
     height: 4.2rem; // this might need to change later
     width: auto;
@@ -27,13 +23,8 @@
   color: gray;
 }
 .show--main-details{
-  grid-template-columns: 4fr 2fr;
   grid-gap: 35px;
-  height: 55vh;
   padding: 20px 0;
-}
-.show--image{
-  //nothing to put here really
 }
 .show--info{
   grid-template-rows: .5fr repeat(9, 1fr)
@@ -53,18 +44,18 @@
   color: #029469;
 }
 .back-me-button{
-  grid-row: 6;
   text-align: center;
   color: white;
 }
 
 // bottom of page
 .show--bottom{
+  display: grid; // need this here so can reassign later in mobile
   padding: 50px 15% 0;
   grid-template-columns: 5fr 2fr;
   grid-gap: 35px;
   border-top: 1px solid lightgray;
-  min-height: 65vh;
+  margin-bottom: 60px;
   h2{
     font-size: 24px;
   }
@@ -81,6 +72,7 @@
   width: 300px;
   border: 1px solid lightgray;
   box-sizing: border-box;
+  position: relative;
 }
 .show--reward-overlay{
   opacity: 0;
@@ -98,7 +90,7 @@
     align-self: center;
   } 
 }
-.here{
+.show--reward{
   height: inherit;
   width: inherit;
   padding: 10%;
@@ -109,3 +101,96 @@
   }
 }
 
+// web
+@media (min-device-width: 601px){
+  .show--main-info{
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+  .show--main-details{
+    grid-template-columns: 4fr 2fr;
+  }
+  .show--author-info{
+    grid-template-rows: 1fr 1fr;
+  }
+  .back-me-button{
+    grid-row: 6;
+  }
+}
+
+// mobile
+@media (max-device-width:600px) {
+
+  //top of page
+  .show--main-info{
+    grid-gap: 20px;
+  }
+  .show--title{
+    align-self: end;
+  }
+  .show--author-info{
+    grid-template-columns: 100px auto;
+    grid-row-start: 2;
+  }
+  .show--image{
+    height: 600px;
+  }
+  .show--info{
+    height: 500px;
+    grid-template-rows: 50px 250px 150px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .show-line{
+    height: 14px;
+    grid-column: 1/4;
+  }
+  .back-me-button{
+    grid-column: 1/4;
+    font-size: 60px;
+  }
+  .show--project-notes{
+    font-size: 60px;
+    text-align: center;
+    li:nth-child(2){
+      font-size: 40px;
+    }
+  }
+  
+  // bottom of page
+  .show--bottom{
+    padding: 50px 8% 0;
+    grid-template-columns: 1fr;
+    h2{
+      font-size: 60px;
+    }
+  }
+  .show--description-column{
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+  }
+  .show--rewards-column{
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 50px;
+  }
+  .show--reward-item{
+    height: 800px;
+    width: 100%;
+    font-size: 60px;
+  }
+  .show--reward-overlay{
+    font-size: 80px;
+  }
+  .show--reward{
+    padding: 8%;
+    grid-template-rows: 1fr 1fr 1.5fr 1fr;
+    li:first-child{
+      font-size: 70px;
+    }
+    li:nth-child(3){
+      color: gray;
+      font-size: 45px;
+    }
+    span{
+      color: #029469
+    }
+  }
+}

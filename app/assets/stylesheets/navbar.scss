@@ -9,7 +9,6 @@
 .navbar{
   grid-template-columns: 1.5fr 5fr 1.5fr;
   border-bottom: .5px solid lightgray;
-
 }
 
 .navbar--section{
@@ -24,7 +23,6 @@
     color: #029469;
     cursor: pointer;
   }
- 
 }
 
 // web
@@ -50,10 +48,8 @@
   }
 } 
 
-
 // mobile
 @media (max-device-width:600px) {
-
   .navbar {
     justify-content: space-between;
     height: 320px;
@@ -85,7 +81,6 @@
   .navbar--section {
     height: auto;
     border-top: 1px solid lightgrey;
-    border-bottom: 1px solid lightgrey;
   }
 
   .navbar--section-right{
@@ -99,6 +94,4 @@
     grid-area: left;
     text-align: center;
   }
-
 }
-

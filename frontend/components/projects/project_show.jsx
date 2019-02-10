@@ -23,27 +23,26 @@ class ProjectShow extends React.Component{
    this.props.history.push(`/projects/${this.props.project.id}/rewards/new`);
  }
 
-makeReward() {
-
-  if (this.props.currentUser === null){
-    return (<div></div>);
-   } else if (this.props.currentUser.id === this.props.project.author_id) {
-    return(<button onClick={()=>this.openRewardForm()} className="new-reward-button">Add a new Reward!</button>);
+  makeReward() {
+    if (this.props.currentUser === null){
+      return (null);
+    } else if (this.props.currentUser.id === this.props.project.author_id) {
+      return(<button onClick={()=>this.openRewardForm()} className="new-reward-button">Add a new Reward!</button>);
+    }
   }
-}
 
-scrollToRewards(e) {
-  e.preventDefault();
-  const ele = document.getElementById("rewards");
-  const rect = ele.getBoundingClientRect(); // this returns a DOMRect object with directional properties
-  window.scrollTo(0, (rect.top-100));
-// will need to make this scroll speed slower later
-}
+  scrollToRewards(e) {
+    e.preventDefault();
+    const ele = document.getElementById("rewards");
+    const rect = ele.getBoundingClientRect(); // this returns a DOMRect object with directional properties
+    window.scrollTo(0, (rect.top-100));
+  // will need to make this scroll speed slower later
+  }
 
-onClick(e) {
-  e.preventDefault();
-  this.scrollToRewards();
-}
+  onClick(e) {
+    e.preventDefault();
+    this.scrollToRewards();
+  }
 
  componentWillReceiveProps(nextProps) {
    if (this.props.match.params.projectId !== nextProps.match.params.projectId) {
@@ -108,12 +107,9 @@ render() {
             <h2>About this project</h2>
             <p className="show--description">{project.description}</p>
           </div>
-          {/* <Route path="/project/:projectId" component={RewardIndexContainer} /> */}
           <div className=""  id="rewards">
-            {this.makeReward()}
-            {
+            {/* {this.makeReward()} */}
             <Route path="/projects/:projectId" component={RewardIndexContainer} />
-            }
           </div>
         </div>
     </div>
