@@ -2,11 +2,11 @@ json.project do
   json.extract! project, :id, :description, :title, :author_id,
                         :funding_deadline,
                         :funding_goal, :total_funded, :blurb,
-                        :title_image, :extra_image, :category_id
+                        :extra_image, :category_id #, :title_image
   json.author project.author.username
   json.author_pic project.author.img_url
   json.days_left project.days_left
-
+  json.title_image url_for(project.photo)
 
   json.funded_percentage project.funded_percentage
   json.backer_count project.backers.length

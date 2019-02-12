@@ -1,6 +1,7 @@
 class Api::ProjectsController < ApplicationController
   def index
     @projects = Project.all.limit(4)
+    # debugger
     render :index
   end
 
