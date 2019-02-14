@@ -22,7 +22,7 @@ const CategoryIndexItem = ({ project }) => {
       <li className="index--item-title">{project.title}</li>
       <li>blurb{project.blurb}</li>
       <div className="index--item-listitems grid">
-        <li><i className="fa fa-usd" aria-hidden="true"></i>{project.total_funded || 5000} already pledged!</li>
+        <li><i className="fa fa-usd" aria-hidden="true"></i>{project.total_funded || 0} already pledged!</li>
         <li><i className="fa fa-users" aria-hidden="true"></i> {project.backer_count} Backers</li>
         <li><i className="fa fa-calendar" aria-hidden="true"></i> {project.days_left} Days Left!</li>
         <li><i className="fa fa-tag" aria-hidden="true"></i> {project.category_name}</li>

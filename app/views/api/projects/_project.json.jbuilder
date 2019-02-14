@@ -13,7 +13,6 @@ json.project do
   #=> .count will trigger a group by query
   json.category_name project.category.name
 end
-#
 
 json.rewards do
   json.array! project.rewards.each do |reward|

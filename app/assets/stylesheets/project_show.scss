@@ -51,6 +51,7 @@
 // bottom of page
 .show--bottom{
   display: grid; // need this here so can reassign later in mobile
+  min-width: 600px;
   padding: 50px 15% 0;
   grid-template-columns: 5fr 2fr;
   grid-gap: 35px;

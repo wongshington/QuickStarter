@@ -7,7 +7,7 @@ import ThirdForm from '../forms/third_page';
 import { getCategories } from '../../actions/category_actions';
 
 
-import Dropzone from 'react-dropzone';
+// import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
 const PHOTO = "http://res.cloudinary.com/quickstarter/image/upload/c_scale,w_900/v1506312200/octavio-fossatti-37556_zgdbn9.jpg";
@@ -23,12 +23,13 @@ class ProjectForm extends React.Component {
           blurb: "",
           description: "",
           funding_deadline: "",
-          title_image: "",
+          title_image: null,
           category_id: "",
           funding_goal: "",
           total_funded: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.update = this.update.bind(this);
   }
@@ -39,38 +40,52 @@ class ProjectForm extends React.Component {
     this.props.getCategories();
   }
 
-  onImageDrop(files) {
-    this.setState({
-      uploadedFile: files[0]
-    });
-    this.handleImageUpload(files[0]);
-  }
+  // onImageDrop(files) {
+  //   this.setState({
+  //     uploadedFile: files[0]
+  //   });
+  //   this.handleImageUpload(files[0]);
+  // }
 
-  handleImageUpload(file) {
-    let upload = request.post(CLOUDINARY_UPLOAD_URL)
-                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-                        .field('file', file);
+  // handleImageUpload(file) {
+  //   let upload = request.post(CLOUDINARY_UPLOAD_URL)
+  //                       .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+  //                       .field('file', file);
 
-    upload.end((err, response) => {
-      if (err) {
-        console.error(err);
-      }
-      if (response.body.secure_url !== '') {
-        this.setState({
-          title_image: response.body.secure_url
-        });
-      }
-    });
+  //   upload.end((err, response) => {
+  //     if (err) {
+  //       console.error(err);
+  //     }
+  //     if (response.body.secure_url !== '') {
+  //       this.setState({
+  //         title_image: response.body.secure_url
+  //       });
+  //     }
+  //   });
+  // }
+
+  handleFile(e){
+    // debugger
+    const file = e.target.files[0];
+    this.setState({title_image: file})
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let newProject = Object.assign({}, this.state);
-    if (this.state.title_image === "") {
-      newProject = Object.assign(newProject, {title_image: PHOTO});
-    }
+    const formData = Object.keys(this.state).reduce( (acc, curr) => {
+      if (curr == "title_image") return acc;
+      acc.append(`project[${curr}]`, this.state[`${curr}`]);
+      return acc;
+    }, new FormData());
+    formData.append("project[photo]", this.state.title_image);
 
-    this.props.createProject(newProject).then((result) => {
+    // let newProject = Object.assign({}, this.state);
+    // if (this.state.title_image === "") {
+    //   newProject = Object.assign(newProject, {title_image: PHOTO});
+    // }
+
+    this.props.createProject(formData).then((result) => {
       return (this.props.history.push(`/projects/${result.project.id}`));
     });
   }
@@ -102,6 +117,7 @@ class ProjectForm extends React.Component {
                   title={this.state.title} 
                   category={this.state.category_id} 
                   update={this.update} 
+                  handleFile={this.handleFile}
                   categories={this.props.categories} />;
       case 2:
         return <SecondForm 
@@ -112,7 +128,8 @@ class ProjectForm extends React.Component {
         return <ThirdForm 
                   update={this.update} 
                   goal={this.state.funding_goal}
-                  deadline={this.state.funding_deadline}/>;
+                  deadline={this.state.funding_deadline}
+                  handleSubmit={this.handleSubmit}/>;
       default:
         return <FirstForm
                   title={this.state.title}
@@ -123,8 +140,7 @@ class ProjectForm extends React.Component {
   }
 
   pageTurner(dir){ 
-    let diff = dir == "prev" ? -1 : 1;
-    const newForm = diff + this.state.formPage;
+    const newForm = dir + this.state.formPage;
     if (newForm > 3 || newForm < 1) return;
     return e => {
       this.setState({formPage: newForm});
@@ -132,8 +148,8 @@ class ProjectForm extends React.Component {
   }
 
   displayNavButtons(){
-    const next = this.state.formPage >= 3 ? <div></div> : <div className="btn" disabled onClick={this.pageTurner("next")}>Next</div>;
-    const prev = this.state.formPage <= 1 ? <div></div> : <div className="btn" onClick={this.pageTurner("prev")}>Previous</div>;
+    const next = this.state.formPage >= 3 ? <div></div> : <div className="btn" disabled onClick={this.pageTurner(1)}>Next</div>;
+    const prev = this.state.formPage <= 1 ? <div></div> : <div className="btn" onClick={this.pageTurner(-1)}>Previous</div>;
 
     return (
       <div className="form--nav grid">

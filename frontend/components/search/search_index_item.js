@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const indexItem = ({item}) =>{
+const indexItem = ({itemClicker, item}) =>{
+  // debugger
   return (
-      <Link to={`projects/${item.id}`} className="search--item grid"> 
+      <div onClick={itemClicker(item.id)} className="search--item grid"> 
         <div className="grid img-container">
           <div className="img search--item-img" 
                 style={{ backgroundImage: `url(${item.title_image})` }}>
@@ -17,7 +18,7 @@ const indexItem = ({item}) =>{
             </div>
             <li>By {item.author}</li>
         </div>
-      </Link>
+      </div>
   );
 };
 export default indexItem;

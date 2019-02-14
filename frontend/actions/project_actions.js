@@ -1,10 +1,10 @@
 import * as APIUtil from '../util/project_api_util';
+
 // consts below to improve error handling
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const RECEIVE_RANDOM_PROJECT = 'RECEIVE_RANDOM_PROJECT';
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_FUNDING = 'RECEIVE_FUNDING';
-
 
 
 export const receiveProject = payload => ({

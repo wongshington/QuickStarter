@@ -11,6 +11,7 @@ class SearchIndex extends React.Component {
     };
     this.renderResults = this.renderResults.bind(this);
     this.searchToggle = this.searchToggle.bind(this);
+    this.itemClicker = this.itemClicker.bind(this);
 
   }
  
@@ -22,12 +23,12 @@ class SearchIndex extends React.Component {
 
   renderResults(){
     let indexItems = this.props.results.map( el => {
-      return <SearchIndexItem item={el}/>;
+      return <SearchIndexItem 
+                item={el}
+                itemClicker={this.itemClicker}
+             />;
     });
-
-    // debugger
     return indexItems;
-    
   }
 
   // unsplash(){ // this is just to test out some unsplash api business(don't forget ti replace the client_id)
@@ -44,16 +45,22 @@ class SearchIndex extends React.Component {
     // uncomment this when the limit is back up
   }
   
-  searchToggle(e){ //should rename this later
-    e.preventDefault(); //might not need
+  searchToggle(e){ 
     this.props.toggleSearch();
     this.props.clearSearches();
     this.props.clearErrors();
   }
 
+  itemClicker(id){
+    return e => {
+      this.props.history.push(`/projects/${id}`);
+      this.searchToggle(); 
+    };
+  }
+
   render() {
     let results = this.props.results;
-    
+    // debugger
     let fullSearchWindow = ""; // to show the full screen only when there are search results
     if (this.props.results.length > 0) fullSearchWindow = "search--full-screen";
 

@@ -1,7 +1,6 @@
 class Api::ProjectsController < ApplicationController
   def index
     @projects = Project.all.limit(4)
-    # debugger
     render :index
   end
 
@@ -10,7 +9,6 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
-
     @project = Project.new(project_params)
     @project.author_id = current_user.id
 
@@ -54,6 +52,6 @@ class Api::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :funding_deadline, :funding_goal, :description, :category_id, :total_funded, :title_image, :blurb)
+    params.require(:project).permit(:title, :funding_deadline, :funding_goal, :description, :category_id, :total_funded, :title_image, :blurb, :photo)
   end
 end

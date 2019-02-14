@@ -4,9 +4,6 @@ import { withRouter } from 'react-router-dom';
 
 
 class ExploreIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.getCategories(); 

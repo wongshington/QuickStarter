@@ -19,6 +19,10 @@ const firstForm = (props) => {
           {categories}
         </select>
       </label>
+      <label> Photo Time!
+        <input type="file" onChange={props.handleFile}></input>
+
+      </label>
     </div>
   );
 };

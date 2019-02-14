@@ -20,7 +20,7 @@ const thirdForm = (props) => {
           value={props.goal}>
           </input>
       </label>
-      <input className="form--submit btn" type="submit" value="Get Your QuickStart!" />
+      <input className="form--submit btn" onClick={props.handleSubmit} type="submit" value="Get Your QuickStart!" />
     </div>
   );
 };
