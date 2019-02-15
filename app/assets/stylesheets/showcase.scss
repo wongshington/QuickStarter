@@ -38,9 +38,7 @@
   }
 
   .showcase--project{
-    // height: 100%;
     grid-template-columns: 3fr 5fr;
-    // grid-gap: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-bottom: 1px dashed lightgray;
@@ -126,7 +124,32 @@
 // small desktop screen
 @media only screen and (max-width: 800px) {
   .showcase{
-    background: coral;
+    grid-template-areas: 
+      "project project"
+      "project-list project-list";
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+  }
+  .showcase--content-left{ 
+    grid-template-rows: 30px 50px 10fr;
+    border-bottom: 1px solid lightgray;
+    border-right: none;
+  }
+  .showcase--content-right{
+    grid-template-rows: 30px 50px 8fr 1fr;
+  }
+  .showcase--feature{
+    grid-template-rows: 4fr .5fr 1fr .5fr;
+  }
+  .showcase--header{
+    font-size: 25px;
+  }
+  .showcase--project{
+    height: 115px;
+  } 
+  // bottom
+  .project-index{
+    // grid-template-columns: repeat(4, minmax(200px, 1fr));
   }
 }
 

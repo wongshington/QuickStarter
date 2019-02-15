@@ -1,15 +1,16 @@
 .project-index {
-  border-top: 1px solid lightgray;
-  margin-top: 25px;
+  // margin-top: 25px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 25px;
   padding: 0 8%;
   height: 55vh; // for now
 }
 .project-index-headers{
-  grid-column: span 4;
+  grid-column: span 2;
   grid-template-columns: 1fr 1fr;
+  padding: 0 8%;
   padding-top: 25px;
+  border-top: 1px solid lightgray;
   span:nth-child(2){
     justify-self: right;
     cursor: pointer;
@@ -20,7 +21,6 @@
 .project-item{
   width: 100%;
   padding: 10% 0;
-  grid-row: 2 / 4;
   grid-template-rows: 2fr 2fr .5fr;
   grid-gap: 15px;
   margin: 0 auto;
@@ -49,6 +49,24 @@
 // the break points for this section will be different than the ones for the showcase
 // on big screen will have 4 across
 // on med screen will have a square of 2 x 2
+@media only screen and (max-width: 950px) {
+  .project-index {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-item{
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .project-index {
+    grid-template-columns: 1fr;
+  }
+  .project-item{
+    min-height: 450px;
+  }
+}
+
+
 // small screen is one per row
 
 @media only screen and (max-device-width: 600px){
@@ -63,12 +81,6 @@
     margin-top: 50px;
     margin-bottom: 35px;
     font-size: 17px;
-    // span:nth-child(2){ // don't think i need this
-    //   text-align: right;
-    //   border: 1px solid;
-    //   cursor: pointer;
-    //   width: -webkit-fill-available;
-    // }
   }
   .project-item{
     grid-row: auto;

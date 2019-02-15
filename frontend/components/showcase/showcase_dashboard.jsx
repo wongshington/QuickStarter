@@ -19,7 +19,7 @@ class ShowcaseDashboard extends React.Component {
     let items = this.props.projects.map( (el) =>  (<DashboardItem key={el.title} project={el}/> ) );
 
     return (
-      <div to={`/projects/${project.id}`} className="showcase grid">
+      <div className="showcase grid">
         <div className="showcase--content-left grid">
           <div></div>
           <div className="showcase--header-container grid">
@@ -34,7 +34,7 @@ class ShowcaseDashboard extends React.Component {
             </div>
             <span className="showcase--text showcase--text-author" >By {project.author}</span>
           </Link>
-          <div></div>
+         
         </div>
         <div className="showcase--content-right showcase--list grid">
           <div></div>

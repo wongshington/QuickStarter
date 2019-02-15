@@ -27,12 +27,11 @@ render() {
     return (
       <div>
           <ShowcaseDashboard />
-        {/* <div className="line">where is this line?</div> */}
-          <ul className="project-index grid">
           <div className="project-index-headers grid">
             <span>Favorites!</span>
-            <span>See More!</span> {/* this needs to be a link?*/}
+            <span>See More!</span>
           </div>
+          <ul className="project-index grid">
             {projects}
           </ul>
       </div>
