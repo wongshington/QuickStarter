@@ -47,6 +47,7 @@ has_many :rewards,
 through: :purchased_rewards,
 source: :reward
 
+has_one_attached :photo
 
 # associations
 

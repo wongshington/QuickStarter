@@ -16,11 +16,13 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
-  font-family: 'Open Sans', sans-serif;
-
+  font-family: 'Quicksand', sans-serif;
 }
 
 ul {
+  list-style: none;
+}
+li{
   list-style: none;
 }
 
@@ -48,4 +50,23 @@ button {
 button,
 input[type="submit"] {
   cursor: pointer;
+}
+
+.grid {
+  display: grid;
+}
+.flex {
+  display: flex;
+}
+.img{
+  background-size: cover;
+  background-position: center;
+}
+.btn{
+  color: white;
+  text-align: center; //this might conflict with some other styles ??
+  background-color: #00A677;
+}
+.green-text{
+  color: #029469
 }

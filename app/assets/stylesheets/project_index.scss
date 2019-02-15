@@ -1,0 +1,100 @@
+.project-index {
+  // margin-top: 25px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 25px;
+  padding: 0 8%;
+  height: 55vh; // for now
+}
+.project-index-headers{
+  grid-column: span 2;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 8%;
+  padding-top: 25px;
+  border-top: 1px solid lightgray;
+  span:nth-child(2){
+    justify-self: right;
+    cursor: pointer;
+    color: #0000EE;
+  }
+}
+
+.project-item{
+  width: 100%;
+  padding: 10% 0;
+  grid-template-rows: 2fr 2fr .5fr;
+  grid-gap: 15px;
+  margin: 0 auto;
+}
+.index--project-img{
+  height: 100%; //temporary
+  flex-direction: column-reverse;
+}
+.index--project-info{
+  grid-template-rows: 2fr 2fr .75fr .75fr
+}
+.index--project-title{
+  font-size: 20px;
+}
+.index--project-author{
+  color: gray;
+}
+.line{
+  width: 100%;
+}
+.index--photo{
+  height: 100%;
+}
+// index
+
+// the break points for this section will be different than the ones for the showcase
+// on big screen will have 4 across
+// on med screen will have a square of 2 x 2
+@media only screen and (max-width: 950px) {
+  .project-index {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-item{
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .project-index {
+    grid-template-columns: 1fr;
+  }
+  .project-item{
+    min-height: 450px;
+  }
+}
+
+
+// small screen is one per row
+
+@media only screen and (max-device-width: 600px){
+  .project-index{
+    height: auto;
+    > li:nth-of-type(1) { // first item in the index
+      padding-top: 0;
+    }
+  }
+  .project-index-headers{
+    grid-column: 1/ 5;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    font-size: 17px;
+  }
+  .project-item{
+    grid-row: auto;
+    grid-column: 1/5;
+    grid-template-rows: 3.5fr 2fr;
+    padding: 5% 0;
+  }
+  .index--project-info{
+    grid-template-rows: 1fr 2fr .75fr;
+    font-size: 13px;
+    align-items: center;
+  }
+  .index--project-title{
+    font-size: 23px;
+    padding: 10px 0;
+  }
+}

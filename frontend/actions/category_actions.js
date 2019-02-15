@@ -3,12 +3,13 @@ import * as APIUtil from '../util/category_util';
 export const RECEIVE_CATEGORY = 'RECEIVE_CATEGORY';
 export const RECEIVE_ALL_CATEGORIES = 'RECEIVE_ALL_CATEGORIES';
 
-export const receiveCategory = category => ({
+export const receiveCategory = ({category, projects}) => ({
   type: RECEIVE_CATEGORY,
-  category
+  category,
+  projects
 });
 
-export const receiveAllCategories = categories => ({
+export const receiveAllCategories = (categories) => ({
   type: RECEIVE_ALL_CATEGORIES,
   categories
 });

@@ -2,7 +2,7 @@ import values from 'lodash/values';
 
 export const selectAllProjects = state =>{
   return (
- values(state.entitiesReducer.projects)
+ values(state.entitiesReducer.projects).slice(0,4)
  );
 };
 
@@ -32,8 +32,27 @@ export const parsePayload = ( payload ) => {
 Object.values(payload).forEach(
         function (el) {
           projects[el.project.id] = el.project;
-            el.rewards.forEach(rewardEl => {rewards[rewardEl.id] = rewardEl;}
+          if (el.rewards){ // some projects don't start with rewards
+            Object.values(el.rewards).forEach(rewardEl => {rewards[rewardEl.id] = rewardEl;}
             );
+          }
         });
   return ( { projects, rewards } );
+};
+
+export const formatProjects = (projects) =>(
+  projects.reduce( (acc, curr) => {
+    acc[curr.id] = curr;
+    return acc;
+  }, {} )
+);
+
+export const categoryProjects = (catId, projects) => {
+  const result = Object.values(projects).reduce( (acc, proj) => {
+      if (proj.category_id == catId){
+        acc.push(proj);
+      }
+      return acc;
+    }, []);
+    return result;
 };

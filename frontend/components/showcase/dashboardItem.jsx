@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 const DashboardItem = ({project}) => {
 
   return (
-    <li className="dashboard-item">
-      <Link to={`/projects/${project.id}`} className="item-photo" style={{ backgroundImage: `url(${project.title_image})` }}>
+    <li className="showcase--project grid">
+    {/* <div></div> */}
+      <Link to={`/projects/${project.id}`} className="showcase--project-photo" style={{ backgroundImage: `url(${project.title_image})`, backgroundSize:"cover" }}>
       </Link>
-      <div className="item-info">
-        <Link to={`/projects/${project.id}`}><span>{project.title}</span></Link>
-        <span>${project.total_funded} funded!</span>
+      <div className="showcase--project-info flex">
+        <Link to={`/projects/${project.id}`}>
+          <li>{project.title}</li>
+        </Link>
+        <li>${project.total_funded} funded!</li>
+        <li className="showcase--project-author">By {project.author}</li>
       </div>
     </li>
   );

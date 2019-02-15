@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 
 
 // might not need getRewards
@@ -9,7 +9,6 @@ class RewardIndexItem extends React.Component{
   constructor(props){
     super(props);
     this.reward = this.props.reward;
-    // this.patchFundingProject = this.props.patchFundingProject.bind(this);
     this.handleClick=this.handleClick.bind(this);
     this.alreadyFunded= this.alreadyFunded.bind(this);
   }
@@ -24,30 +23,34 @@ class RewardIndexItem extends React.Component{
 
 handleClick(e) {
   e.preventDefault();
-  if (this.props.currentUser === null) {
-      this.props.toggleModal();
+  if (!this.props.currentUser) { 
+      this.props.history.push("/login");
   } else if (this.props.reward.paid_users === false ) {
     this.props.postBacking(this.props.currentUser.id, this.reward).then((this.props.getProject(this.props.projectId)));
   }
+  // handle if they've already purchased?
+  // alreadyFunded function
 }
 
 
   render() {
-
+    let text = this.reward.paid_users ? "Already Purchased!!!" : "Select this reward!";
+    
       return(
-        <div className="reward-item">
-          <button onClick={this.handleClick} >
-            <div className="overlay">
-              <div>Select this reward!</div>
-            </div>
-            <li>A $<span>{this.reward.pledge_amount}</span> pledge will be eligible for:</li>
+        <div className="show--reward-item" onClick={this.handleClick}>
+          <div className="show--reward-overlay">
+            <div>{text}</div>
+          </div>
+          <div className="show--reward grid"  >
+            <li>Pledge <span>${this.reward.pledge_amount}</span></li>
             <li>{this.reward.gift}</li>
-            <li >{this.reward.gift_description}</li>
+            <li>{this.reward.gift_description}</li>
+            <li><span>{this.reward.backers}</span> already purchased!</li>
             {this.alreadyFunded()}
-          </button>
+          </div>
         </div>
       );
     }
   }
 
-export default RewardIndexItem;
+export default withRouter(RewardIndexItem);

@@ -15,7 +15,6 @@ export const receiveReward = (reward) => ({
 });
 
 
-
 export const getRewards = (id) => dispatch => (
   APIUtil.getRewards(id).then(rewards => (dispatch(receiveAllRewards(rewards)) )
 ));

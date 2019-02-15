@@ -1,0 +1,98 @@
+// header button font size a little smaller?
+// sign out -> logout?
+
+.button {
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.navbar{
+  grid-template-columns: 1.5fr 5fr 1.5fr;
+  border-bottom: .5px solid lightgray;
+}
+
+.navbar--section{
+  justify-items: center;
+  height: inherit;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  * {
+    align-self: center;
+  }
+  *:hover {
+    color: #029469;
+    cursor: pointer;
+  }
+}
+
+// web
+@media (min-device-width: 601px){
+  .navbar {
+    height: 9vh;
+    padding: 0 15px;
+  }
+
+  .navbar--button {
+    border-radius: 0px;
+    height: -webkit-fill-available;
+  }
+
+  .navbar--image {
+    margin: auto;
+  }
+}
+
+// web small window
+@media (max-width: 600px){
+  .navbar{
+    min-width: 440px;
+  }
+} 
+
+// mobile
+@media (max-device-width:600px) {
+  .navbar {
+    justify-content: space-between;
+    height: 320px;
+    font-size: 35px;
+    position: relative;
+    grid-template-areas: 
+    "logo logo logo"
+    "left space right";
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 2fr 3fr 2fr;
+  }
+
+  .navbar--button {
+    border-radius: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .navbar--image {
+    grid-area: logo;
+    padding: 0 150px;
+    display: grid;
+    border-bottom: 1px solid lightgrey;
+    img{
+      align-self: center;
+    }
+  }
+
+  .navbar--section {
+    height: auto;
+    border-top: 1px solid lightgrey;
+  }
+
+  .navbar--section-right{
+    grid-area: right;
+    grid-template-columns: 1fr 1fr;
+    :last-child{
+      display: none; // hide guest button on mobile
+    }
+  }
+  .navbar--section-left{
+    grid-area: left;
+    text-align: center;
+  }
+}

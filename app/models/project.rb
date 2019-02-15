@@ -29,7 +29,6 @@ class Project < ApplicationRecord
     through: :selected_rewards,
     source: :reward
 
-
   has_many :backers,
     through: :rewards,
     source: :reward_backers
@@ -38,10 +37,21 @@ class Project < ApplicationRecord
     primary_key: :id,
     foreign_key: :category_id,
     class_name: 'Category'
+  
+  has_one_attached :photo
 
   # def self.searched?
   #   self.where("category = ?")
   # end
+  
+  # validation for attached photos
+  validate :ensure_photo
+  # might move to application record if needed for both user and project model
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "must be attached"
+    end
+  end
 
   def update_funds
     result = 0

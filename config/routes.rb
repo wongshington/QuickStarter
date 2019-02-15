@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 root "root#root"
   namespace :api, defaults: {format: :json} do
     resources :categories, only: [:index, :show]
-    resources :users, only: [:create] do
+    resources :users, only: [:create, :show] do
       member do
         post 'purchased_reward'
       end

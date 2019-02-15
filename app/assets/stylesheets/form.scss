@@ -1,172 +1,108 @@
-$green: #2BDE73;
-
-
-.form-page {
-  display: flex;
-}
-.form-errors span{
-  border-bottom: 2px solid red;
-
-}
-
-.project-form {
-  flex-direction: column;
-  align-items: left;
-  display: flex;
-  margin: 0 auto;
-  margin-top: 20px;
-  text-align: center;
-  margin-bottom: 200px;
-}
-.form-header {
-  margin-top: 150px;
-  text-align: center;
-  font-size: xx-large;
-  font-weight: 100;
-}
-.form-errors {
-  margin: 0 auto;
-  color: red;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: 20px;
-}
-.form-errors span {
-  font-size: 25px;
-}
-
-.FileUpload div{
-  margin:0 auto;
-}
-.project-form img {
+.form--container{
+  grid-template-rows: auto 50px 1fr;
+  grid-template-columns: 8% 1fr 8%;
+  grid-gap: 10px;
+  height: 70vh;
   margin-top: 15px;
-  max-width: 400px;
 }
-
-.project-form input{
-  border-bottom: 1px solid black;
-  width: 500px;
-  height: 40px;
-  // border-radius: 5px;
-  margin: 0 auto;
-}
-.project-form input:focus {
-  border-bottom: 1px solid $green;
-}
-.project-form select {
-  width: 500px;
-  height: 40px;
-  font-size: 30px;
-
-}
-.project-form textarea:focus {
-  border-bottom: 1px solid $green;
-}
-
-.project-form label {
-  margin: 0 auto;
-  margin-bottom: 15px;
-}
-
-.form-blurb{
-  border-bottom: 1px solid black;
-  width: 500px;
-  height: 100px;
-  // border-radius:5px;
-}
-
-.form-description {
-  border-bottom: 1px solid black;
-  width: 500px;
-  height: 100px;
-  // border-radius: 5px;
-  margin: 0 auto;
-}
-
-.form-submit {
-  border: 1px solid $green !important;
-  background: $green;
-  color: white;
-  font-weight: bold;
-  height:60px !important;
-}
-.form-submit:hover {
-  border: 1px solid #21bc60 !important;
-  background: #21bc60;
-}
-
-
-
-//
-//
-//
-//
-//
-
-// REWARD FORM
-
-.reward-form {
+.form--header{
+  font-size: 35px;
+  grid-column:2;
   text-align: center;
+}
+.form--main{
+  grid-column: 2;
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 15px;
+  label{
+    display: grid;
+    grid-template-columns: 225px 1fr 225px;
+  }
+  label textarea{
+    height: 50px;
+  } 
+  label *{
+    border: 1px solid;
+  }
+}
+.form--upload{
 
 }
 
-.form-header {
-  padding-bottom: 30px;
-
+.form--first{
+  // grid-column: 2;
+  // width: 400px;
+  // background: lightpink;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // * {
+  //   grid-column: 2;
+  // }
 }
-.rewawrd-form label {
-  margin-bomttom: 20px;
+.form--section{
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: center;
+    max-width: 600px;
+    padding: 10px 0;
+    min-width: 425px;
+  
+  label{
+    display: grid;
+    justify-content: center;
+    font-size: 24px;
+    grid-template-rows: 2fr 5fr;
+    padding: 0 50px;
+    text-align: center;
+    *{ //using the * because not just inputs in the form
+      padding: 10px;
+      border: 1px solid lightgray;
+      font-size: inherit;
+      min-height: 60px;
+      justify-self: center;
+    }
+    input, select{
+      height: 60px;
+      border-radius: 3px;
+      width: 400px;
+    }
+    textarea{
+      height: 120px;
+      width: 400px;
+    }
+    *:hover{
+      border: 1px solid green;
+      box-shadow: 2px 3px lightgrey;
+    }
+    *:focus{
+      border: 1px solid black;
+      outline: 0; //for drop downs
+    }
+  }
+} 
+.form--section-header{
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+.form--nav{
+  grid-template-columns: 1fr 1fr;
+  grid-column: 2/3;
+  grid-row: 2;
+  justify-items: center;
+
+  div{
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    align-self: center;
+  }
+}
+.form--submit{
+  font-size: 22px;
+  width: 400px;
+  justify-self: center;
+  height: 60px;
 }
 
-.reward-form input{
-  border: 1px solid blue;
-  width: 500px;
-  height: 30px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-
-}
-.reward-form textarea{
-  border: 1px solid blue;
-  width: 600px;
-  height: 30px;
-  border-radius: 5px;
-  height: 80px;
-  margin-bottom: 20px;
-
-}
-
-.reward-form input:focus{
-  border: 1px solid $green;
-}
-.reward-form textarea:focus{
-  border: 1px solid $green;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
+// for mobile it looks like things are close to where they should be,
+//  might need a sizing adjustment, but not too bad

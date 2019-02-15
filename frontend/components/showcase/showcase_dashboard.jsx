@@ -19,18 +19,33 @@ class ShowcaseDashboard extends React.Component {
     let items = this.props.projects.map( (el) =>  (<DashboardItem key={el.title} project={el}/> ) );
 
     return (
-      <div to={`/projects/${project.id}`} className="showcase-dashboard">
-        <Link to={`/projects/${project.id}`} className={"dashboard-1"}>
-          <h3>Featured Project</h3>
-          <div className="showcase-photo" style={ {backgroundImage: `url(${project.title_image})`} }>
-            <span className="showcase-title" >{project.title}</span>
-            <span className="showcase-author" >By {project.author}</span>
+      <div className="showcase grid">
+        <div className="showcase--content-left grid">
+          <div></div>
+          <div className="showcase--header-container grid">
+            <span className="showcase--text showcase--header">Featured Project</span>
           </div>
-        </Link>
-        <div className={"dashboard-2"}>
-          <h3>See More!</h3>
-          <div className="showcase-information">
+          <Link to={`/projects/${project.id}`} className="showcase--feature grid">
+            <div className="showcase--image showcase--image-main" style={{ backgroundImage: `url(${project.title_image})`} }></div>
+            <span className="showcase--text showcase--text-title" >{project.title}</span>
+            <div className="showcase--description"> {/* this section needs to be kept to a certain length otherwise it will mess with the css */}
+              this is some descriptive stuffs?? 
+              thskljbd skbnd;gnsd fngksdf fdgsdfgs dfgsdfg sdgkhgck ghcjfc hgjvhj ;gkfdg bksfdbv sdfkjb sdfkljv sfdnkv dkjvbsdf;k
+            </div>
+            <span className="showcase--text showcase--text-author" >By {project.author}</span>
+          </Link>
+         
+        </div>
+        <div className="showcase--content-right showcase--list grid">
+          <div></div>
+          <div className="showcase--header-container grid">
+            <span className="showcase--header showcase--header-right">See More!</span>
+          </div>
+          <div className="showcase--list-projects grid">
             {items}
+          </div>
+          <div className="showcase--more-container">
+            <div className="showcase--more">View More Projects</div>
           </div>
         </div>
       </div>

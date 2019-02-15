@@ -18,10 +18,7 @@ const RewardsReducer = (state = {}, action) => {
     let parseRewards = parsePayload(action.payload).rewards;
       return parseRewards;
     case RECEIVE_PROJECT:
-    // need to finish this file for suuuure
-       // {[action.payload.rewards.id]: action.payload.reward};
-      newState = merge({}, state);
-      // newState[action.payload.reward]
+      newState = merge({}, state, action.payload.rewards);
       return newState;
     default:
       return state;
