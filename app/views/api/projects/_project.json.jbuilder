@@ -15,10 +15,12 @@ json.project do
 end
 
 json.rewards do
-  json.array! project.rewards.each do |reward|
+  project.rewards.each do |reward|
+  json.set! reward.id do
     json.extract! reward, :id, :pledge_amount, :gift, :gift_description
       if current_user
         json.paid_users reward.backers.pluck(:id).include?(current_user.id)
       end
     end
   end
+end

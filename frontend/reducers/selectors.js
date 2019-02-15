@@ -32,8 +32,10 @@ export const parsePayload = ( payload ) => {
 Object.values(payload).forEach(
         function (el) {
           projects[el.project.id] = el.project;
-            el.rewards.forEach(rewardEl => {rewards[rewardEl.id] = rewardEl;}
+          if (el.rewards){ // some projects don't start with rewards
+            Object.values(el.rewards).forEach(rewardEl => {rewards[rewardEl.id] = rewardEl;}
             );
+          }
         });
   return ( { projects, rewards } );
 };

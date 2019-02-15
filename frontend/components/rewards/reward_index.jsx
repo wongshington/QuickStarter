@@ -11,8 +11,6 @@ class RewardIndex extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-
-
   componentDidMount(){
     this.props.getRewards(this.props.projectId);
   }
@@ -45,12 +43,10 @@ class RewardIndex extends React.Component {
             reward={reward}
             projectId={this.props.projectId}
             currentUser={this.props.currentUser}
-            patchFundingProject={this.props.patchFundingProject}
-            toggleModal={this.props.toggleModal}
             postBacking={this.props.postBacking}
             getProject={this.props.getProject}/> );
       });
-
+      
     return (
       <div  >
         <ul className="show--rewards-column grid">
