@@ -56,7 +56,6 @@ class ProjectForm extends React.Component {
   // }
 
   handleFile(e){
-    // debugger
     const file = e.target.files[0];
     this.setState({title_image: file})
 
@@ -82,7 +81,6 @@ class ProjectForm extends React.Component {
   }
 
   update(field) {
-    // debugger
     return e => this.setState({
       [field]: e.currentTarget.value
     });

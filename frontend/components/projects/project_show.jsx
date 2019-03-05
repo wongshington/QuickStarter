@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { Line } from 'rc-progress';
-import Scroll from 'react-scroll';
+// import Scroll from 'react-scroll';
 
-import RewardIndex from '../rewards/reward_index';
 import RewardIndexContainer from '../rewards/reward_index_container';
-// import Project
 
 class ProjectShow extends React.Component{
   constructor(props){
