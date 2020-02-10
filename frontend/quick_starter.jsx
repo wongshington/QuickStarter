@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 // Testing Start
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchSearch = fetchSearch;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.fetchSearch = fetchSearch;
 
 // Testing End
 

@@ -5,7 +5,7 @@ import { getRandomProject } from '../../actions/project_actions';
 
 const mapStateToProps = ({ entitiesReducer, uiReducer }) => {
   if ( !entitiesReducer && !uiReducer ){
-    return {project: undefined, randId: undefined};
+    return { project: undefined, randId: undefined };
   } 
   const randId = uiReducer.randProject || undefined;
   let projects = Object.values(entitiesReducer.projects).slice(0,3);

@@ -21,7 +21,6 @@ class Api::UsersController < ApplicationController
   
   def show
     @user = User.first
-    debugger
     render :show
   end
 

@@ -1,9 +1,8 @@
-import React from 'react';
-import Search from './search';
-import SearchIndexItem from './search_index_item';
+import React from "react";
+import Search from "./search";
+import SearchIndexItem from "./search_index_item";
 
 class SearchIndex extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -12,21 +11,18 @@ class SearchIndex extends React.Component {
     this.renderResults = this.renderResults.bind(this);
     this.searchToggle = this.searchToggle.bind(this);
     this.itemClicker = this.itemClicker.bind(this);
-
   }
- 
+
   componentWillReceiveProps(nextProps) {
-    if (nextProps.results[0] && nextProps.errors){ // only clear if there is something to clear
+    if (nextProps.results[0] && nextProps.errors) {
+      // only clear if there is something to clear
       this.props.clearErrors();
     }
   }
 
-  renderResults(){
-    let indexItems = this.props.results.map( el => {
-      return <SearchIndexItem 
-                item={el}
-                itemClicker={this.itemClicker}
-             />;
+  renderResults() {
+    let indexItems = this.props.results.map(el => {
+      return <SearchIndexItem item={el} itemClicker={this.itemClicker} />;
     });
     return indexItems;
   }
@@ -40,51 +36,50 @@ class SearchIndex extends React.Component {
   //    }).catch( err => console.log("errrrrr", err));
   // }
 
-  componentDidMount(){
+  componentDidMount() {
     // this.unsplash();
     // uncomment this when the limit is back up
   }
-  
-  searchToggle(e){ 
+
+  searchToggle(e) {
     this.props.toggleSearch();
     this.props.clearSearches();
     this.props.clearErrors();
   }
 
-  itemClicker(id){
+  itemClicker(id) {
     return e => {
       this.props.history.push(`/projects/${id}`);
-      this.searchToggle(); 
+      this.searchToggle();
     };
   }
 
   render() {
     let results = this.props.results;
-    // debugger
+
     let fullSearchWindow = ""; // to show the full screen only when there are search results
     if (this.props.results.length > 0) fullSearchWindow = "search--full-screen";
 
     let show = this.props.searchState; //this will control if the search components should be showing
-    if (!show){
+    if (!show) {
       return null;
     }
 
     return (
       <div className={`search--overlay ` + fullSearchWindow}>
         <div className="search--input-bar flex">
-          <Search 
-              clearSearches={this.props.clearSearches} 
-              fetchSearch={this.props.fetchSearch}
-              />
-          <div className="search--input-close" onClick={this.searchToggle}>X</div>
+          <Search
+            clearSearches={this.props.clearSearches}
+            fetchSearch={this.props.fetchSearch}
+          />
+          <div className="search--input-close" onClick={this.searchToggle}>
+            X
+          </div>
           {/* Loading....(search_index) */}
         </div>
-        <div className="grid search--results">
-          {this.renderResults()}
-        </div>
+        <div className="grid search--results">{this.renderResults()}</div>
       </div>
     );
-
   }
 }
 

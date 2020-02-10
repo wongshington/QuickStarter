@@ -18,11 +18,7 @@ class Api::ProjectsController < ApplicationController
       render json: @project.errors.full_messages, status: 422
     end
   end
-
-  def new
-    render :new
-  end
-
+ 
   def show
 
     if params[:id] == "-1"

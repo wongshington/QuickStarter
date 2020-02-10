@@ -5,7 +5,6 @@ const DashboardItem = ({project}) => {
 
   return (
     <li className="showcase--project grid">
-    {/* <div></div> */}
       <Link to={`/projects/${project.id}`} className="showcase--project-photo" style={{ backgroundImage: `url(${project.title_image})`, backgroundSize:"cover" }}>
       </Link>
       <div className="showcase--project-info flex">
