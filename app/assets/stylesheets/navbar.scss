@@ -6,12 +6,13 @@
   padding: 5px;
 }
 
-.navbar{
+.navbar {
   grid-template-columns: 1.5fr 5fr 1.5fr;
-  border-bottom: .5px solid lightgray;
+  border-bottom: 0.5px solid lightgray;
+  font-size: 14px;
 }
 
-.navbar--section{
+.navbar--section {
   justify-items: center;
   height: inherit;
   grid-template-columns: 1fr 1fr 1fr;
@@ -26,7 +27,7 @@
 }
 
 // web
-@media (min-device-width: 601px){
+@media (min-device-width: 601px) {
   .navbar {
     height: 9vh;
     padding: 0 15px;
@@ -43,22 +44,22 @@
 }
 
 // web small window
-@media (max-width: 600px){
-  .navbar{
+@media (max-width: 600px) {
+  .navbar {
     min-width: 440px;
   }
-} 
+}
 
 // mobile
-@media (max-device-width:600px) {
+@media (max-device-width: 600px) {
   .navbar {
     justify-content: space-between;
     height: 320px;
     font-size: 35px;
     position: relative;
-    grid-template-areas: 
-    "logo logo logo"
-    "left space right";
+    grid-template-areas:
+      "logo logo logo"
+      "left space right";
     grid-template-rows: 2fr 1fr;
     grid-template-columns: 2fr 3fr 2fr;
   }
@@ -74,7 +75,7 @@
     padding: 0 150px;
     display: grid;
     border-bottom: 1px solid lightgrey;
-    img{
+    img {
       align-self: center;
     }
   }
@@ -84,14 +85,14 @@
     border-top: 1px solid lightgrey;
   }
 
-  .navbar--section-right{
+  .navbar--section-right {
     grid-area: right;
     grid-template-columns: 1fr 1fr;
-    :last-child{
+    :last-child {
       display: none; // hide guest button on mobile
     }
   }
-  .navbar--section-left{
+  .navbar--section-left {
     grid-area: left;
     text-align: center;
   }

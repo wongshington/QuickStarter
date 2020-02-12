@@ -340,6 +340,25 @@ Reward.create(project_id: project4.id, pledge_amount: 50, gift: "a thank you", g
 Reward.create(project_id: project4.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
 Reward.create(project_id: project4.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
 
+Reward.create(project_id: project5.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project5.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project5.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project6.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project6.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project6.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project7.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project7.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project7.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project8.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project8.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project8.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project9.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project9.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project9.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project10.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project10.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project10.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+
 
 puts "Finished seeding!"
 
