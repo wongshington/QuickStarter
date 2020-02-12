@@ -11,6 +11,7 @@ require 'open-uri'
 User.destroy_all
 Project.destroy_all
 Reward.destroy_all
+<<<<<<< HEAD
 Category.destroy_all
 
 puts "Creating Users..."
@@ -47,6 +48,13 @@ user3.photo.attach(io: file, filename: 'icon.png')
 user3.save
 
 
+=======
+puts "Creating Users..."
+jesse = User.create!(username: 'Jesse Wong', email: "jessewong@email.com", password: "123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308070/katrina_user_rmzxd2.jpg" )
+user1 = User.create(username: "theNextElon", email: "name@email.com", password:"123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308070/katrina_user_rmzxd2.jpg" )
+user2 = User.create(username: 'theIdeaGuy', email: "email@email.com", password: 'password', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
+user3 = User.create(username: 'Quick_Silver', email: "LookAround@email.com", password: 'secure', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
+>>>>>>> 29c0c236c511d49004c49c057f7a464d4077acdb
 
 puts "Creating Categories..."
 cat1 = Category.create(name: "Art")
@@ -74,7 +82,11 @@ project1= Project.new(
   title: "Doggy Hotel: For Dogs by Dogs",
   author_id: user1.id, 
   funding_goal: 5410, 
+<<<<<<< HEAD
   funding_deadline: '2020-08-05', 
+=======
+  funding_deadline: '2012-08-05', 
+>>>>>>> 29c0c236c511d49004c49c057f7a464d4077acdb
   description: "Help fund this Doggo owned and Doggo run hotel! A milkbone in every room and an extra large toilet bowl that can be filled with champagne for special occaisons upon request. We are committed to bringing you a cat free and chocolate free stay at one of our many locations worldwide. Support our mission and donate below!", 
   category_id: cat1.id,
   backer_count: 0, 
