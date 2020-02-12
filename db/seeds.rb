@@ -11,6 +11,7 @@ require 'open-uri'
 User.destroy_all
 Project.destroy_all
 Reward.destroy_all
+Category.destroy_all
 
 puts "Creating Users..."
 jesse = User.new(username: 'Jesse Wong', 

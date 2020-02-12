@@ -4,7 +4,7 @@ json.project do
                         :funding_goal, :total_funded, :blurb,
                         :extra_image, :category_id #, :title_image
   json.author project.author.username
-  json.author_pic project.author.img_url
+  json.author_pic url_for(project.author.photo)
   json.days_left project.days_left
   json.title_image url_for(project.photo)
 

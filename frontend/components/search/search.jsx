@@ -30,7 +30,6 @@ class Search extends React.Component {
   }
 
   render() {
-    console.log("search.jsx");
     return (
       <input
         className="search--input-field"

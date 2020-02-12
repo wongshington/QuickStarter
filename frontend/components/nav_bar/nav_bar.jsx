@@ -41,7 +41,6 @@ class navBar extends React.Component {
       signIn = <Link to="/login">Sign In</Link>;
       guest = <div onClick={this.logDemo}>Guest</div>;
     }
-    if (window.innerWidth < 600) guest = "";
 
     return (
       <div className="grid navbar--section navbar--section-right">
