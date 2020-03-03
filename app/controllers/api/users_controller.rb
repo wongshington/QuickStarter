@@ -13,9 +13,11 @@ class Api::UsersController < ApplicationController
   def purchased_reward
     @user = User.find(params[:id])
     @user_reward = UserReward.new(backer_id: @user.id, reward_id: params[:reward][:id].to_i)
+    # @user.rewards << UserReward.new(backer_id: @user.id, reward_id: params[:reward][:id].to_i)
     @user_reward.save
     @project = Project.find(params[:reward][:project_id])
     @project.update_funds
+    # don't know if i need to manually call this here
     render "api/projects/show"
   end
   

@@ -11,7 +11,6 @@ require 'open-uri'
 User.destroy_all
 Project.destroy_all
 Reward.destroy_all
-<<<<<<< HEAD
 Category.destroy_all
 
 puts "Creating Users..."
@@ -47,15 +46,6 @@ file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/userIcon.png')
 user3.photo.attach(io: file, filename: 'icon.png')
 user3.save
 
-
-=======
-puts "Creating Users..."
-jesse = User.create!(username: 'Jesse Wong', email: "jessewong@email.com", password: "123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308070/katrina_user_rmzxd2.jpg" )
-user1 = User.create(username: "theNextElon", email: "name@email.com", password:"123456", img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308070/katrina_user_rmzxd2.jpg" )
-user2 = User.create(username: 'theIdeaGuy', email: "email@email.com", password: 'password', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
-user3 = User.create(username: 'Quick_Silver', email: "LookAround@email.com", password: 'secure', img_url: "http://res.cloudinary.com/quickstarter/image/upload/v1506308158/user-avatar-placeholder_hdsliy.png")
->>>>>>> 29c0c236c511d49004c49c057f7a464d4077acdb
-
 puts "Creating Categories..."
 cat1 = Category.create(name: "Art")
 cat2 = Category.create(name: "Food")
@@ -64,6 +54,7 @@ cat4 = Category.create(name: "Technology")
 cat5 = Category.create(name: "Fashion")
 cat6 = Category.create(name: "Film & Video")
 
+# 
 puts "Creating Projects..."
 jesse_project = Project.new(
   title: "this is a Title", 
@@ -82,11 +73,7 @@ project1= Project.new(
   title: "Doggy Hotel: For Dogs by Dogs",
   author_id: user1.id, 
   funding_goal: 5410, 
-<<<<<<< HEAD
   funding_deadline: '2020-08-05', 
-=======
-  funding_deadline: '2012-08-05', 
->>>>>>> 29c0c236c511d49004c49c057f7a464d4077acdb
   description: "Help fund this Doggo owned and Doggo run hotel! A milkbone in every room and an extra large toilet bowl that can be filled with champagne for special occaisons upon request. We are committed to bringing you a cat free and chocolate free stay at one of our many locations worldwide. Support our mission and donate below!", 
   category_id: cat1.id,
   backer_count: 0, 
@@ -199,6 +186,7 @@ file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stain_glass.jp
 project9.photo.attach(io: file, filename: 'stain_glass.jpg')
 project9.save
 
+# 
 puts "Building second set of projects..."
 project1= Project.new(
   title: "Doggy Hotel: For Dogs by Dogs",
@@ -317,6 +305,7 @@ file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stain_glass.jp
 project9.photo.attach(io: file, filename: 'stain_glass.jpg')
 project9.save
 
+# 
 
 # project7= Project.create(title: "Doggy Hotel: For Dogs by Dogs", author_id: user1.id, funding_goal: 5410, funding_deadline: '2019-08-05', description: "Help fund this Doggo owned and Doggo run hotel! A milkbone in every room and an extra large toilet bowl that can be filled with champagne for special occaisons upon request. We are committed to bringing you a cat free and chocolate free stay at one of our many locations worldwide. Support our mission and donate below!", category_id: cat1.id, title_image: "http://res.cloudinary.com/quickstarter/image/upload/q_100/v1519713905/christopher-gower-289520-unsplash_rpy3tw.jpg", backer_count: 0, total_funded: 0 )
 # project8= Project.create(title: "Get Poor Slow", author_id: user1.id, funding_goal: 4410, funding_deadline: Date.new(2020, 1, 9), description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", category_id: cat2.id, title_image: "http://res.cloudinary.com/quickstarter/image/upload/c_scale,w_900/v1506312207/lily-lvnatikk-267356_mkeshi.jpg", backer_count: 0, total_funded: 0 )
@@ -338,6 +327,7 @@ project9.save
 # project24= Project.create(title: "Title #24", author_id: user2.id, funding_goal: 4231, funding_deadline: Date.new(2020, 4, 4), description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", category_id: cat3.id, title_image: "http://res.cloudinary.com/quickstarter/image/upload/c_scale,w_900/v1506312201/andrea-cau-51160_nc4h1o.jpg", backer_count: 0, total_funded: 0 )
 
 
+# 
 puts "Creating Rewards..."
 Reward.create(project_id: project1.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
 Reward.create(project_id: project1.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")

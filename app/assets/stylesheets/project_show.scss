@@ -102,10 +102,7 @@
     opacity: 0.9;
   }
 }
-
-//
-//
-
+//  not dryest, can refactor more still
 .show--reward-title {
   font-size: 16px;
 }
@@ -126,9 +123,6 @@
     font-size: 12px;
   }
 }
-
-//
-//
 
 // keep bottom part of page width matched as screen gets smaller
 @media (max-width: 715px) and (min-width: 300px) {
