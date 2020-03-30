@@ -54,6 +54,8 @@ cat4 = Category.create(name: "Technology")
 cat5 = Category.create(name: "Fashion")
 cat6 = Category.create(name: "Film & Video")
 
+
+
 # 
 puts "Creating Projects..."
 jesse_project = Project.new(
@@ -78,7 +80,7 @@ project1= Project.new(
                 A milkbone in every room and an extra large toilet bowl that can be filled with champagne for special occaisons upon request. 
                 We are committed to bringing you a cat-free and chocolate-free stay at one of our many locations worldwide. 
                 Support our mission and donate below!", 
-  category_id: cat1.id,
+  category_id: cat2.id,
   backer_count: 0, 
   total_funded: 0 )
 file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/dogs.jpeg')
@@ -95,128 +97,9 @@ project2= Project.new(
                 
                 This is the project for you! Buy my book and it'll be the last money you ever spend!(maybe) We have compiled all the tips and tricks you need to keep your money right where you want it. Don't spend. Don't loose. Everybody get's poor, but we want to maximize how we GET POOR SLOWLY!
                 Follow me to prosperity friends!!!", 
-  category_id: cat2.id, 
-  backer_count: 0, 
-  total_funded: 0 )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/coins.jpeg')
-project2.photo.attach(io: file, filename: 'coins.jpg')
-project2.save
-
-project3= Project.new(
-  title: "America's Next Top Child Artist", 
-  author_id: user2.id, 
-  funding_goal: 2110, 
-  funding_deadline: Date.new(2020, 6, 12), 
-  description: "Adult artists are so last year! Even Teenage artist can be too anxsty to really want to support. Everyone loves child art, well let's see who's finger-painting skills can take them to the next level! This one of a kind competition is coming to a pre-school near you. All we need is your support to help make your children into the stars that you all see them as. Why hang your child's art on your refirigerator when you can hang it in the Louvre! Support and Donate below!", 
-  category_id: cat1.id, 
-  backer_count: 0, 
-  total_funded: 0  )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/finger_paint.jpeg')
-project3.photo.attach(io: file, filename: 'finger_paint.jpg')
-project3.save
-
-project4= Project.new(
-  title: "Title #4", 
-  author_id: user1.id, 
-  funding_goal: 6010, 
-  funding_deadline: Date.new(2020, 8, 10), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat2.id, 
-  backer_count: 0, 
-  total_funded: 0  )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/pool.jpeg')
-project4.photo.attach(io: file, filename: 'pool.jpg')
-project4.save
-
-project5= Project.new(
-  title: "TSA: The Mix Tape", 
-  author_id: user3.id, 
-  funding_goal: 9010, 
-  funding_deadline: Date.new(2020, 10, 1), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat3.id, 
-  backer_count: 0, 
-  total_funded: 0  )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/airport.jpeg')
-project5.photo.attach(io: file, filename: 'airport.jpg')
-project5.save
-
-project6= Project.new(
-  title: "Title #6", 
-  author_id: user2.id, 
-  funding_goal: 6231, 
-  funding_deadline: Date.new(2020, 4, 4), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat5.id, 
-  backer_count: 0, 
-  total_funded: 0 )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/gentle_mountains.jpeg')
-project6.photo.attach(io: file, filename: 'mountains.jpg')
-project6.save
-
-project7= Project.new(
-  title: "Title #7", 
-  author_id: user3.id, 
-  funding_goal: 6231, 
-  funding_deadline: Date.new(2020, 11, 4), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat3.id, 
-  backer_count: 0, 
-  total_funded: 0 )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/produce.jpeg')
-project7.photo.attach(io: file, filename: 'produce.jpg')
-project7.save
-
-project8= Project.new(
-  title: "Title #8", 
-  author_id: user1.id, 
-  funding_goal: 6231, 
-  funding_deadline: Date.new(2021, 1, 4), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
   category_id: cat4.id, 
   backer_count: 0, 
   total_funded: 0 )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/records.jpeg')
-project8.photo.attach(io: file, filename: 'records.jpg')
-project8.save
-
-project9= Project.new(
-  title: "Title #9", 
-  author_id: user3.id, 
-  funding_goal: 6231, 
-  funding_deadline: Date.new(2021,2, 4), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat5.id, 
-  backer_count: 0, 
-  total_funded: 0 )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stain_glass.jpeg')
-project9.photo.attach(io: file, filename: 'stain_glass.jpg')
-project9.save
-
-# 
-puts "Building second set of projects..."
-project1= Project.new(
-  title: "Doggy Hotel: For Dogs by Dogs",
-  author_id: user1.id, 
-  funding_goal: 5410, 
-  funding_deadline: '2012-08-05', 
-  description: "Help fund this Doggo owned and Doggo run hotel! A milkbone in every room and an extra large toilet bowl that can be filled with champagne for special occaisons upon request. We are committed to bringing you a cat free and chocolate free stay at one of our many locations worldwide. Support our mission and donate below!", 
-  category_id: cat1.id,
-  backer_count: 0, 
-  total_funded: 0 )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/dogs.jpeg')
-project1.photo.attach(io: file, filename: 'dogs.jpg')
-project1.save
-
-project2= Project.new(
-  title: "Get Poor Slow", 
-  author_id: user1.id, 
-  funding_goal: 3410, 
-  funding_deadline: Date.new(2020, 12, 9), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat2.id, 
-  backer_count: 0, 
-  total_funded: 0 )
 file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/coins.jpeg')
 project2.photo.attach(io: file, filename: 'coins.jpg')
 project2.save
@@ -226,7 +109,11 @@ project3= Project.new(
   author_id: user2.id, 
   funding_goal: 2110, 
   funding_deadline: Date.new(2020, 6, 12), 
-  description: "Adult artists are so last year! Even Teenage artist can be too anxsty to really want to support. Everyone loves child art, well let's see who's finger-painting skills can take them to the next level! This one of a kind competition is coming to a pre-school near you. All we need is your support to help make your children into the stars that you all see them as. Why hang your child's art on your refirigerator when you can hang it in the Louvre! Support and Donate below!", 
+  description: "Adult artists are so last year! Even Teenage artist can be too anxsty to really want to support. 
+              Everyone loves child art, and we're going to see who's finger-painting skills can take them to the next level! This one of a kind competition is coming to a pre-school near you. 
+              All we need is your support to help make your children into the stars that you all see them as. Why hang your child's art on your refirigerator when you can hang it in the Louvre! 
+              
+              Support and Donate below!", 
   category_id: cat1.id, 
   backer_count: 0, 
   total_funded: 0  )
@@ -241,7 +128,7 @@ project4= Project.new(
   funding_deadline: Date.new(2020, 8, 10), 
   description: "We've all wondered it. We've all discussed it. Some of us have even joked about it.
   Today we're going to finally get to the bottom of it. Why did the chicken cross the road? This and many of the other unanswered questions surrounding chickens and their fundamental role in modern society will be disected and theorized about at length! Come join us on this journey as we send out monthly updates about our ongoing chicken research. Support for our project is support for curiosity, culture, and of course chicken. Join the pursuit of poultry and higher education!", 
-  category_id: cat2.id, 
+  category_id: cat6.id, 
   backer_count: 0, 
   total_funded: 0  )
 file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/pool.jpeg')
@@ -272,7 +159,7 @@ project6= Project.new(
   Better for brain delopment than blocks? 
   Prettier than the playground? 
   You guessed it! Watching paint dry is the new craze sweeping the nation. Fun for all ages and teaches important life skills like sitting, patience, and dealing with extreme boredom. Join us in our efforts to share these exciting activites with the world. So go out, grab some family or friends, and watch that joyful paint drying event with the important people in your life!", 
-  category_id: cat5.id, 
+  category_id: cat1.id, 
   backer_count: 0, 
   total_funded: 0 )
 file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/gentle_mountains.jpeg')
@@ -280,25 +167,28 @@ project6.photo.attach(io: file, filename: 'mountains.jpg')
 project6.save
 
 project7= Project.new(
-  title: "Title #7", 
+  title: "Wardrobe Wizards!", 
   author_id: user3.id, 
   funding_goal: 6231, 
   funding_deadline: Date.new(2020, 11, 4), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat3.id, 
+  description: "Have you ever wanted to add a little magic into your look? Pulling from warlocks and witches across over 25 different realms, our Wardobe Wizards project is the project for you! 
+                With state of the art elemental magic, we correctly divine the clothes guaranteed to fit you best and turn heads! We source the finest pickled lizards and mystic dragon scales for our divination potions sure to never miss the fashion mark. 
+                Our infallible crystal ball 🔮 readings help us know what you should wear to your next business meeting, hot date, or family affair. Fashion science? Scratch that! We have something better than science. 
+                The brain child of Harry Potter and Ron Weasley, this is sure to be a bigger hit than their last Quidditch Game!", 
+  category_id: cat5.id, 
   backer_count: 0, 
   total_funded: 0 )
 file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/produce.jpeg')
-project7.photo.attach(io: file, filename: 'produce.jpg')
+project7.photo.attach(io: file, filename: 'produce.jpg') # wizard image?
 project7.save
 
 project8= Project.new(
-  title: "Title #8", 
+  title: "", 
   author_id: user1.id, 
   funding_goal: 6231, 
   funding_deadline: Date.new(2021, 1, 4), 
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat4.id, 
+  category_id: cat6.id, 
   backer_count: 0, 
   total_funded: 0 )
 file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/records.jpeg')
@@ -318,18 +208,143 @@ file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stain_glass.jp
 project9.photo.attach(io: file, filename: 'stain_glass.jpg')
 project9.save
 
-project10= Project.new(
-  title: "Title #9", 
-  author_id: user3.id, 
-  funding_goal: 6231, 
-  funding_deadline: Date.new(2021,2, 4), 
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-  category_id: cat5.id, 
-  backer_count: 0, 
-  total_funded: 0 )
-file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stain_glass.jpeg')
-project10.photo.attach(io: file, filename: 'stain_glass.jpg')
-project10.save
+# # 
+# puts "Building second set of projects..."
+# project1= Project.new(
+#   title: "Doggy Hotel: For Dogs by Dogs",
+#   author_id: user1.id, 
+#   funding_goal: 5410, 
+#   funding_deadline: '2012-08-05', 
+#   description: "Help fund this Doggo owned and Doggo run hotel! A milkbone in every room and an extra large toilet bowl that can be filled with champagne for special occaisons upon request. We are committed to bringing you a cat free and chocolate free stay at one of our many locations worldwide. Support our mission and donate below!", 
+#   category_id: cat1.id,
+#   backer_count: 0, 
+#   total_funded: 0 )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/dogs.jpeg')
+# project1.photo.attach(io: file, filename: 'dogs.jpg')
+# project1.save
+
+# project2= Project.new(
+#   title: "Get Poor Slow", 
+#   author_id: user1.id, 
+#   funding_goal: 3410, 
+#   funding_deadline: Date.new(2020, 12, 9), 
+#   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
+#   category_id: cat2.id, 
+#   backer_count: 0, 
+#   total_funded: 0 )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/coins.jpeg')
+# project2.photo.attach(io: file, filename: 'coins.jpg')
+# project2.save
+
+# project3= Project.new(
+#   title: "America's Next Top Child Artist", 
+#   author_id: user2.id, 
+#   funding_goal: 2110, 
+#   funding_deadline: Date.new(2020, 6, 12), 
+#   description: "Adult artists are so last year! Even Teenage artist can be too anxsty to really want to support. Everyone loves child art, well let's see who's finger-painting skills can take them to the next level! This one of a kind competition is coming to a pre-school near you. All we need is your support to help make your children into the stars that you all see them as. Why hang your child's art on your refirigerator when you can hang it in the Louvre! Support and Donate below!", 
+#   category_id: cat1.id, 
+#   backer_count: 0, 
+#   total_funded: 0  )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/finger_paint.jpeg')
+# project3.photo.attach(io: file, filename: 'finger_paint.jpg')
+# project3.save
+
+# project4= Project.new(
+#   title: "Why Did the Chicken Cross the Road?: A Think Piece", 
+#   author_id: user1.id, 
+#   funding_goal: 6010, 
+#   funding_deadline: Date.new(2020, 8, 10), 
+#   description: "We've all wondered it. We've all discussed it. Some of us have even joked about it.
+#   Today we're going to finally get to the bottom of it. Why did the chicken cross the road? This and many of the other unanswered questions surrounding chickens and their fundamental role in modern society will be disected and theorized about at length! Come join us on this journey as we send out monthly updates about our ongoing chicken research. Support for our project is support for curiosity, culture, and of course chicken. Join the pursuit of poultry and higher education!", 
+#   category_id: cat6.id, 
+#   backer_count: 0, 
+#   total_funded: 0  )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/pool.jpeg')
+# project4.photo.attach(io: file, filename: 'pool.jpg')
+# project4.save
+
+# project5= Project.new(
+#   title: "TSA: The Mix Tape", 
+#   author_id: user3.id, 
+#   funding_goal: 9010, 
+#   funding_deadline: Date.new(2020, 10, 1), 
+#   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
+#   category_id: cat3.id, 
+#   backer_count: 0, 
+#   total_funded: 0  )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/airport.jpeg')
+# project5.photo.attach(io: file, filename: 'airport.jpg')
+# project5.save
+
+# project6= Project.new(
+#   title: "D.R.Y. Painting Show", 
+#   author_id: user2.id, 
+#   funding_goal: 6231, 
+#   funding_deadline: Date.new(2020, 4, 4), 
+#   description: "The Home Network went looking for the next primetime show for it's network and we won their content creationg sweepstakes! 
+#   Our project is looking to spread the joy of painting that we explored in our show, and bring it to the masses. Our project is aiming to provide structure and danger free leisure activities to schools around the nation. 
+#   What is safer than soccer? 
+#   Better for brain delopment than blocks? 
+#   Prettier than the playground? 
+#   You guessed it! Watching paint dry is the new craze sweeping the nation. Fun for all ages and teaches important life skills like sitting, patience, and dealing with extreme boredom. Join us in our efforts to share these exciting activites with the world. So go out, grab some family or friends, and watch that joyful paint drying event with the important people in your life!", 
+#   category_id: cat1.id, 
+#   backer_count: 0, 
+#   total_funded: 0 )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/gentle_mountains.jpeg')
+# project6.photo.attach(io: file, filename: 'mountains.jpg')
+# project6.save
+
+# project7= Project.new(
+#   title: "Title #7", 
+#   author_id: user3.id, 
+#   funding_goal: 6231, 
+#   funding_deadline: Date.new(2020, 11, 4), 
+#   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
+#   category_id: cat3.id, 
+#   backer_count: 0, 
+#   total_funded: 0 )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/produce.jpeg')
+# project7.photo.attach(io: file, filename: 'produce.jpg')
+# project7.save
+
+# project8= Project.new(
+#   title: "Title #8", 
+#   author_id: user1.id, 
+#   funding_goal: 6231, 
+#   funding_deadline: Date.new(2021, 1, 4), 
+#   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
+#   category_id: cat4.id, 
+#   backer_count: 0, 
+#   total_funded: 0 )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/records.jpeg')
+# project8.photo.attach(io: file, filename: 'records.jpg')
+# project8.save
+
+# project9= Project.new(
+#   title: "Title #9", 
+#   author_id: user3.id, 
+#   funding_goal: 6231, 
+#   funding_deadline: Date.new(2021,2, 4), 
+#   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
+#   category_id: cat5.id, 
+#   backer_count: 0, 
+#   total_funded: 0 )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stain_glass.jpeg')
+# project9.photo.attach(io: file, filename: 'stain_glass.jpg')
+# project9.save
+
+# project10= Project.new(
+#   title: "Title #9", 
+#   author_id: user3.id, 
+#   funding_goal: 6231, 
+#   funding_deadline: Date.new(2021,2, 4), 
+#   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
+#   category_id: cat5.id, 
+#   backer_count: 0, 
+#   total_funded: 0 )
+# file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stain_glass.jpeg')
+# project10.photo.attach(io: file, filename: 'stain_glass.jpg')
+# project10.save
 
 
 # 
@@ -358,21 +373,22 @@ Reward.create(project_id: project5.id, pledge_amount: 200, gift: "Custom Mixtape
 Reward.create(project_id: project5.id, pledge_amount: 250, gift: "TSA Pre-Check", gift_description: "It might not say it on your boarding pass, but our TSA family will know who you are and always let you cut the security line. This supporter reward is definitely the best bang for your buck!")
 
 Reward.create(project_id: project6.id, pledge_amount: 50, gift: "Paint Chips from the Show", gift_description: "Take a little piece of the show home today! A real paint chip from some real paint from our real show!!! Really.")
-Reward.create(project_id: project6.id, pledge_amount: 150, gift: "Custom Paint Can", gift_description: "")
-Reward.create(project_id: project6.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project6.id, pledge_amount: 150, gift: "Custom Paint Can", gift_description: "You want red paint? You want blue paint? You want green paint? Oh, also we'll write your name on the paint can!")
+Reward.create(project_id: project6.id, pledge_amount: 200, gift: "Official Paint Observation Specs", gift_description: "Never before have you had a paint drying experience like this! Guaranteed to help you see every bit of paint dry with our Official Paint Observation Specs. Think you've seen it all? THINK!AGAIN!")
 
-Reward.create(project_id: project7.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project7.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project7.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project8.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project8.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project8.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project9.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project9.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project9.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project10.id, pledge_amount: 50, gift: "a thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project10.id, pledge_amount: 150, gift: "a big thank you", gift_description: "a card and a hug and all that jazz")
-Reward.create(project_id: project10.id, pledge_amount: 200, gift: "a really big thank you", gift_description: "a card and a hug and all that jazz")
+Reward.create(project_id: project7.id, pledge_amount: 100, gift: "Sorting Cat", gift_description: "From the creators of the Sorting Hat comes the Sorting Cat! The ultimate companion uniquely trained to shred all your non-trendy clothes. *Might also shred some of your trendy furniture though*")
+Reward.create(project_id: project7.id, pledge_amount: 230, gift: "DIY Diviniation Potion Kit", gift_description: "We'll send you everything you need to make your own divination potion from the comfort of your own home. Take it before that big meeting to know just what to wear to crush that presentation!")
+Reward.create(project_id: project7.id, pledge_amount: 500, gift: "🔮 Reading!", gift_description: "We'll tell you exactly what to wear to attract the love of your life!(probably)")
+
+Reward.create(project_id: project8.id, pledge_amount: 50, gift: "", gift_description: "")
+Reward.create(project_id: project8.id, pledge_amount: 150, gift: "", gift_description: "")
+Reward.create(project_id: project8.id, pledge_amount: 200, gift: "", gift_description: "")
+Reward.create(project_id: project9.id, pledge_amount: 50, gift: "", gift_description: "")
+Reward.create(project_id: project9.id, pledge_amount: 150, gift: "", gift_description: "")
+Reward.create(project_id: project9.id, pledge_amount: 200, gift: "", gift_description: "")
+Reward.create(project_id: project10.id, pledge_amount: 50, gift: "", gift_description: "")
+Reward.create(project_id: project10.id, pledge_amount: 150, gift: "", gift_description: "")
+Reward.create(project_id: project10.id, pledge_amount: 200, gift: "", gift_description: "")
 
 
 puts "Finished seeding!"
