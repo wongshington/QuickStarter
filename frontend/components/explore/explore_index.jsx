@@ -23,7 +23,7 @@ class ExploreIndex extends React.Component {
         </Link>
       );
     });
-    // debugger;
+
     return (
       <div className="explore-index grid">
         <h3>Categories</h3>

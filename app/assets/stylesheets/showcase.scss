@@ -9,7 +9,7 @@
 .showcase--content-right {
   grid-area: project-list;
 }
-.showcase--more{
+.showcase--more {
   cursor: pointer;
 }
 
@@ -17,27 +17,25 @@
 // the showcase spreads too wide as of now, will need to set max width of showcase
 
 // web
-@media  (min-device-width:601px) {
-
+@media (min-device-width: 601px) {
   .showcase {
     height: 650px; // this might need to be changed
     margin: 20px auto;
     grid-template-columns: 5fr 4fr;
     padding: 0 8%;
-    grid-template-areas: 
-      "project project-list";
+    grid-template-areas: "project project-list";
     max-width: 1200px;
   }
 
   .showcase--list {
     grid-template-rows: 1fr 1fr 10fr 5fr;
   }
-  
-  .showcase--list-projects{
+
+  .showcase--list-projects {
     grid-template-rows: 1fr 1fr 1fr;
   }
 
-  .showcase--project{
+  .showcase--project {
     grid-template-columns: 3fr 5fr;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -46,25 +44,25 @@
     margin-right: 20px;
   }
 
-  .showcase--header{
+  .showcase--header {
     font-size: 20px;
     align-self: center;
   }
-  .showcase--header-container{
+  .showcase--header-container {
   }
 
-  .showcase--header-right{
+  .showcase--header-right {
     margin-left: 20px;
   }
 
-  .showcase--project-photo{
+  .showcase--project-photo {
     height: 100%;
     margin-left: 20px;
     margin-right: 15px;
     background-position: center;
   }
 
-  .showcase--project-info{
+  .showcase--project-info {
     font-size: 15px;
     list-style: none;
     flex-direction: column;
@@ -78,20 +76,21 @@
   }
 
   .showcase--feature {
-    grid-template-rows: 4fr .5fr 1fr .5fr 1fr; 
+    grid-template-rows: 4fr 0.5fr 1fr 0.5fr 1fr;
     margin-right: 40px;
+    height: inherit;
   }
 
-  .showcase--text-title{
+  .showcase--text-title {
     font-size: 28px;
     margin: 10px 0;
   }
 
-  .showcase--description{
+  .showcase--description {
     font-size: 18px;
   }
 
-  .showcase--text-author{
+  .showcase--text-author {
     font-size: 15px;
     margin: 10px 0;
   }
@@ -102,7 +101,7 @@
     font-size: 14px;
   }
 
-  .showcase--image{
+  .showcase--image {
     background-size: cover;
   }
   .showcase--image-main {
@@ -113,61 +112,59 @@
     grid-template-columns: 1fr 10fr 1fr;
   }
 
-  .showcase--more{
+  .showcase--more {
     font-size: 16px;
-    color: #0000EE;
+    color: #0000ee;
     margin: 20px;
   }
-
 }
 
 // small desktop screen
 @media only screen and (max-width: 800px) {
-  .showcase{
-    grid-template-areas: 
+  .showcase {
+    grid-template-areas:
       "project project"
       "project-list project-list";
     grid-template-rows: 1fr 1fr;
     height: auto;
   }
-  .showcase--content-left{ 
+  .showcase--content-left {
     grid-template-rows: 30px 50px 10fr;
     border-bottom: 1px solid lightgray;
     border-right: none;
   }
-  .showcase--content-right{
+  .showcase--content-right {
     grid-template-rows: 30px 50px 8fr 1fr;
   }
-  .showcase--feature{
-    grid-template-rows: 4fr .5fr 1fr .5fr;
+  .showcase--feature {
+    grid-template-rows: 4fr 0.5fr 1fr 0.5fr;
   }
-  .showcase--header{
+  .showcase--header {
     font-size: 25px;
   }
-  .showcase--project{
+  .showcase--project {
     height: 115px;
-  } 
+  }
   // bottom
-  .project-index{
+  .project-index {
     // grid-template-columns: repeat(4, minmax(200px, 1fr));
   }
 }
 
-
 // mobile
-@media only screen and (max-device-width:600px) {
+@media only screen and (max-device-width: 600px) {
   .showcase {
     border-top: 1px solid lightgray;
-    grid-template-areas: 
-        "project"
-        "project-list";
+    grid-template-areas:
+      "project"
+      "project-list";
   }
 
   .showcase--image {
     background-size: cover;
   }
 
-  .showcase--feature{
+  .showcase--feature {
     grid-template-rows: 5fr 1fr 3fr 1fr;
     border-bottom: 1px solid lightgray;
     * {
@@ -175,21 +172,21 @@
     }
   }
 
-  .showcase--text-title{
+  .showcase--text-title {
   }
 
-  .showcase--text-author{
+  .showcase--text-author {
     font-size: 14px;
   }
 
   .showcase--text {
     font-size: 30px;
-    padding-left: 50px; 
+    padding-left: 50px;
   }
-  .showcase--text-author{
+  .showcase--text-author {
     font-size: 14px;
   }
-  .showcase--description{
+  .showcase--description {
     padding: 0 50px;
   }
 
@@ -201,11 +198,11 @@
     font-size: 15px;
   }
 
-  .showcase--header-container{
+  .showcase--header-container {
     padding-top: 45px;
     padding-bottom: 45px;
   }
-  .showcase--header-right{
+  .showcase--header-right {
     padding: 0 50px;
   }
 
@@ -218,29 +215,29 @@
     color: gray;
   }
 
-  .showcase--list-projects{
+  .showcase--list-projects {
     padding: 50px;
     height: 50vh;
     padding-top: 0;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  .showcase--project{
+  .showcase--project {
     grid-template-columns: 1fr 2fr;
     border-bottom: 1px solid lightgray;
     padding: 10px 0;
   }
-  .showcase--project-photo{
+  .showcase--project-photo {
     background-size: cover;
     background-position: center;
     margin: 30px 0 30px 0;
   }
-  .showcase--project:first-child{
+  .showcase--project:first-child {
     padding-top: 0;
     a {
       margin-top: 0;
     }
   }
-  .showcase--project-info{
+  .showcase--project-info {
     padding-left: 50px;
     flex-direction: column;
     list-style: none;
@@ -249,18 +246,17 @@
   .showcase--project-info * {
     padding-top: 15px;
   }
-  .showcase--project-author{
+  .showcase--project-author {
     color: gray;
   }
-  .showcase--more-container{
+  .showcase--more-container {
     padding: 50px;
   }
-  .showcase--more{
+  .showcase--more {
     font-size: 16px;
-    color: #0000EE;
+    color: #0000ee;
     margin-left: 20px;
   }
-
 
   .showcase--text-author {
     color: gray;
