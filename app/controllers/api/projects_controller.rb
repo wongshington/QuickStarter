@@ -34,23 +34,12 @@ class Api::ProjectsController < ApplicationController
   end
 
   def update
-  @project = Project.find(params[:id])
-
+    @project = Project.find(params[:id])
     if @project.update_attributes(project_params)
       @project.update_funds
       render :show
     else
       render @project.errors.full_messages
-    end
-  end
-
-  def custom_fund
-    @project = Project.find(params[:id])
-    if # if the funding goes through
-      @project.update_funds
-      render :show
-    else
-      # render some errors boi
     end
   end
 

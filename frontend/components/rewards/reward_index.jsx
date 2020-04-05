@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import RewardIndexItem from "./reward_index_item";
+import CustomFundContainer from "./custom_fund_container";
 
 class RewardIndex extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class RewardIndex extends React.Component {
       return null;
     }
 
-    const rewards = this.props.rewards.slice(0, 5).map(reward => {
+    const rewards = this.props.rewards.slice(0, 5).map((reward) => {
       return (
         <RewardIndexItem
           key={reward.id}
@@ -54,6 +55,8 @@ class RewardIndex extends React.Component {
       <div>
         <ul className="show--rewards-column grid">
           <h2>Support a Project!</h2>
+          <CustomFundContainer />
+
           {rewards}
         </ul>
       </div>

@@ -65,9 +65,43 @@
   grid-template-rows: 50px 1fr;
 }
 .show--rewards-column {
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px 110px 1fr;
   grid-row-gap: 20px;
 }
+.show--rewards-custom {
+  height: auto;
+  grid-template-rows: 1fr 2fr;
+  font-size: 20px;
+  border: 1px solid lightgray;
+  grid-gap: 5px;
+  padding: 10px;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    // removes arrow keys for number input
+    -webkit-appearance: none;
+  }
+  .rewards-fund-field:hover,
+  .rewards-fund-field:focus {
+    border: 1px solid #029469;
+  }
+  .rewards-fund-field {
+    margin: 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
+    input {
+      margin-left: 5px;
+    }
+  }
+
+  .rewards-fund-button {
+    margin-top: 5px;
+    background-color: #029469;
+    text-align: center;
+    color: white;
+    align-content: center;
+    cursor: pointer;
+  }
+}
+
 .show--reward-item {
   min-height: 200px;
   width: 300px;
@@ -128,12 +162,15 @@
 @media (max-width: 715px) and (min-width: 300px) {
   .show--bottom {
     padding: 50px 5% 0;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 }
 
 // web
 @media (min-device-width: 601px) {
+  .show--title-container {
+    grid-template-rows: 75px 1fr;
+  }
   .show--main-info {
     grid-template-columns: 1fr 5fr 1fr;
     grid-gap: 10px;
@@ -147,6 +184,25 @@
   .back-me-button {
     grid-row: 6;
   }
+  .show--reward-grid {
+    .show--reward-pledge {
+      font-size: 30px;
+    }
+    .show--reward-title {
+      font-size: 25px;
+    }
+    .show--reward-description {
+      font-size: 20px;
+    }
+    .show--reward-delivery {
+      span {
+        font-size: 16px;
+      }
+    }
+    .show--reward-backers {
+      font-size: 20px;
+    }
+  }
 }
 
 // mobile
@@ -154,6 +210,9 @@
   //top of page
   .show--main-info {
     grid-gap: 20px;
+  }
+  .show--title-container {
+    grid-template-rows: 150px 1fr;
   }
   .show--title {
     align-self: end;
@@ -197,15 +256,46 @@
   .show--description-column {
     grid-template-rows: auto 1fr;
     grid-gap: 20px;
+
+    .show--description {
+      font-size: 35px;
+    }
   }
   .show--rewards-column {
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-row-gap: 50px;
   }
+  .show--rewards-custom {
+    font-size: 40px;
+    .rewards-fund-field {
+      font-size: 50px;
+      input {
+        margin-left: 5px;
+      }
+    }
+    .rewards-fund-button {
+      margin-top: 5px;
+    }
+  }
+
   .show--reward-item {
     height: 800px;
     width: 100%;
     font-size: 60px;
+    .show--reward-title {
+      font-size: 50px;
+    }
+    .show--reward-delivery {
+      span {
+        font-size: 35px;
+      }
+      span:first-child {
+        margin-right: 10px;
+      }
+      // .reward-deliveryHeader {
+      //   font-size: 30px;
+      // }
+    }
   }
   .show--reward-overlay {
     font-size: 80px;

@@ -50,7 +50,7 @@ class RewardIndexItem extends React.Component {
           <li className="show--reward-description">
             {this.props.reward.gift_description}
           </li>
-          <li className="show--reward-delivery">
+          <li className="show--reward-delivery flex">
             <span className="reward-deliveryHeader flex">
               Estimated Delivery
             </span>

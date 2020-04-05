@@ -1,47 +1,46 @@
-
-export const getProjects = data => (
+export const getProjects = (data) =>
   $.ajax({
-    method: 'GET',
-    url: 'api/projects',
-    data
-  })
-);
+    method: "GET",
+    url: "api/projects",
+    data,
+  });
 
-export const getProject = id => (
+export const getProject = (id) =>
   $.ajax({
-    method: 'GET',
-    url: `api/projects/${id}`
-  })
-);
+    method: "GET",
+    url: `api/projects/${id}`,
+  });
 
-export const createProject = project => {
-  return (
-  $.ajax({
+export const createProject = (project) => {
+  return $.ajax({
     method: "POST",
     url: `api/projects`,
     data: project,
     contentType: false,
-    processData: false
-  })
-);
+    processData: false,
+  });
 };
 
 export const patchFundingProject = (project) => {
-  return (
-  $.ajax({
+  return $.ajax({
     method: "PATCH",
     url: `api/projects/${project.id}`,
-    data: {project}
-  })
-);
+    data: { project },
+  });
 };
 
 export const postFunds = (reward) => {
-  return (
-  $.ajax({
+  return $.ajax({
     method: "POST",
     url: `api/projects/${reward.project_id}/rewards`,
-    data: {reward}
-  })
-);
+    data: { reward },
+  });
+};
+
+export const fundAmount = (support) => {
+  return $.ajax({
+    method: "POST",
+    url: `api/supporters/`,
+    data: { support },
+  });
 };
