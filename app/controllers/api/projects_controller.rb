@@ -20,7 +20,6 @@ class Api::ProjectsController < ApplicationController
   end
  
   def show
-
     if params[:id] == "-1"
       @project = Project.random_project
       return @project
@@ -42,6 +41,16 @@ class Api::ProjectsController < ApplicationController
       render :show
     else
       render @project.errors.full_messages
+    end
+  end
+
+  def custom_fund
+    @project = Project.find(params[:id])
+    if # if the funding goes through
+      @project.update_funds
+      render :show
+    else
+      # render some errors boi
     end
   end
 

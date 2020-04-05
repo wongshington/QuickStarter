@@ -58,7 +58,7 @@ class Project < ApplicationRecord
     self.rewards.each do |rew|
       result += (rew.pledge_amount * rew.reward_backers.count)
     end
-    self.total_funded = result
+    self.total_funded += result
     self.save
   end
 

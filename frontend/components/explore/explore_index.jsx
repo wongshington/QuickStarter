@@ -14,8 +14,9 @@ class ExploreIndex extends React.Component {
 
     const categories = Object.values(this.props.categories);
     let content = categories.map((category, i) => {
+      // debugger;
       return (
-        <Link key={category.name} to={`/categories/${i}`}>
+        <Link key={category.name} to={`/categories/${category.id}`}>
           <li>
             {category.name}
             <span>{category.project_count}</span>

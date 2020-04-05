@@ -282,10 +282,10 @@ ActiveRecord::Base.transaction do
     funding_deadline: '2012-08-05', 
     blurb: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-    category_id: cat1.id,
+    category_id: cat2.id,
     backer_count: 0, 
     total_funded: 0 )
-  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/dogs.jpeg')
+  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/trees.jpeg')
   project1.photo.attach(io: file, filename: 'dogs.jpg')
   project1.save
 
@@ -313,7 +313,7 @@ ActiveRecord::Base.transaction do
     category_id: cat1.id, 
     backer_count: 0, 
     total_funded: 0  )
-  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/finger_paint.jpeg')
+  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/stars.jpeg')
   project3.photo.attach(io: file, filename: 'finger_paint.jpg')
   project3.save
 
@@ -327,7 +327,7 @@ ActiveRecord::Base.transaction do
     category_id: cat6.id, 
     backer_count: 0, 
     total_funded: 0  )
-  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/pool.jpeg')
+  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/ggBridge.jpeg')
   project4.photo.attach(io: file, filename: 'pool.jpg')
   project4.save
 
@@ -341,7 +341,7 @@ ActiveRecord::Base.transaction do
     category_id: cat3.id, 
     backer_count: 0, 
     total_funded: 0  )
-  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/airport.jpeg')
+  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/cake.jpeg')
   project5.photo.attach(io: file, filename: 'airport.jpg')
   project5.save
 
@@ -355,7 +355,7 @@ ActiveRecord::Base.transaction do
     category_id: cat1.id, 
     backer_count: 0, 
     total_funded: 0 )
-  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/gentle_mountains.jpeg')
+  file = open('https://quick-starter-dev.s3-us-west-1.amazonaws.com/hongKong.jpeg')
   project6.photo.attach(io: file, filename: 'mountains.jpg')
   project6.save
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Line } from "rc-progress";
-// import Scroll from 'react-scroll';
 
 import RewardIndexContainer from "../rewards/reward_index_container";
 
@@ -58,11 +57,11 @@ class ProjectShow extends React.Component {
   }
 
   render() {
-    if (this.props.project === undefined) {
+    let { project } = this.props;
+    if (project === undefined) {
       return <div>Loading...</div>;
     }
 
-    let project = this.props.project;
     return (
       <div>
         <div className="show--upper">
@@ -73,10 +72,7 @@ class ProjectShow extends React.Component {
             </div>
             <div className="show--title-container grid">
               <li className="show--title">{project.title}</li>
-              <li className="show--title-blurb">
-                and blurb info will go here eventually, but for now enjoy this
-                text
-              </li>
+              <li className="show--title-blurb">{project.blurb}</li>
             </div>
           </div>
           <div className="show--main-details grid">
@@ -119,10 +115,25 @@ class ProjectShow extends React.Component {
         <div className="show--bottom grid">
           <div className="show--description-column grid">
             <h2>About this project</h2>
-            <p className="show--description">{project.description}</p>
+            <p className="show--description">
+              {project.description}
+              <br></br>
+              <br></br>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              auctor porttitor vestibulum. Morbi eget ligula lorem. Donec
+              vehicula vehicula scelerisque. Morbi cursus mauris mollis odio
+              finibus placerat. Donec mauris orci, vestibulum sit amet sagittis
+              eu, porttitor ullamcorper lectus. Sed maximus vulputate arcu, non
+              pellentesque mi fringilla vitae. Nam vestibulum lacus vel erat
+              sodales, id dapibus nisi euismod. Nulla a risus tincidunt,
+              consectetur urna auctor, sollicitudin leo. Aenean eget vestibulum
+              quam. Suspendisse potenti. In elit est, viverra a varius sed,
+              elementum quis nisl. In quis nisl facilisis, ultrices lacus ut,
+              eleifend nisl. Nam nec lacinia lacus, et laoreet arcu. Maecenas
+              blandit.
+            </p>
           </div>
           <div className="" id="rewards">
-            {/* {this.makeReward()} */}
             <Route
               path="/projects/:projectId"
               component={RewardIndexContainer}

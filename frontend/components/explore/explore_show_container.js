@@ -1,23 +1,23 @@
+import { connect } from "react-redux";
 
-import { connect } from 'react-redux';
-
-import ExploreShow from './explore_show';
-import { getCategory } from '../../actions/category_actions';
-import { withRouter } from 'react-router-dom';
-import { categoryProjects } from '../../reducers/selectors';
+import ExploreShow from "./explore_show";
+import { getCategory } from "../../actions/category_actions";
+import { withRouter } from "react-router-dom";
+import { categoryProjects } from "../../reducers/selectors";
 
 const mapStateToProps = (state, ownProps) => {
   const categoryIdx = ownProps.match.params.categoryId;
-
-  return ({
+  return {
     category: state.entitiesReducer.categories[categoryIdx],
     currentUser: state.sessionReducer.currentUser,
-    projects: categoryProjects(categoryIdx, state.entitiesReducer.projects)
-  });
+    projects: categoryProjects(categoryIdx, state.entitiesReducer.projects),
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  getCategory: (id) => dispatch(getCategory(id))
+  getCategory: (id) => dispatch(getCategory(id)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ExploreShow));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ExploreShow)
+);
