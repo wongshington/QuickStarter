@@ -7,6 +7,7 @@ class Api::SupportersController < ApplicationController
         :author,
         :category,
         :backers,
+        :supporters,
         rewards: [:backers]
       ).find(@support.project_id)
       render 'api/projects/show'

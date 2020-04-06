@@ -28,6 +28,7 @@ class Api::ProjectsController < ApplicationController
         :author,
         :category,
         :backers,
+        :supporters,
         rewards: [:backers]
       ).find(params[:id])
     end

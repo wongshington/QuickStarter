@@ -11,10 +11,10 @@ class Project < ApplicationRecord
     foreign_key: :project_id,
     class_name: 'Reward'
 
-            # has_many :supporters,
-            # primary_key: :id,
-            # foreign_key: :project_id,
-            # class_name: 'Supporter'
+  has_many :supporters,
+  primary_key: :id,
+  foreign_key: :project_id,
+  class_name: 'Supporter'
   # maybe don't need
             # has_many :backers,
             # through: :supporters,
@@ -82,6 +82,9 @@ class Project < ApplicationRecord
   def self.random_project
     project = Project.limit(1).order("RANDOM()")[0]
     project
+  end
+  def backer_count
+    backers.length + supporters.length
   end
 
 end

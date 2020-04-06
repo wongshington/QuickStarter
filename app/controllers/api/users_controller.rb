@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
 
   def purchased_reward
     @user = User.find(params[:id])
+    debugger
     @user_reward = UserReward.new(backer_id: @user.id, reward_id: params[:reward][:id].to_i)
     # @user.rewards << UserReward.new(backer_id: @user.id, reward_id: params[:reward][:id].to_i)
     @user_reward.save

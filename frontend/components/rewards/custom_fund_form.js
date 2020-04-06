@@ -9,7 +9,7 @@ class CustomFundForm extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.backed_amount == 0) {
+    if (this.state.backed_amount <= 0) {
       return null;
     }
     this.props

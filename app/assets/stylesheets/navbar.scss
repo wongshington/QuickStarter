@@ -91,9 +91,11 @@
     :last-child {
       display: none; // hide guest button on mobile
     }
+    margin-right: 10px;
   }
   .navbar--section-left {
     grid-area: left;
     text-align: center;
+    margin-left: 10px;
   }
 }

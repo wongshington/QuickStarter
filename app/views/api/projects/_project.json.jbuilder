@@ -9,7 +9,7 @@ json.project do
   json.title_image url_for(project.photo)
 
   json.funded_percentage project.funded_percentage
-  json.backer_count project.backers.length
+  json.backer_count project.backer_count
   #=> .count will trigger a group by query
   json.category_name project.category.name
 end
