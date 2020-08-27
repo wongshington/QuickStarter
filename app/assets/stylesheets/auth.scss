@@ -1,88 +1,91 @@
-.auth--main{
-  background: #F7F7F6;
-  grid-template-rows: .25fr auto 1fr;
-  height: 91vh; 
-}
- 
-.auth--form{ 
-  border: 1px solid lightgray; 
+.auth--main {
+  background: #f7f7f6;
+  grid-template-rows: 0.25fr auto 1fr;
+  height: 91vh;
 }
 
-.auth--inputs{
-  grid-template-rows: repeat(5, 1fr);  
+.auth--form {
+  border: 1px solid lightgray;
+}
+
+// specifically scss
+.auth--inputs {
+  grid-template-rows: repeat(5, 1fr);
   grid-gap: 20px;
   grid-template-columns: 15px 1fr 15px;
-  input{
+
+  input {
+    //will affect all inputs that are descendants at any level of my .auth--inputs
     height: 45px;
     padding: 0 10px;
     min-width: 350px;
-    border: 1px solid #00A677;
+    border: 1px solid #00a677;
   }
-  h2{
+  h2 {
     font-size: 35px;
     margin-top: 15px;
   }
-  span{
+  span {
     height: 45px;
     text-align: center;
-    div{
-      color: #0000EE;
+    div {
+      color: #0000ee;
       cursor: pointer;
       display: inline;
     }
   }
 }
-.auth--inputs *{
+.auth--inputs * {
   grid-column: 2 / 3;
   align-self: center;
 }
 
-.auth--errors{
+.auth--errors {
   background: red;
   color: white;
   padding: 15px;
 }
-.auth--error-grid{
+.auth--error-grid {
   grid-template-rows: 1fr auto repeat(4, 1fr);
 }
 
 //web
-@media (min-device-width:601px) {
-  .auth--main{
+@media (min-device-width: 601px) {
+  .auth--main {
     grid-template-columns: 1fr auto 1fr;
   }
-  .auth--form{
+  .auth--form {
     grid-column: 2;
     grid-row: 2;
     max-width: 440px; // so doesn't grow huge with errors
   }
-  .auth--inputs{
+  .auth--inputs {
     grid-column: 2;
   }
 }
 
 // mobile
-@media only screen and (max-device-width:600px) {
-  .auth--main{
+@media only screen and (max-device-width: 600px) {
+  .auth--main {
     height: 85vh;
   }
-  .auth--form{
+  .auth--form {
     padding: 10%;
   }
-  .auth--inputs{
+  .auth--inputs {
     grid-row-gap: 35px;
-    h2 { 
+    h2 {
       font-size: 70px;
     }
-    input{
+    input {
       height: 100%;
       font-size: 32px;
     }
-    span{
+    span {
       font-size: 35px;
     }
   }
-  .auth--errors{
+  .auth--errors {
     font-size: 30px;
   }
 }
